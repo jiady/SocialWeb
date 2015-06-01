@@ -1,12 +1,12 @@
 # SocialWeb
-This is a website, a social network that connects friends,lovers, classmates.
+This is a website, a social network that connects friends,classmates.
 
 Just like facebook, one difference is that :
 
-If you are a boy, you can only see boys comments boy and girls comments girl .If you are a girl ,just inverse the situation.
+Except yourself,you can only see boys commenting boys and girls commenting girls .
 
-So you will feel that all girls are single and all boys are losers which may make you feel well! :)
+So you will feel that all users are single and all users are losers which may make you feel happy!  :)
 
-Just enjoy!
+From your point of view, you are the most attractive person in the world! Just enjoy!
 
 
