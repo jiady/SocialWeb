@@ -32,7 +32,7 @@ class Info_Model extends CI_model{
 
     function getCities() {
     	$query="SELECT * FROM city";
-    	return $query->result();
+    	return $this->db->query($query)->result();
     }
 
     function addSchool($school) {
@@ -61,7 +61,7 @@ class Info_Model extends CI_model{
 
     function getSchools() {
     	$query="SELECT * FROM school";
-    	return $query->result();
+    	return $this->db->query($query)->result();
     }
 
     function addMajor($major) {
@@ -90,6 +90,6 @@ class Info_Model extends CI_model{
 
     function getMajors() {
     	$query="SELECT * FROM major";
-    	return $query->result();
+    	return $this->db->query($query)->result();
     }
 }
