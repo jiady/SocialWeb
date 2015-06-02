@@ -42,7 +42,7 @@ class Test extends CI_Controller {
 		$this->output->set_output($gallery);
 
 		//*******************************************************
-		$map['content']="来一发"；
+		$map['content']="来一发";
 		$f=$this->Feed_model->postFid($map);
 		$ar=array("www.baidu.com","www.google.com");
 		$this->Feed_model->addPictures($f,$ar);
