@@ -24,7 +24,7 @@ class Userinfo_model extends CI_model{
         $seq=$this->db->query($query)->row()->n;
         $insert="INSERT INTO usergallery(uid,seq,pic_type,url) VALUES(".$this->db->escape($id).",".$this->db->escape($seq).", 'jpg',".$this->db->escape($image_url).")";
         $this->db->query($insert);
-        if ($this->db->affected_rows>0)
+        if ($this->db->affected_rows()>0)
             return true;
         return false;
     }
@@ -32,7 +32,7 @@ class Userinfo_model extends CI_model{
     function deleteImage($uid,$gid) {
         $delete="DELETE FROM usergallery WHERE uid=".$this->db->escape($uid)." AND gid=".$this->db->escape($gid);
         $this->db->query($delete);
-        if ($this->db->affected_rows>0)
+        if ($this->db->affected_rows()>0)
             return true;
         return false;
     }
@@ -40,13 +40,13 @@ class Userinfo_model extends CI_model{
     function changeImageSeq($id,$seq_from,$seq_to) {
         $query="SELECT gid FROM usergallery WHERE uid=".$this->db->escape($id)." AND seq=".$this->db->escape($seq_to);
         $gid_to=$this->db->query($query)->row()->gid;
-        $update="UPDATE usergallery SET seq=".$this->db->escape($seq_to)." WHERE id=".$this->db->escape($id)." AND seq=".$this->db->escape($seq_from);
+        $update="UPDATE usergallery SET seq=".$this->db->escape($seq_to)." WHERE uid=".$this->db->escape($id)." AND seq=".$this->db->escape($seq_from);
         $this->db->query($update);
-        if ($this->db->affected_rows==0)
+        if ($this->db->affected_rows()==0)
             return false;
-        $update2="UPDATE usergallery SET seq=".$this->db->escape($seq_from)." WHERE id=".$this->db->escape($id)." AND gid=".$this->db->escape($gid_to);
+        $update2="UPDATE usergallery SET seq=".$this->db->escape($seq_from)." WHERE uid=".$this->db->escape($id)." AND gid=".$this->db->escape($gid_to);
         $this->db->query($update2);
-        if ($this->db->affected_rows>0)
+        if ($this->db->affected_rows()>0)
             return true;
         return false;
     }
@@ -69,7 +69,7 @@ class Userinfo_model extends CI_model{
             return false;
         $insert="INSERT INTO hastag(uid,tag) VALUES(".$this->db->escape($id).",".$this->db->escape($tag_name).")";
         $this->db->query($insert);
-        if ($this->db->affected_rows>0)
+        if ($this->db->affected_rows()>0)
             return true;
         return false;
     }
@@ -77,7 +77,7 @@ class Userinfo_model extends CI_model{
     function deleteTag($id, $tag_name) {
         $delete="DELETE FROM hastag WHERE tag_name=".$this->db->escape($tag_name)." AND uid=".$this->db->escape($id);
         $this->db->query($delete);
-        if ($this->db->affected_rows>0)
+        if ($this->db->affected_rows()>0)
             return true;
         return false;
     }
