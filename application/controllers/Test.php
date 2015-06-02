@@ -19,12 +19,11 @@ class Test extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 
-	public function TestUser(){}
 	public function TestUserInfo(){
 		$this->load->model("UserInfo_Model");
 		var_dump($this->UserInfo_Model->getInfo(2));
 		$newInfo=array();
-		$newInfo["edu"]="研究生"
+		$newInfo["edu"]="研究生";
 		var_dump($this->UserInfo_Model->updateInfo(2,$newInfo));
 		var_dump($this->UserInfo_Model->addImage(2,"http://www.baidu.jpg"));
 		var_dump($this->UserInfo_Model->addImage(2,"http://www.google.jpg"));
