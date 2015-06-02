@@ -48,7 +48,7 @@ class Feed_model extends CI_model{
         $this->db->select('fid,putter_gender,uid');
         $this->db->where('fid',$map['fid']);
         $query=$this->db->get("feed");
-        $row=$query->result();
+        $row=$query->row();
         $map['fid_putter']=$row['uid'];
         $map['fid_gender']=$row['putter_gender'];
         $map['uid']=$this->session->userdata('uid');
