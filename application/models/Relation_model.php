@@ -60,7 +60,7 @@ class Relation_model extends CI_model{
     }
 
     function getFriendRequest($id) {
-    	$query="SELECT from_id,reason FROM friendrequest WHERE to_id=".$this->db->escape($id);
+    	$query="SELECT from_uid,reason FROM friendrequest WHERE to_uid=".$this->db->escape($id);
     	return $this->db->query($query)->result();
     }
 
