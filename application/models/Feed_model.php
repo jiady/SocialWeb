@@ -74,6 +74,9 @@ class Feed_model extends CI_model{
         $result=$query->result();
         $data=array();
         foreach ($result as $row){
+            if(!array_key_exists($row->fid, $data)){
+                $data[$row->fid]=array();
+            }
             array_push($data[$row->fid],$row);
         }
         return $data;
@@ -86,6 +89,9 @@ class Feed_model extends CI_model{
         $result=$query->result();
         $data=array();
         foreach ($result as $row){
+            if(!array_key_exists($row->fid, $data)){
+                $data[$row->fid]=array();
+            }
             array_push($data[$row->fid],$row);
         }
         return $data;
