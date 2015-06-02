@@ -54,8 +54,8 @@ class Test extends CI_Controller {
 		var_dump($obj->deleteMajor("南阳"));
 	}
 	public function TestRelation(){
-		$obj=new Relation_model;
 		$this->load->model("Relation_model");
+		$obj=new Relation_model;
 		var_dump($obj->addBlackList(4,2));
 		var_dump($obj->getBlackLists(4));
 		var_dump($obj->sendFriendRequest(2,4));
