@@ -50,7 +50,7 @@ class Feed_model extends CI_model{
         $query=$this->db->get("feed");
         $row=$query->result();
         $map['fid_putter']=$row['uid'];
-        $map['fid_gender']=$row['gender'];
+        $map['fid_gender']=$row['putter_gender'];
         $map['uid']=$this->session->userdata('uid');
         $map['commenter_name']=$this->session->userdata('name');
         $map['commenter_gender']=$this->session->userdata('gender');
