@@ -92,4 +92,12 @@ class Info_Model extends CI_model{
     	$query="SELECT * FROM major";
     	return $this->db->query($query)->result();
     }
+
+    function addTag($tag_name) {
+        $insert="INSERT INTO tag VALUES(".$this->db->escape($tag_name).")";
+        $this->db->query($insert);
+        if ($this->db->affected_rows>0)
+            return true;
+        return false;
+    }
 }
