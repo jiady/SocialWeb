@@ -37,7 +37,7 @@ class Testj extends CI_Controller {
 		//*******************************************************
 		echo "Comment #</br>";
 		$comment=$this->Feed_model->getComment($fidarray);
-		var_dump($Contentarray);
+		var_dump($comment);
 
 		//*******************************************************
 		$gallery=$this->Feed_model->getFeedGallery($fidarray);
@@ -55,7 +55,7 @@ class Testj extends CI_Controller {
 		//*******************************************************
 		echo "Comment #</br>";
 		$comment=$this->Feed_model->getComment($fidarray);
-		var_dump($Contentarray);
+		var_dump($comment);
 
 		//*************************************************************
 		list($fidarray,$Contentarray)=$this->Feed_model->getFeeds($uid);

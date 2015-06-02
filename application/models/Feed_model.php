@@ -44,8 +44,8 @@ class Feed_model extends CI_model{
             $map['to_name']=$row->name;
             $map['to_gender']=$row->gender;
         }
-        $map['comment_name']=$this->session->userdata('name');
-        $map['comment_gender']=$this->session->userdata('gender');
+        $map['commenter_name']=$this->session->userdata('name');
+        $map['commenter_gender']=$this->session->userdata('gender');
         $this->db->insert('comment',$map);
         return $this->db->insert_id();
     }
