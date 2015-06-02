@@ -21,10 +21,10 @@ class Test extends CI_Controller {
 
 	public function TestUserInfo(){
 		$this->load->model("Userinfo_model");
+		$obj=new Userinfo_model;
 		var_dump($obj->getInfo(2));
 		$newInfo=array();
 		$newInfo["edu"]="研究生";
-		$obj=new Userinfo_model;
 		var_dump($obj->updateInfo(2,$newInfo));
 		var_dump($obj->addImage(2,"http://www.baidu.jpg"));
 		var_dump($obj->addImage(2,"http://www.google.jpg"));
