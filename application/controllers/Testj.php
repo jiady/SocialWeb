@@ -16,7 +16,7 @@ class Testj extends CI_Controller {
 
 		$this->User_model->register("email","password111");
 		echo "all_userdata:</br>";
-		ver_dump($this->session->all_userdata());
+		var_dump($this->session->all_userdata());
 		echo "login wrong: expected false</br>";
 		echo $this->User_model->login("email","password112");
 		echo "logout,expected:null</br>";
