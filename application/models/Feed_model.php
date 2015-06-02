@@ -34,7 +34,7 @@ class Feed_model extends CI_model{
     }
 
     function postComments($map){
-        if(!array_key_exists('to_uid', $map){
+        if(!array_key_exists('to_uid', $map)){
             $map['to_name']=$this->session->userdata('name');
             $map['to_gender']=$this->session->userdate('gender');
         }
