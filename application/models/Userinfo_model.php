@@ -8,8 +8,8 @@ class Userinfo_model extends CI_model{
 
     function getInfo($id) {
     	$query="SELECT * FROM user WHERE uid=".$this->db->escape($id);
-    	$res=$this->db->query($query)->result()->row();
-    	return $res;
+    	$res=$this->db->query($query)->result();
+    	return $res->row();
     }
 
     function updateInfo($id, $newInfo) {
@@ -22,7 +22,9 @@ class Userinfo_model extends CI_model{
 
     function addImage($id, $image_url) {
         $query="SELECT MAX(seq)+1 AS n FROM usergallery WHERE uid=".$this->db->escape($id);
-        $seq=$this->db->query($query)->result()->row()->n;
+        $seqt=$this->db->query($query)->result();
+        $seqr=->row();
+        $seq=$seq->n;
         $insert="INSERT INTO usergallery(uid,seq,typ,url) VALUES(".$this->db->escape($id).",".$this->db->escpae($seq).", 'jpg',".$this->db->escape($image_url).")";
         $this->db->query($insert);
         if ($this->db->affected_rows>0)
@@ -40,7 +42,8 @@ class Userinfo_model extends CI_model{
 
     function changeImageSeq($id,$seq_from,$seq_to) {
         $query="SELECT gid FROM usergallery WHERE uid=".$this->db->escape($id)." AND seq=".$this->db->escape($seq_to);
-        $gid_to=$this->db->query($query)->result()->row()->gid;
+        $gid_to_obj=$this->db->query($query)->result();
+        $gid_to=$gid_to_obj->row()->gid;
         $update="UPDATE usergallery SET seq=".$this->db->escape($seq_to)." WHERE id=".$this->db->escape($id)." AND seq=".$this->db->escape($seq_from);
         $this->db->query($update);
         if ($this->db->affected_rows==0)
