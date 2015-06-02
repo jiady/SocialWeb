@@ -8,7 +8,7 @@ class User_model extends CI_model{
 
    
 
-    function Login($email,$password){
+    function login($email,$password){
         if($this->session->userdata('uid'))
             return false;//already login
         $this->db->where('email',$email)->where('password',$password);
@@ -23,12 +23,12 @@ class User_model extends CI_model{
         return false;
     }
 
-    function Logout($id){
+    function logout(){
     	$this->session->sess_destroy();
         return true;
     }
 
-    function Register($email,$password){
+    function register($email,$password){
         $this->db->where('email',$email);
         $query=$this->db->get('user');
         if($query->num_rows()>0){
@@ -38,7 +38,7 @@ class User_model extends CI_model{
         $to_insert['email']=$email;
         $to_insert['password']=$password;
         $this->db->insert($to_insert);
-        return $this->Login($email,$password);
+        return $this->login($email,$password);
     }
     
 
