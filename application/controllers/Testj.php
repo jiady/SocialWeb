@@ -38,7 +38,7 @@ class Test extends CI_Controller {
 
 		//*******************************************************
 		$gallery=$this->Feed_model->getFeedGallery($fidarray);
-		echo "Feedimage</br>"
+		echo "Feedimage</br>";
 		$this->output->set_output($gallery);
 
 		//*******************************************************
