@@ -1,6 +1,6 @@
 <?php
 
-class User_model extends CI_model{
+class Feed_model extends CI_model{
 	function __construct()
     {
         parent::__construct();
@@ -40,6 +40,45 @@ class User_model extends CI_model{
         $this->db->insert($to_insert);
         return $this->Login($email,$password);
     }
+
+    function PostFid($map){
+        $this->db->insert('feed',$map);
+        return $this->db->insert_id();
+    } 
+    function AddPictures($fid,$array){
+        int $seq=1;
+        foreach ($array as $pic){
+            $ins=array("fid"=>$fid,"seq"=>$seq,"url"=>$pic);
+            $this->db->insert('feedgallery',$ins);
+            $seq++;
+        } 
+        return true;
+    } 
+
+    function DeleteFeed($fid){
+        $this->db->where('fid',$fid);
+        $this->db->delete('feed');
+        $this->db->where('fid',$fid);
+        $this->db->delete('comment');
+        $this->db->where('fid',$fid);
+        $this->db->delete('feedgallery');
+        return true;
+    }
+
+    function PostComments($map){
+        $this->where('uid',$map[''])
+
+
+        $this->db->insert('comment',$map);
+        return $this->db->insert_id();
+    }
+
+    function DeleteComments($cid){
+        $this->db->where('cid',$cid);
+        $this->db->delete('comment');
+        return true;
+    }
+
     
 
 }
