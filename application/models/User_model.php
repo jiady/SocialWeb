@@ -16,7 +16,6 @@ class User_model extends CI_model{
         if($query->num_rows()>0){
             $row=$query->row_array();
             unset($row['password']);
-            $this->session->sess_destroy();
             $this->session->set_userdata($row);
             return true;
         }
@@ -24,7 +23,7 @@ class User_model extends CI_model{
     }
 
     function logout(){
-    	$this->session->sess_destroy();
+    	$this->session->unset_userdata('uid');
         return true;
     }
 

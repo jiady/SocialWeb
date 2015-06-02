@@ -14,11 +14,13 @@ class Testj extends CI_Controller {
 	{
 		//$this->output->set_content_type('application/json');
 
-		$this->User_model->register("email","password111");
-		echo "all_userdata:</br>";
-		var_dump($this->session->all_userdata());
+		if($this->User_model->register("email","password111")){
+			echo "all_userdata:</br>";
+			var_dump($this->session->all_userdata());
+		}
 		echo "login wrong: expected false</br>";
-		echo $this->User_model->login("email","password112");
+		var_dump( $this->User_model->login("email","password112") );
+
 		echo "logout,expected:null</br>";
 		$this->User_model->logout();
 		var_dump($this->session->all_userdata());
