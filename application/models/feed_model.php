@@ -6,41 +6,6 @@ class Feed_model extends CI_model{
         parent::__construct();
     }
 
-   
-
-    function Login($email,$password){
-        if($this->session->userdata('uid'))
-            return false;//already login
-        $this->db->where('email',$email)->where('password',$password);
-        $query=$this->db->get('user');
-        if($query->num_rows()>0){
-            $row=$query->row_array();
-            unset($row['password']);
-            $this->session->sess_destroy();
-            $this->session->set_userdata($row);
-            return true;
-        }
-        return false;
-    }
-
-    function Logout($id){
-    	$this->session->sess_destroy();
-        return true;
-    }
-
-    function Register($email,$password){
-        $this->db->where('email',$email);
-        $query=$this->db->get('user');
-        if($query->num_rows()>0){
-            return false;
-        }
-        $to_insert=array();
-        $to_insert['email']=$email;
-        $to_insert['password']=$password;
-        $this->db->insert($to_insert);
-        return $this->Login($email,$password);
-    }
-
     function PostFid($map){
         $this->db->insert('feed',$map);
         return $this->db->insert_id();
@@ -66,9 +31,12 @@ class Feed_model extends CI_model{
     }
 
     function PostComments($map){
-        $this->where('uid',$map[''])
-
-
+        $query=$this->where('uid',$map['to_uid']);
+        $row=$query->first_row();
+        $map['to_name']=$row->name;
+        $map['to_gender']=$row->gender;
+        $map['comment_name']=$this->session->userdata('name');
+        $map['comment_gender']=$this->session->userdate('gender');
         $this->db->insert('comment',$map);
         return $this->db->insert_id();
     }
@@ -77,6 +45,41 @@ class Feed_model extends CI_model{
         $this->db->where('cid',$cid);
         $this->db->delete('comment');
         return true;
+    }
+
+    function GetFeeds($id,$limit=20,$offset=0){
+        $query=$this->db->query("SELECT * From feed WHERE uid IN (SELECT to_uid FROM friend
+                WHERE from_uid=".$this->db->escape($id).") LIMIT ".$this->db->escape($limit)." OFFSET ".$this->db->escape($offset)." ");
+        $result=$query->result();
+        $fid_array=array();
+        foreach( $result as $value){
+            array_push($fid_array,$value->fid);
+        }
+        return array($fid_array,$result);
+    }
+
+    function GetComment($fid_array){
+        $this->db->where_in('fid', $fid_array);
+        $this->db->order_by('post_time',"desc");
+        $query=$this->db->get('comment');
+        $result=$query->result();
+        $data=array();
+        foreach ($result as $row){
+            array_push($data[$row->fid],$row);
+        }
+        return $data;
+    }
+
+    function GetFeedGallery($fid_array){
+        $this->db->where_in('fid', $fid_array);
+        $this->db->order_by('seq',"desc");
+        $query=$this->db->get('feedgallery');
+        $result=$query->result();
+        $data=array();
+        foreach ($result as $row){
+            array_push($data[$row->fid],$row);
+        }
+        return $data;
     }
 
     
