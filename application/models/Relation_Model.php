@@ -1,6 +1,6 @@
 <?php
 
-class Relation_Model extends CI_model{
+class relation_model extends CI_model{
 	function __construct()
     {
         parent::__construct();
