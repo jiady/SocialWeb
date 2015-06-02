@@ -12,7 +12,7 @@ class Relation_model extends CI_model{
     		return false;
     	$insert="INSERT INTO blacklist(from_uid, to_uid) VALUES(".$this->db->escape($id).",".$this->db->escape($blackid).")";
     	$this->db->query($insert);
-    	if ($this->db->affected_rows>0)
+    	if ($this->db->affected_rows()>0)
     		return true;
     	return false;
     }
@@ -25,7 +25,7 @@ class Relation_model extends CI_model{
     function deleteBlackList($id,$blackid) {
     	$delete="DELETE FROM blacklist WHERE from_uid=".$this->db->escape($id)." AND to_uid=".$this->db->escape($blackid);
     	$this->db->query($delete);
-    	if ($this->db->affected_rows>0)
+    	if ($this->db->affected_rows()>0)
     		return true;
     	return false;
     }
@@ -38,7 +38,7 @@ class Relation_model extends CI_model{
     function deleteFriend($id, $delete_id) {
     	$delete="DELETE FROM friend WHERE from_uid=".$this->db->escape($id)." AND to_uid=".$this->db->escape($delete_id);
     	$this->db->query($delete);
-    	if ($this->db->affected_rows>0)
+    	if ($this->db->affected_rows()>0)
     		return true;
     	return false;
     }
@@ -49,7 +49,7 @@ class Relation_model extends CI_model{
     		return false;
     	$insert="INSERT INTO friendrequest(from_uid, to_uid) VALUES(".$this->db->escape($id).",".$this->db->escape($to_id).")";
     	$this->db->query($insert);
-    	if ($this->db->affected_rows>0)
+    	if ($this->db->affected_rows()>0)
     		return true;
     	return false;
     }
@@ -65,7 +65,7 @@ class Relation_model extends CI_model{
         $this->db->query($delete);
     	$insert="INSERT INTO friendrequest(from_uid, to_uid, reason) VALUES(".$this->db->escape($id).",".$this->db->escape($to_id).",".$this->db->escape($reason).")";
     	$this->db->query($insert);
-    	if ($this->db->affected_rows>0)
+    	if ($this->db->affected_rows()>0)
     		return true;
     	return false;
     }
@@ -78,15 +78,15 @@ class Relation_model extends CI_model{
     function acceptFriendRequest($id, $from_id) {
     	$update="UPDATE friendrequest SET accepted=true WHERE from_uid=".$this->db->escape($from_id)." AND to_uid=".$this->db->escape($id);
     	$this->db->query($update);
-    	if ($this->db->affected_rows==0)
+    	if ($this->db->affected_rows()==0)
     		return false;
     	$insert="INSERT INTO friend(from_uid, to_uid) VALUES(".$this->db->escape($id).",".$this->db->escape($from_id).")";
     	$this->db->query($insert);
-    	if ($this->db->affected_rows==0)
+    	if ($this->db->affected_rows()==0)
     		return false;
     	$insert="INSERT INTO friend(from_uid, to_uid) VALUES(".$this->db->escape($from_id).",".$this->db->escape($id).")";
     	$this->db->query($insert);
-    	if ($this->db->affected_rows==0)
+    	if ($this->db->affected_rows()==0)
     		return false;
     	return true;
     }
