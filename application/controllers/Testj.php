@@ -5,8 +5,8 @@ class Test extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('User_model');
-		$this->load->model('Feed_model');
+		$this->load->model('user_model');
+		$this->load->model('feed_model');
 		$this->output->set_content_type('application/json');
 	}
 	
