@@ -9,3 +9,4 @@ Icon
 .Spotlight-V100
 .Trashes
 database.php
+./application/config/database.php
