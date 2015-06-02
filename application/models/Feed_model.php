@@ -14,7 +14,7 @@ class Feed_model extends CI_model{
         return $this->db->insert_id();
     } 
     function addPictures($fid,$array){
-        int $seq=1;
+        $seq=1;
         foreach ($array as $pic){
             $ins=array("fid"=>$fid,"seq"=>$seq,"url"=>$pic);
             $this->db->insert('feedgallery',$ins);
