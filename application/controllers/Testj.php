@@ -7,16 +7,16 @@ class Testj extends CI_Controller {
 		parent::__construct();
 		$this->load->model('User_model');
 		$this->load->model('Feed_model');
-		$this->output->set_content_type('application/json');
+		//$this->output->set_content_type('application/json');
 	}
 	
 	public function TestUser()
 	{
-		$this->output->set_content_type('application/json');
+		//$this->output->set_content_type('application/json');
 
 		$this->User_model->register("email","password111");
 		echo "all_userdata:</br>";
-		$this->output->set_output($this->session->all_userdata());
+		ver_dump($this->session->all_userdata());
 		echo "login wrong: expected false</br>";
 		echo $this->User_model->login("email","password112");
 		echo "logout,expected:null</br>";
