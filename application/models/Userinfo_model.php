@@ -13,7 +13,7 @@ class Userinfo_model extends CI_model{
     }
 
     function updateInfo($id, $newInfo) {
-    	$this->db->where=('uid',$id);
+    	$this->db->where('uid',$id);
         $this->db->update('user',$newInfo);
     	if ($this->db->affected_rows()==0)
     		return false;
