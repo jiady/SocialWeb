@@ -8,8 +8,7 @@ class Userinfo_model extends CI_model{
 
     function getInfo($id) {
     	$query="SELECT * FROM user WHERE uid=".$this->db->escape($id);
-    	$res=$this->db->query($query)->result();
-    	return $res->row();
+    	return $this->db->query($query)->result();
     }
 
     function updateInfo($id, $newInfo) {
@@ -23,8 +22,7 @@ class Userinfo_model extends CI_model{
     function addImage($id, $image_url) {
         $query="SELECT MAX(seq)+1 AS n FROM usergallery WHERE uid=".$this->db->escape($id);
         $seqt=$this->db->query($query)->result();
-        $seqr=->row();
-        $seq=$seq->n;
+        $seq=$seqt->row()->n;
         $insert="INSERT INTO usergallery(uid,seq,typ,url) VALUES(".$this->db->escape($id).",".$this->db->escpae($seq).", 'jpg',".$this->db->escape($image_url).")";
         $this->db->query($insert);
         if ($this->db->affected_rows>0)
@@ -62,7 +60,8 @@ class Userinfo_model extends CI_model{
 
     function getHeadImage($id) {
         $query="SELECT url FROM usergallery WHERE seq<=ALL (SELECT seq FROM usergallery)";
-        return $this->db->query($query)->result()->row()->url;
+        $res=$this->db->query($query)->result();
+        return $res->row()->url;
     }
 
     function addTag($id,$tag_name) {
