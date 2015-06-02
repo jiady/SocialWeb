@@ -63,11 +63,11 @@ class Userinfo_model extends CI_model{
     }
 
     function addTag($id,$tag_name) {
-        $query="SELECT * FROM hastag WHERE tag_name=".$this->db->escape($tag_name)." AND uid=".$this->db->escape(%id);
+        $query="SELECT * FROM hastag WHERE tag_name=".$this->db->escape($tag_name)." AND uid=".$this->db->escape($id);
         $res=$this->db->query($query);
         if ($res->num_rows>0)
             return false;
-        $insert="INSERT INTO hastag(uid,tag) VALUES(".$this->db->escape(%id).",".$this->db->escape($tag_name).")";
+        $insert="INSERT INTO hastag(uid,tag) VALUES(".$this->db->escape($id).",".$this->db->escape($tag_name).")";
         $this->db->query($insert);
         if ($this->db->affected_rows>0)
             return true;
@@ -75,7 +75,7 @@ class Userinfo_model extends CI_model{
     }
 
     function deleteTag($id, $tag_name) {
-        $delete="DELETE FROM hastag WHERE tag_name=".$this->db->escape($tag_name)." AND uid=".$this->db->escape(%id);
+        $delete="DELETE FROM hastag WHERE tag_name=".$this->db->escape($tag_name)." AND uid=".$this->db->escape($id);
         $this->db->query($delete);
         if ($this->db->affected_rows>0)
             return true;
@@ -83,7 +83,7 @@ class Userinfo_model extends CI_model{
     }
 
     function getTags($id) {
-        $query="SELECT tag FROM hastag WHERE uid=".$this->db->escape(%id);
+        $query="SELECT tag FROM hastag WHERE uid=".$this->db->escape($id);
         return $this->db->query($query)->result();
     }
 }
