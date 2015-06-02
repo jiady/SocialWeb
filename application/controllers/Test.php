@@ -20,7 +20,7 @@ class Test extends CI_Controller {
 	 */
 
 	public function TestUserInfo(){
-		$this->load->model("userinfo_model");
+		$this->load->model("Userinfo_model");
 		var_dump($this->UserInfo_Model->getInfo(2));
 		$newInfo=array();
 		$newInfo["edu"]="研究生";
@@ -38,7 +38,7 @@ class Test extends CI_Controller {
 		var_dump($this->UserInfo_Model->deleteTag(2,"aaa"));
 	}
 	public function TestInfo(){
-		$this->load->model("info_model");
+		$this->load->model("Info_model");
 		var_dump($this->Info_Model->addCity("郑州"));
 		var_dump($this->Info_Model->addCity("郑州","南阳"));
 		var_dump($this->Info_Model->addCity("南阳"));
@@ -52,7 +52,7 @@ class Test extends CI_Controller {
 		var_dump($this->Info_Model->addMajor("南阳"));
 	}
 	public function TestRelation(){
-		$this->load->model("relation_model");
+		$this->load->model("Relation_model");
 		var_dump($this->Relation_Model->addBlackList(4,2));
 		var_dump($this->Relation_Model->getBlackLists(4));
 		var_dump($this->Relation_Model->sendFriendRequest(2,4));
