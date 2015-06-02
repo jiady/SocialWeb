@@ -63,10 +63,4 @@ class Test extends CI_Controller {
 		var_dump($this->Relation_Model->getFriends(2));
 		var_dump($this->Relation_Model->deleteFriend(4,2));
 	}
-	
-	public function TestUser()
-	{
-		
-	}
-	public function TestFeed(){}
 }
