@@ -21,46 +21,49 @@ class Test extends CI_Controller {
 
 	public function TestUserInfo(){
 		$this->load->model("Userinfo_model");
-		var_dump($this->UserInfo_Model->getInfo(2));
+		var_dump($obj->getInfo(2));
 		$newInfo=array();
 		$newInfo["edu"]="研究生";
-		var_dump($this->UserInfo_Model->updateInfo(2,$newInfo));
-		var_dump($this->UserInfo_Model->addImage(2,"http://www.baidu.jpg"));
-		var_dump($this->UserInfo_Model->addImage(2,"http://www.google.jpg"));
-		var_dump($this->UserInfo_Model->addImage(2,"http://www.tencent.jpg"));
-		var_dump($this->UserInfo_Model->deleteImage(2,2));
-		var_dump($this->UserInfo_Model->changeImageSeq(2,1,0));
-		var_dump($this->UserInfo_Model->getGallery(2));
-		var_dump($this->UserInfo_Model->getHeadImage(2));
-		var_dump($this->UserInfo_Model->addTag(2,"很猥琐"));
-		var_dump($this->UserInfo_Model->addTag(2,"aaa"));
-		var_dump($this->UserInfo_Model->getTags(2));
-		var_dump($this->UserInfo_Model->deleteTag(2,"aaa"));
+		$obj=new Userinfo_model;
+		var_dump($obj->updateInfo(2,$newInfo));
+		var_dump($obj->addImage(2,"http://www.baidu.jpg"));
+		var_dump($obj->addImage(2,"http://www.google.jpg"));
+		var_dump($obj->addImage(2,"http://www.tencent.jpg"));
+		var_dump($obj->deleteImage(2,2));
+		var_dump($obj->changeImageSeq(2,1,0));
+		var_dump($obj->getGallery(2));
+		var_dump($obj->getHeadImage(2));
+		var_dump($obj->addTag(2,"很猥琐"));
+		var_dump($obj->addTag(2,"aaa"));
+		var_dump($obj->getTags(2));
+		var_dump($obj->deleteTag(2,"aaa"));
 	}
 	public function TestInfo(){
 		$this->load->model("Info_model");
-		var_dump($this->Info_Model->addCity("郑州"));
-		var_dump($this->Info_Model->addCity("郑州","南阳"));
-		var_dump($this->Info_Model->addCity("南阳"));
+		$obj=new Info_model;
+		var_dump($obj->addCity("郑州"));
+		var_dump($obj->addCity("郑州","南阳"));
+		var_dump($obj->addCity("南阳"));
 		
-		var_dump($this->Info_Model->addSchool("郑州"));
-		var_dump($this->Info_Model->addSchool("郑州","南阳"));
-		var_dump($this->Info_Model->addSchool("南阳"));
+		var_dump($obj->addSchool("郑州"));
+		var_dump($obj->addSchool("郑州","南阳"));
+		var_dump($obj->addSchool("南阳"));
 		
-		var_dump($this->Info_Model->addMajor("郑州"));
-		var_dump($this->Info_Model->addMajor("郑州","南阳"));
-		var_dump($this->Info_Model->addMajor("南阳"));
+		var_dump($obj->addMajor("郑州"));
+		var_dump($obj->addMajor("郑州","南阳"));
+		var_dump($obj->addMajor("南阳"));
 	}
 	public function TestRelation(){
+		$obj=new Relation_model;
 		$this->load->model("Relation_model");
-		var_dump($this->Relation_Model->addBlackList(4,2));
-		var_dump($this->Relation_Model->getBlackLists(4));
-		var_dump($this->Relation_Model->sendFriendRequest(2,4));
-		var_dump($this->Relation_Model->deleteBlackList(4,2));
-		var_dump($this->Relation_Model->sendFriendRequest(2,4));
-		var_dump($this->Relation_Model->getFriendRequest(4));
-		var_dump($this->Relation_Model->acceptFriendRequest(4,2));
-		var_dump($this->Relation_Model->getFriends(2));
-		var_dump($this->Relation_Model->deleteFriend(4,2));
+		var_dump($obj->addBlackList(4,2));
+		var_dump($obj->getBlackLists(4));
+		var_dump($obj->sendFriendRequest(2,4));
+		var_dump($obj->deleteBlackList(4,2));
+		var_dump($obj->sendFriendRequest(2,4));
+		var_dump($obj->getFriendRequest(4));
+		var_dump($obj->acceptFriendRequest(4,2));
+		var_dump($obj->getFriends(2));
+		var_dump($obj->deleteFriend(4,2));
 	}
 }
