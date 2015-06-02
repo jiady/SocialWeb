@@ -44,6 +44,12 @@ class Feed_model extends CI_model{
             $map['to_name']=$row->name;
             $map['to_gender']=$row->gender;
         }
+        $this->db->select('fid,gender,uid');
+        $this->db->where('fid',$map['fid']);
+        $query=$this->get("feed");
+        $row=$query->result();
+        $map['fid_putter']=$row['uid'];
+        $map['fid_gender']=$row['gender'];
         $map['uid']=$this->session->userdata('uid');
         $map['commenter_name']=$this->session->userdata('name');
         $map['commenter_gender']=$this->session->userdata('gender');
@@ -70,6 +76,7 @@ class Feed_model extends CI_model{
 
     function getComment($fid_array){
         $this->db->where_in('fid', $fid_array);
+        
         $this->db->order_by('post_time',"desc");
         $query=$this->db->get('comment');
         $result=$query->result();
@@ -78,7 +85,12 @@ class Feed_model extends CI_model{
             if(!array_key_exists($row->fid, $data)){
                 $data[$row->fid]=array();
             }
-            array_push($data[$row->fid],$row);
+            if($row->commenter_gender==$row->fid_gender && $row->to_gender==$row->fid_gender)
+                array_push($data[$row->fid],$row);
+            else if($row->fid_putter==$this->session->userdata('uid'))
+                array_push($data[$row->fid],$row);
+            else if($row->uid==$this->session->userdata('uid') || $row->to_uid==$this->session->userdata('uid'))
+                array_push($data[$row->fid],$row);
         }
         return $data;
     }
@@ -97,6 +109,8 @@ class Feed_model extends CI_model{
         }
         return $data;
     }
+
+
 
     
 
