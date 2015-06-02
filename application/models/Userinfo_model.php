@@ -22,7 +22,7 @@ class Userinfo_model extends CI_model{
     function addImage($id, $image_url) {
         $query="SELECT MAX(seq)+1 AS n FROM usergallery WHERE uid=".$this->db->escape($id);
         $seq=$this->db->query($query)->row()->n;
-        $insert="INSERT INTO usergallery(uid,seq,typ,url) VALUES(".$this->db->escape($id).",".$this->db->escpae($seq).", 'jpg',".$this->db->escape($image_url).")";
+        $insert="INSERT INTO usergallery(uid,seq,typ,url) VALUES(".$this->db->escape($id).",".$this->db->escape($seq).", 'jpg',".$this->db->escape($image_url).")";
         $this->db->query($insert);
         if ($this->db->affected_rows>0)
             return true;
