@@ -23,7 +23,7 @@ class Welcome extends CI_Controller {
 		echo "auto pull has been started! 我是天才</br>";
 		$this->load->view('welcome_message');
 		exec("/home/ubuntu/gitsocialweb.sh",$results,$ret);
-		foreach ($result as $row){
+		foreach ($results as $row){
 			echo $row;
 			echo "</br>";
 		}
