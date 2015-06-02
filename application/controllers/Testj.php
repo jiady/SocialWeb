@@ -26,6 +26,7 @@ class Testj extends CI_Controller {
 		var_dump($this->session->all_userdata());
 	}
 	public function TestFeed($uid){
+		$this->User_model->login("222","54250") 
 		$this->output->set_content_type('application/json');
 		//*************************************************************
 		list($fidarray,$Contentarray)=$this->Feed_model->getFeeds($uid);
