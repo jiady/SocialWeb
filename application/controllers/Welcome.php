@@ -20,6 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		echo "auto pull has been started! 我是天才";
 		$this->load->view('welcome_message');
 	}
 }
