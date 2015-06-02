@@ -82,7 +82,7 @@ class UserInfo_Model extends CI_model{
         return false;
     }
 
-    function getTages($id) {
+    function getTags($id) {
         $query="SELECT tag FROM hastag WHERE uid=".$this->db->escape(%id);
         return $this->db->query($query)->result();
     }
