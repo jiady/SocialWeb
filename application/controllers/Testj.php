@@ -15,10 +15,10 @@ class Testj extends CI_Controller {
 		//$this->output->set_content_type('application/json');
 
 		if(true==$this->User_model->register("email","password111")){
-			echo "all_userdata:</br>";
+			echo "all_userdata:<\br>";
 			var_dump($this->session->all_userdata());
 		}
-		echo "login wrong: expected false<\br>";
+		echo "login : expected true \n";
 		var_dump( $this->User_model->login("email","password111") );
 
 		echo "logout,expected:no uid \n";
@@ -30,18 +30,18 @@ class Testj extends CI_Controller {
 		//*************************************************************
 		list($fidarray,$Contentarray)=$this->Feed_model->getFeeds($uid);
 		echo "Get Feeds seq</br>";
-		$this->output->set_output($fidarray);
+		var_dump($fidarray);
 		echo "Get Feeds </br>";
-		$this->output->set_output($Contentarray);
+		var_dump($Contentarray);
 		//*******************************************************
 		echo "Comment #</br>";
 		$comment=$this->Feed_model->getComment($fidarray);
-		$this->output->set_output($Contentarray);
+		var_dump($Contentarray);
 
 		//*******************************************************
 		$gallery=$this->Feed_model->getFeedGallery($fidarray);
 		echo "Feedimage</br>";
-		$this->output->set_output($gallery);
+		var_dump($gallery);
 
 		//*******************************************************
 		$map['content']="来一发";
@@ -54,14 +54,14 @@ class Testj extends CI_Controller {
 		//*******************************************************
 		echo "Comment #</br>";
 		$comment=$this->Feed_model->getComment($fidarray);
-		$this->output->set_output($Contentarray);
+		var_dump($Contentarray);
 
 		//*************************************************************
 		list($fidarray,$Contentarray)=$this->Feed_model->getFeeds($uid);
 		echo "Get Feeds seq</br>";
-		$this->output->set_output($fidarray);
+		var_dump($fidarray);
 		echo "Get Feeds </br>";
-		$this->output->set_output($Contentarray);
+		var_dump($Contentarray);
 
 
 	}
