@@ -37,7 +37,7 @@ class User_model extends CI_model{
         $to_insert=array();
         $to_insert['email']=$email;
         $to_insert['password']=$password;
-        $this->db->insert($to_insert);
+        $this->db->insert('user',$to_insert);
         return $this->login($email,$password);
     }
     
