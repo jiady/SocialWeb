@@ -96,7 +96,7 @@ class Info_model extends CI_model{
     function addTag($tag_name) {
         $insert="INSERT INTO tag VALUES(".$this->db->escape($tag_name).")";
         $this->db->query($insert);
-        if ($this->db->affected_rows>0)
+        if ($this->db->affected_rows()>0)
             return true;
         return false;
     }
