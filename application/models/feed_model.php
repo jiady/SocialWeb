@@ -6,11 +6,14 @@ class Feed_model extends CI_model{
         parent::__construct();
     }
 
-    function PostFid($map){
+    function postFid($map){
+        $map['uid']=$this->session->userdata('uid');
+        $map['putter_name']=$this->session->userdata('name');
+        $map['putter_gender']=$this->session->userdata('gender');
         $this->db->insert('feed',$map);
         return $this->db->insert_id();
     } 
-    function AddPictures($fid,$array){
+    function addPictures($fid,$array){
         int $seq=1;
         foreach ($array as $pic){
             $ins=array("fid"=>$fid,"seq"=>$seq,"url"=>$pic);
@@ -20,7 +23,7 @@ class Feed_model extends CI_model{
         return true;
     } 
 
-    function DeleteFeed($fid){
+    function deleteFeed($fid){
         $this->db->where('fid',$fid);
         $this->db->delete('feed');
         $this->db->where('fid',$fid);
@@ -30,24 +33,30 @@ class Feed_model extends CI_model{
         return true;
     }
 
-    function PostComments($map){
-        $query=$this->where('uid',$map['to_uid']);
-        $row=$query->first_row();
-        $map['to_name']=$row->name;
-        $map['to_gender']=$row->gender;
+    function postComments($map){
+        if(!array_key_exists('to_uid', $map){
+            $map['to_name']=$this->session->userdata('name');
+            $map['to_gender']=$this->session->userdate('gender');
+        }
+        else{
+            $query=$this->where('uid',$map['to_uid']);
+            $row=$query->first_row();
+            $map['to_name']=$row->name;
+            $map['to_gender']=$row->gender;
+        }
         $map['comment_name']=$this->session->userdata('name');
         $map['comment_gender']=$this->session->userdate('gender');
         $this->db->insert('comment',$map);
         return $this->db->insert_id();
     }
 
-    function DeleteComments($cid){
+    function deleteComments($cid){
         $this->db->where('cid',$cid);
         $this->db->delete('comment');
         return true;
     }
 
-    function GetFeeds($id,$limit=20,$offset=0){
+    function getFeeds($id,$limit=20,$offset=0){
         $query=$this->db->query("SELECT * From feed WHERE uid IN (SELECT to_uid FROM friend
                 WHERE from_uid=".$this->db->escape($id).") LIMIT ".$this->db->escape($limit)." OFFSET ".$this->db->escape($offset)." ");
         $result=$query->result();
@@ -58,7 +67,7 @@ class Feed_model extends CI_model{
         return array($fid_array,$result);
     }
 
-    function GetComment($fid_array){
+    function getComment($fid_array){
         $this->db->where_in('fid', $fid_array);
         $this->db->order_by('post_time',"desc");
         $query=$this->db->get('comment');
@@ -70,7 +79,7 @@ class Feed_model extends CI_model{
         return $data;
     }
 
-    function GetFeedGallery($fid_array){
+    function getFeedGallery($fid_array){
         $this->db->where_in('fid', $fid_array);
         $this->db->order_by('seq',"desc");
         $query=$this->db->get('feedgallery');
