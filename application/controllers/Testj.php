@@ -21,7 +21,7 @@ class Testj extends CI_Controller {
 		echo $this->User_model->login("email","password112");
 		echo "logout,expected:null</br>";
 		$this->User_model->logout();
-		$this->output->set_output($this->session->all_userdata());
+		ver_dump($this->session->all_userdata());
 	}
 	public function TestFeed($uid){
 		$this->output->set_content_type('application/json');
