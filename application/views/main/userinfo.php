@@ -39,7 +39,7 @@ div {margin-top: 10px; margin-left: 10px;}
 			    	</div>
 			    </div>
 			     
-			    <div class="col-lg-6">
+			    <div class="col-lg-5">
 			    	<div class="input-group">
 						<span class="input-group-addon">
 							性别
@@ -81,7 +81,7 @@ div {margin-top: 10px; margin-left: 10px;}
 				      	<input type="text" class="form-control typeahead" name="edu" value=<?=$info["edu"]?> />
 			    	</div>
 			    </div>
-			   	<div class="col-lg-6">
+			   	<div class="col-lg-5">
 			    	<div class="input-group">
 						<span class="input-group-addon">
 							入学年份
