@@ -13,7 +13,7 @@
 		      	<input type="hidden" class="form-control" name="part" value=<?=$part?> placeholder="Old name..."/>
 	    </div>
 	</form>
-	<div></br></div>
+	<br/>
 	<form  method="post" action=<?=site_url('info_control/update')?>>
 		<div class="row">
 			<div class="col-lg-12">
@@ -37,7 +37,7 @@
 		      	<input type="hidden" class="form-control" name="part" value=<?=$part?> placeholder="Old name..."/>
 	    </div>
 	</form>
-	<div></br></div>
+	<br/>
 	<form method="post" action=<?=site_url('info_control/delete')?>>
 		<div class="input-group">
 			<span class="input-group-addon">
@@ -52,5 +52,5 @@
 		      	<input type="hidden" class="form-control" name="part" value=<?=$part?> placeholder="Old name..."/>
 	    </div>
 	</form>
-	<div></br></div>
+	<br/>
 </div>

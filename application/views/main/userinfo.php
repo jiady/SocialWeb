@@ -47,21 +47,21 @@
 							echo "女" ?> />
 		    	</div>
 		    </div>
-
+			<br/>
 	    	<div class="input-group">
 	    		<span class="input-group-addon">
 					个性签名
 				</span>
 			    <input type="text" class="form-control" name="profile" value=<?=$info["profile"]?> />
 		    </div>
-
+		    <br/>
 		    <div class="input-group">
 	    		<span class="input-group-addon">
 					电子邮箱
 				</span>
 			    <input type="text" class="form-control" name="email" value=<?=$info["email"]?> />
 		    </div>
-
+		    <br/>
 		    <div class="row">
 				<div class="input-group">
 					<span class="input-group-addon">
@@ -76,27 +76,28 @@
 					<input class="form-control" type="text" name="eduyear" value=<?=$info["eduyear"]?> />
 		    	</div>
 		    </div>
-
+		    <br/>
 		    <div class="input-group">
 	    		<span class="input-group-addon">
 					所在学校
 				</span>
 			    <input id="school_enter" type="text" class="form-control typeahead" name="school" data-provide="typeahead" value=<?=$info["school"]?> />
 		    </div>
-
+		    <br/>
 		    <div class="input-group">
 	    		<span class="input-group-addon">
 					所学专业
+				</span>
 			    <input id="major_enter" type="text" class="form-control typeahead" name="major" data-provide="typeahead" value=<?=$info["major"]?> />
 		    </div>
-
+		    <br/>
 		    <div class="input-group">
 	    		<span class="input-group-addon">
 					所在城市
 				</span>
 			    <input id="city_enter" type="text" class="form-control typeahead" name="city" data-provide="typeahead" value=<?=$info["city"]?> />
 		    </div>
-
+		    <br/>
 		    <div>
 		    	<button type="submit" class="btn btn-default">提交</button>
 		    </div>
