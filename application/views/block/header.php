@@ -12,12 +12,10 @@
     <title>LoveTransfer</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?=base_url()?>dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
     <link href="<?=base_url()?>dist/css/home_act.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

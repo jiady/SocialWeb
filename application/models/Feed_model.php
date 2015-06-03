@@ -82,6 +82,9 @@ class Feed_model extends CI_model{
         $query=$this->db->get('comment');
         $result=$query->result();
         $data=array();
+        foreach ($fid_array as $f){
+            $data[$f]=array();
+        }
         foreach ($result as $row){
             if(!array_key_exists($row->fid, $data)){
                 $data[$row->fid]=array();
@@ -102,6 +105,9 @@ class Feed_model extends CI_model{
         $query=$this->db->get('feedgallery');
         $result=$query->result();
         $data=array();
+        foreach ($fid_array as $f){
+            $data[$f]=array();
+        }
         foreach ($result as $row){
             if(!array_key_exists($row->fid, $data)){
                 $data[$row->fid]=array();
