@@ -7,6 +7,10 @@ class Info_model extends CI_model{
     }
 
     function addCity($city) {
+        $query="SELECT * FROM city WHERE city_name=".$this->db->escape($city);
+        $res=$this->db->query($query);
+        if ($res->num_rows()>0)
+            return false;
     	$insert="INSERT INTO city VALUES(".$this->db->escape($city).")";
     	$this->db->query($insert);
     	if ($this->db->affected_rows()>0)
@@ -36,6 +40,10 @@ class Info_model extends CI_model{
     }
 
     function addSchool($school) {
+        $query="SELECT * FROM school WHERE school_name=".$this->db->escape($school);
+        $res=$this->db->query($query);
+        if ($res->num_rows()>0)
+            return false;
     	$insert="INSERT INTO school VALUES(".$this->db->escape($school).")";
     	$this->db->query($insert);
     	if ($this->db->affected_rows()>0)
@@ -65,6 +73,10 @@ class Info_model extends CI_model{
     }
 
     function addMajor($major) {
+        $query="SELECT * FROM major WHERE major_name=".$this->db->escape($major);
+        $res=$this->db->query($query);
+        if ($res->num_rows()>0)
+            return false;
     	$insert="INSERT INTO major VALUES(".$this->db->escape($major).")";
     	$this->db->query($insert);
     	if ($this->db->affected_rows()>0)
