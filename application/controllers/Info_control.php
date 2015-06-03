@@ -6,6 +6,7 @@ class Info_control extends CI_Controller {
 	}
 
 	public function index() {
+		$this->load->view('block/header');
 		$data=array();
 		$data['part']='城市';
 		$this->load->view('main/info_manage',$data);
@@ -13,6 +14,7 @@ class Info_control extends CI_Controller {
 		$this->load->view('main/info_manage',$data);
 		$data['part']='专业';
 		$this->load->view('main/info_manage',$data);
+		$this->load->view('block/footer');
 	}
 
 	public function add() {
