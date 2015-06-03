@@ -46,7 +46,7 @@ class Testj extends CI_Controller {
 
 		//*******************************************************
 		$map['content']="来一发";
-		$f=$this->Feed_model->postFid($map);
+		$f=$this->Feed_model->postFeed($map);
 		$ar=array("www.baidu.com","www.google.com");
 		$this->Feed_model->addPictures($f,$ar);
 		$map['fid']=$f;

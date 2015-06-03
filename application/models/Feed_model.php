@@ -6,7 +6,7 @@ class Feed_model extends CI_model{
         parent::__construct();
     }
 
-    function postFid($map){
+    function postFeed($map){
         $map['uid']=$this->session->userdata('uid');
         $map['putter_name']=$this->session->userdata('name');
         $map['putter_gender']=$this->session->userdata('gender');
