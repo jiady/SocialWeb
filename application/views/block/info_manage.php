@@ -21,9 +21,9 @@
 </head>
 <body bgcolor="#c0c0c0" link="#999999" alink="#999999" vlink="#999999"
 	 >
-	<div class="container">
-		<form  method="post" action=<?=site_url('info_control/add')?>>
-			<div class="input-group">
+	<div class="container" class='col-sm-5 col-sm-offset-1'>
+		<form  method="post" action=<?=site_url('info_control/add')?> class='form-horizontal'>
+			<div class="form-group">
 				<span class="input-group-addon" id="basic-addon1">
 					新增<?=$part?>
 				</span>
@@ -32,7 +32,7 @@
 		        	<button class="btn btn-default" type="submit">提交</button>
 	     		</span>
 	    	</div>
-	    	<div class="input-group">
+	    	<div class="form-group">
 			      	<input type="hidden" class="form-control" name="part" value=<?=$part?> placeholder="Old name..."/>
 		    </div>
 		</form>
@@ -40,7 +40,7 @@
 		<form  method="post" action=<?=site_url('info_control/update')?>>
 			<div class="row">
 				<div class="col-lg-6">
-					<div class="input-group">
+					<div class="form-group">
 						<span class="input-group-addon" id="basic-addon1">
 							修改<?=$part?>
 						</span>
@@ -48,7 +48,7 @@
 			    	</div>
 			    </div>
 			    <div class="col-lg-6">
-					<div class="input-group">
+					<div class="form-group">
 				      	<input type="text" class="form-control" name="name_new" placeholder="New name..."/>
 				      	<span class="input-group-btn">
 				        	<button class="btn btn-default" type="submit">提交</button>
@@ -56,13 +56,13 @@
 			    	</div>
 			    </div>
 		    <div>
-	    	<div class="input-group">
+	    	<div class="form-group">
 			      	<input type="hidden" class="form-control" name="part" value=<?=$part?> placeholder="Old name..."/>
 		    </div>
 		</form>
 
 		<form method="post" action=<?=site_url('info_control/delete')?>>
-			<div class="input-group">
+			<div class="form-group">
 				<span class="input-group-addon" id="basic-addon1">
 					删除<?=$part?>
 				</span>
@@ -71,7 +71,7 @@
 		        	<button class="btn btn-default" type="submit">提交</button>
 	     		</span>
 	    	</div>
-	    	<div class="input-group">
+	    	<div class="form-group">
 			      	<input type="hidden" class="form-control" name="part" value=<?=$part?> placeholder="Old name..."/>
 		    </div>
 		</form>
