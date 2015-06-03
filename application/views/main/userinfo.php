@@ -34,7 +34,7 @@
 			<div class="row">
 				<div class="input-group">
 					<span class="input-group-addon">姓名</span>
-			      	<input type="text" class="form-control" name="name" value=<?=$info["name"]?>/>
+			      	<input type="text" class="form-control" name="name" value=<?=$info["name"]?> />
 		    	</div>
 		    	<div class="input-group">
 					<span class="input-group-addon">
@@ -52,14 +52,14 @@
 	    		<span class="input-group-addon">
 					个性签名
 				</span>
-			    <input type="text" class="form-control" name="profile" value=<?=$info["profile"]?>/>
+			    <input type="text" class="form-control" name="profile" value=<?=$info["profile"]?> />
 		    </div>
 
 		    <div class="input-group">
 	    		<span class="input-group-addon">
 					电子邮箱
 				</span>
-			    <input type="text" class="form-control" name="email" value=<?=$info["email"]?>/>
+			    <input type="text" class="form-control" name="email" value=<?=$info["email"]?> />
 		    </div>
 
 		    <div class="row">
@@ -67,13 +67,13 @@
 					<span class="input-group-addon">
 						学历
 					</span>
-			      	<input type="text" class="form-control typeahead" name="edu" value=<?=$info["edu"]?>/>
+			      	<input type="text" class="form-control typeahead" name="edu" value=<?=$info["edu"]?> />
 		    	</div>
 		    	<div class="input-group">
 					<span class="input-group-addon">
 						入学年份
 					</span>
-					<input class="form-control" type="text" name="eduyear" value=<?=$info["eduyear"]?>/>
+					<input class="form-control" type="text" name="eduyear" value=<?=$info["eduyear"]?> />
 		    	</div>
 		    </div>
 
@@ -81,20 +81,20 @@
 	    		<span class="input-group-addon">
 					所在学校
 				</span>
-			    <input id="school_enter" type="text" class="form-control typeahead" name="school" data-provide="typeahead" value=<?=$info["school"]?>/>
+			    <input id="school_enter" type="text" class="form-control typeahead" name="school" data-provide="typeahead" value=<?=$info["school"]?> />
 		    </div>
 
 		    <div class="input-group">
 	    		<span class="input-group-addon">
 					所学专业
-			    <input id="major_enter" type="text" class="form-control typeahead" name="major" data-provide="typeahead" value=<?=$info["major"]?>/>
+			    <input id="major_enter" type="text" class="form-control typeahead" name="major" data-provide="typeahead" value=<?=$info["major"]?> />
 		    </div>
 
 		    <div class="input-group">
 	    		<span class="input-group-addon">
 					所在城市
 				</span>
-			    <input id="city_enter" type="text" class="form-control typeahead" name="city" data-provide="typeahead" value=<?=$info["city"]?>/>
+			    <input id="city_enter" type="text" class="form-control typeahead" name="city" data-provide="typeahead" value=<?=$info["city"]?> />
 		    </div>
 
 		    <div>
@@ -104,20 +104,18 @@
 	</div>
 </body>
 
-<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-	$('#edu_enter').typeahead({
-      	source: function(query, process) {
-         	return <?php 
-         		echo $this->Userinfo_model->getCities();
-         		?>
-      	}
-   	});
-});
-</script>
+<div class="footer">
+    <p>© Team of Social Web</p>
+</div>
+    
+   
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 
-
-
-
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src=<?=base_url("dist/js/bootstrap-typeahead.js")?>></script>
+   
+     </div> <!-- /container -->
+  </body>
 </html>
