@@ -123,7 +123,7 @@ input {background-color: rgb(250,255,189);}
 	</div>
 </body>
 
-<div class="footer">
+<div class="footer" style="float:center;">
     <p>© Team of Social Web</p>
 </div>
     
