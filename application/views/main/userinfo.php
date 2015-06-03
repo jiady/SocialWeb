@@ -32,14 +32,14 @@ div {margin-top: 10px; margin-left: 10px;}
 	<div class="container">
 		<form  method="post" action=<?=site_url('userinfo_control/change')?> class='form-horizontal'>
 			<div class="row col-lg-8">
-				<div class="col-lg-8">
+				<div class="col-lg-6">
 					<div class="input-group">
 						<span class="input-group-addon">姓名</span>
 				      	<input type="text" class="form-control" name="name" value=<?=$info["name"]?> />
 			    	</div>
 			    </div>
 			     
-			    <div class="col-lg-8">
+			    <div class="col-lg-6">
 			    	<div class="input-group">
 						<span class="input-group-addon">
 							性别
@@ -73,7 +73,7 @@ div {margin-top: 10px; margin-left: 10px;}
 			</div>
 		     
 		    <div class="row col-lg-8">
-		    	<div class="col-lg-8">
+		    	<div class="col-lg-6">
 					<div class="input-group">
 						<span class="input-group-addon">
 							学历
@@ -81,7 +81,7 @@ div {margin-top: 10px; margin-left: 10px;}
 				      	<input type="text" class="form-control typeahead" name="edu" value=<?=$info["edu"]?> />
 			    	</div>
 			    </div>
-			   	<div class="col-lg-8">
+			   	<div class="col-lg-6">
 			    	<div class="input-group">
 						<span class="input-group-addon">
 							入学年份
