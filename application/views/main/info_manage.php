@@ -1,5 +1,5 @@
 <style type="text/css">
-form {float:left; margin-top: 5px; margin-left: 5px;}
+form {float:left; margin-top: 5px; margin-bottom: 5px;}
 </style>
 
 	<form  method="post" action=<?=site_url('info_control/add')?> class='form-horizontal'>
@@ -19,7 +19,7 @@ form {float:left; margin-top: 5px; margin-left: 5px;}
 	    </div>
 	</form>
 	<form  method="post" action=<?=site_url('info_control/update')?> class='form-horizontal'>
-		<div class="row" class="col-lg-10">
+		<div class="row col-lg-10">
 			<div class="col-lg-5">
 				<div class="input-group">
 					<span class="input-group-addon">
