@@ -18,15 +18,23 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	function __construct()
 	{
-		echo "auto pull has been started! 我是天才</br>";
-		$this->load->view('welcome_message');
+		parent::__construct();
+		$this->load->model('User_model');
 		exec("/home/ubuntu/gitsocialweb.sh",$results,$ret);
 		foreach ($results as $row){
 			echo $row;
 			echo "</br>";
 		}
 		echo $ret;
+	}
+
+
+	public function index()
+	{
+		
+		$this->load->view('welcome_message');
+		
 	}
 }
