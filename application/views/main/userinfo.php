@@ -21,9 +21,6 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-<style>
-div {float:left;}
-</style>
 
 </head>
 <?php $this->load->model("Userinfo_model")?>
@@ -31,25 +28,24 @@ div {float:left;}
 <body>
 	<div class="container">
 		<form  method="post" action=<?=site_url('userinfo_control/change')?> class='form-horizontal'>
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="input-group">
-						<span class="input-group-addon">姓名</span>
-				      	<input type="text" class="form-control" name="name" value=<?=$info["name"]?> />
-			    	</div>
-			    </div>
-			    <div class="col-lg-12">
-			    	<div class="input-group">
-						<span class="input-group-addon">
-							性别
-						</span>
-						<input class="form-control typeahead" type="text" name="gender" value=<?php
-							if ($info['gender']==0)
-								echo "男";
-							else 
-								echo "女" ?> />
-			    	</div>
-			    </div>
+			<div class="col-lg-12">
+				<div class="input-group">
+					<span class="input-group-addon">姓名</span>
+			      	<input type="text" class="form-control" name="name" value=<?=$info["name"]?> />
+		    	</div>
+		    </div>
+		    <br/>
+		    <div class="col-lg-12">
+		    	<div class="input-group">
+					<span class="input-group-addon">
+						性别
+					</span>
+					<input class="form-control typeahead" type="text" name="gender" value=<?php
+						if ($info['gender']==0)
+							echo "男";
+						else 
+							echo "女" ?> />
+		    	</div>
 		    </div>
 			<br/>
 			<div class="col-lg-12">
@@ -61,6 +57,7 @@ div {float:left;}
 			    </div>
 			    <br/>
 			</div>
+			<br/>
 			<div class="col-lg-12">
 			    <div class="input-group">
 		    		<span class="input-group-addon">
@@ -70,23 +67,22 @@ div {float:left;}
 			    </div>
 			</div>
 		    <br/>
-		    <div class="row">
-		    	<div class="col-lg-12">
-					<div class="input-group">
-						<span class="input-group-addon">
-							学历
-						</span>
-				      	<input type="text" class="form-control typeahead" name="edu" value=<?=$info["edu"]?> />
-			    	</div>
-			   	</div>
-			   	<div class="col-lg-12">
-			    	<div class="input-group">
-						<span class="input-group-addon">
-							入学年份
-						</span>
-						<input class="form-control" type="text" name="eduyear" value=<?=$info["eduyear"]?> />
-			    	</div>
-			    </div>
+	    	<div class="col-lg-12">
+				<div class="input-group">
+					<span class="input-group-addon">
+						学历
+					</span>
+			      	<input type="text" class="form-control typeahead" name="edu" value=<?=$info["edu"]?> />
+		    	</div>
+		    </div>
+		    <br/>
+		   	<div class="col-lg-12">
+		    	<div class="input-group">
+					<span class="input-group-addon">
+						入学年份
+					</span>
+					<input class="form-control" type="text" name="eduyear" value=<?=$info["eduyear"]?> />
+		    	</div>
 		    </div>
 		    <br/>
 		    <div class="col-lg-12">
@@ -98,7 +94,7 @@ div {float:left;}
 			    </div>
 			</div>
 		    <br/>
-		    <div>
+		    <div class="col-lg-12">
 			    <div class="input-group">
 		    		<span class="input-group-addon">
 						所学专业
@@ -107,7 +103,7 @@ div {float:left;}
 			    </div>
 			</div>
 		    <br/>
-		    <div>
+		    <div class="col-lg-12">
 			    <div class="input-group">
 		    		<span class="input-group-addon">
 						所在城市
