@@ -11,7 +11,7 @@ class Friends_control extends CI_Controller {
 		$this->load->view('block/header');
 		$id=$this->session->userdata("uid");
 		$info=array();
-		$res=$this->User_model->getFriends($id);
+		$res=$this->Userinfo_model->getFriends($id);
 		if (count($res)>0) {
 			foreach ($res as $row) {
 				$user_info=$this->Userinfo_model->getInfo($row->to_uid);
