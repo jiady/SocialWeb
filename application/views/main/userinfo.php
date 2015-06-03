@@ -40,7 +40,7 @@
 					<span class="input-group-addon">
 						性别
 					</span>
-					<input class="form-control" type="text" name="gender" data-provide="typeahead" data-source='["男", "女"]' value=<?php
+					<input class="form-control typeahead" type="text" name="gender" value=<?php
 						if ($info['gender']==0)
 							echo "男";
 						else 
@@ -52,14 +52,14 @@
 	    		<span class="input-group-addon">
 					个性签名
 				</span>
-			    <input type="text" class="form-control" name="profile" value=<?=$info["profile"]?> placeholder="Profile..."/>
+			    <input type="text" class="form-control" name="profile" value=<?=$info["profile"]?>/>
 		    </div>
 
 		    <div class="input-group">
 	    		<span class="input-group-addon">
 					电子邮箱
 				</span>
-			    <input type="text" class="form-control" name="email" value=<?=$info["email"]?> placeholder="Profile..."/>
+			    <input type="text" class="form-control" name="email" value=<?=$info["email"]?>/>
 		    </div>
 
 		    <div class="row">
@@ -67,13 +67,13 @@
 					<span class="input-group-addon">
 						学历
 					</span>
-			      	<input type="text" class="form-control" name="edu" value=<?=$info["edu"]?> data-provide="typeahead" data-source='["大学本科", "研究生","其他"]'/>
+			      	<input type="text" class="form-control typeahead" name="edu" value=<?=$info["edu"]?>/>
 		    	</div>
 		    	<div class="input-group">
 					<span class="input-group-addon">
 						入学年份
 					</span>
-					<input class="form-control" type="text" name="eduyear" value=<?=$info["eduyear"]?> placeholder="2012"/>
+					<input class="form-control" type="text" name="eduyear" value=<?=$info["eduyear"]?>/>
 		    	</div>
 		    </div>
 
@@ -81,7 +81,20 @@
 	    		<span class="input-group-addon">
 					所在学校
 				</span>
-			    <input id="edu_enter" type="text" class="form-control" name="email" value=<?=$info["school"]?> data-provide="typeahead"/>
+			    <input id="school_enter" type="text" class="form-control typeahead" name="school" data-provide="typeahead" value=<?=$info["school"]?>/>
+		    </div>
+
+		    <div class="input-group">
+	    		<span class="input-group-addon">
+					所学专业
+			    <input id="major_enter" type="text" class="form-control typeahead" name="major" data-provide="typeahead" value=<?=$info["major"]?>/>
+		    </div>
+
+		    <div class="input-group">
+	    		<span class="input-group-addon">
+					所在城市
+				</span>
+			    <input id="city_enter" type="text" class="form-control typeahead" name="city" data-provide="typeahead" value=<?=$info["city"]?>/>
 		    </div>
 
 		    <div>
