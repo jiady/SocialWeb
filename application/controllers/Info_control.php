@@ -43,11 +43,11 @@ class Info_control extends CI_Controller {
 				echo "Something wrong happened!";
 		}
 		else if ($input['part']=='学校') {
-			if (true!=$this->Info_model->addSchool($input['name_old'],$input['name_new']))
+			if (true!=$this->Info_model->updateSchool($input['name_old'],$input['name_new']))
 				echo "Something wrong happened!";
 		}
 		else {
-			if (true!=$this->Info_model->addMajor($input['name_old'],$input['name_new']))
+			if (true!=$this->Info_model->updateMajor($input['name_old'],$input['name_new']))
 				echo "Something wrong happened!";
 		}
 	}
