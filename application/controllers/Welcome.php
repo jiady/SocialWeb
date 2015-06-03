@@ -34,14 +34,14 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		
-		$this->load->view('block/login');
+		$this->load->view('login/login');
 		
 	}
 	public function login(){
 		$input=$this->input->post();
 		var_dump($input);
 		if(true==$this->User_model->login($input['email'],$input['password'])){
-			redirect(site_url("feed"))；
+			redirect(site_url("feed"));
 		}else{
 			echo "wrong password or account";
 		}

@@ -37,13 +37,13 @@
 		        <div class='form-group'>
 	                <label class='col-sm-2 control-label' for='email'>Email</label>
 	                <div class='col-sm-10'>
-	                    <input type=<?=$row->type?> class='form-control' id="email"  name="email" placeholder="Email" >
+	                    <input type='text' class='form-control' id="email"  name="email" placeholder="Email" >
 	                </div>
             	</div>
             	 <div class='form-group'>
 	                <label class='col-sm-2 control-label' for='password'>Password</label>
 	                <div class='col-sm-10'>
-	                    <input type=<?=$row->type?> class='form-control' id="password"  name="password" placeholder="Password" >
+	                    <input type='text' class='form-control' id="password"  name="password" placeholder="Password" >
 	                </div>
             	</div>
 
