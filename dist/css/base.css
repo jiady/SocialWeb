@@ -1,0 +1,17 @@
+.site-desc {
+    margin-top: 30px;
+    font-family: '微软雅黑';
+}
+
+.homepage-jumbotron {
+    background-color: #63995c;
+    color: #ffffff;
+}
+
+.modal-login {
+    margin-top: 20px;
+}
+
+.glyphicon {
+    margin-right: 5px;
+}
