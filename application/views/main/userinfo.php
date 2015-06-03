@@ -122,7 +122,7 @@ div {margin-top: 10px; margin-left: 10px;}
 	</div>
 </body>
 
-<div class="footer" style="position:relative;right:50%;">
+<div class="footer">
     <p>© Team of Social Web</p>
 </div>
     
