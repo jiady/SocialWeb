@@ -8,7 +8,7 @@ class Userinfo_model extends CI_model{
 
     function getInfo($id) {
     	$query="SELECT * FROM user WHERE uid=".$this->db->escape($id);
-    	return $this->db->query($query)->row();
+    	return $this->db->query($query)->row_array();
     }
 
     function updateInfo($id, $newInfo) {
