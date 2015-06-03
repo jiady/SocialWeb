@@ -57,7 +57,7 @@ class Userinfo_model extends CI_model{
     }
 
     function getHeadImage($id) {
-        $query="SELECT url FROM usergallery WHERE seq<=ALL (SELECT seq FROM usergallery)";
+        $query="SELECT url FROM usergallery WHERE uid=".$this->db->escape($id)." AND seq=(SELECT MIN(seq) FROM usergallery WHERE uid=".$this->db->escape($id).")";
         return $this->db->query($query)->row()->url;
     }
 
