@@ -21,9 +21,9 @@ class Test extends CI_Controller {
 
 	public function TestUserInfo(){
 		$this->load->model("Userinfo_model");
-		$obj=new Userinfo_model;
-		var_dump($obj->getInfo(2));
-		$newInfo=array();
+//		$obj=new Userinfo_model;
+		echo $this->Userinfo_model->getInfo(2);
+/*		$newInfo=array();
 		$newInfo["edu"]="研究生";
 		var_dump($obj->updateInfo(2,$newInfo));
 		var_dump($obj->addImage(2,"http://www.baidu.jpg"));
@@ -36,7 +36,7 @@ class Test extends CI_Controller {
 		var_dump($obj->addTag(2,"很猥琐"));
 		var_dump($obj->addTag(2,"aaa"));
 		var_dump($obj->getTags(2));
-		var_dump($obj->deleteTag(2,"aaa"));
+		var_dump($obj->deleteTag(2,"aaa"));*/
 	}
 	public function TestInfo(){
 		$this->load->model("Info_model");
