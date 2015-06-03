@@ -36,14 +36,14 @@
 					<span class="input-group-addon">
 						姓名
 					</span>
-			      	<input type="text" class="form-control" name="name" value=<?=$info->name?>/>
+			      	<input type="text" class="form-control" name="name" value=<?=$info["name"]?>/>
 		    	</div>
 		    	<div class="input-group">
 					<span class="input-group-addon">
 						性别
 					</span>
 					<input class="form-control" type="text" name="gender" value=<?
-						if ($info->gender==0)
+						if ($info['gender']==0)
 							echo "男";
 						else {
 							echo "女";
@@ -55,14 +55,14 @@
 	    		<span class="input-group-addon">
 					个性签名
 				</span>
-			    <input type="text" class="form-control" name="profile" value=<?=$info->profile?> placeholder="Profile..."/>
+			    <input type="text" class="form-control" name="profile" value=<?=$info["profile"]?> placeholder="Profile..."/>
 		    </div>
 
 		    <div class="input-group">
 	    		<span class="input-group-addon">
 					电子邮箱
 				</span>
-			    <input type="text" class="form-control" name="email" value=<?=$info->email?> placeholder="Profile..."/>
+			    <input type="text" class="form-control" name="email" value=<?=$info["email"]?> placeholder="Profile..."/>
 		    </div>
 
 		    <div class="row">
@@ -70,13 +70,13 @@
 					<span class="input-group-addon">
 						学历
 					</span>
-			      	<input type="text" class="form-control" name="edu" value=<?=$info->edu?> data-provide="typeahead" data-source='["大学本科", "研究生","其他"]'/>
+			      	<input type="text" class="form-control" name="edu" value=<?=$info["edu"]?> data-provide="typeahead" data-source='["大学本科", "研究生","其他"]'/>
 		    	</div>
 		    	<div class="input-group">
 					<span class="input-group-addon">
 						入学年份
 					</span>
-					<input class="form-control" type="text" name="eduyear" value=<?=$info->eduyear?> placeholder="2012"/>
+					<input class="form-control" type="text" name="eduyear" value=<?=$info["eduyear"]?> placeholder="2012"/>
 		    	</div>
 		    </div>
 
@@ -84,7 +84,7 @@
 	    		<span class="input-group-addon">
 					所在学校
 				</span>
-			    <input id="edu_enter" type="text" class="form-control" name="email" value=<?=$info->school?> data-provide="typeahead"/>
+			    <input id="edu_enter" type="text" class="form-control" name="email" value=<?=$info["school"]?> data-provide="typeahead"/>
 		    </div>
 
 		    <div>
