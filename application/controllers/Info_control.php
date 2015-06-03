@@ -1,5 +1,5 @@
 <?php
-class Info_model extends CI_Controller {
+class Info_control extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
