@@ -36,7 +36,11 @@ class Info_model extends CI_model{
 
     function getCities() {
     	$query="SELECT * FROM city";
-    	return $this->db->query($query)->result();
+        $result=$this->db->query($query)->result();
+        $res=array();
+        foreach ($result as $row)
+        array_push($res,$row->city_name);
+    	return $res;
     }
 
     function addSchool($school) {
@@ -69,7 +73,11 @@ class Info_model extends CI_model{
 
     function getSchools() {
     	$query="SELECT * FROM school";
-    	return $this->db->query($query)->result();
+    	$result=$this->db->query($query)->result();
+        $res=array();
+        foreach ($result as $row)
+        array_push($res,$row->school_name);
+        return $res;
     }
 
     function addMajor($major) {
@@ -102,12 +110,28 @@ class Info_model extends CI_model{
 
     function getMajors() {
     	$query="SELECT * FROM major";
-    	return $this->db->query($query)->result();
+    	$result=$this->db->query($query)->result();
+        $res=array();
+        foreach ($result as $row)
+        array_push($res,$row->major_name);
+        return $res;
     }
 
     function addTag($tag_name) {
+        $query="SELECT * FROM tag WHERE tag_name=".$this->db->escape($tag_name);
+        $res=$this->db->query($query);
+        if ($res->num_rows()>0)
+            return false;
         $insert="INSERT INTO tag VALUES(".$this->db->escape($tag_name).")";
         $this->db->query($insert);
+        if ($this->db->affected_rows()>0)
+            return true;
+        return false;
+    }
+
+    function deleteTag($tag_name) {
+        $delete="DELETE FROM tag WHERE tag_name=".$this->db->escape($tag_name);
+        $this->db->query($delete);
         if ($this->db->affected_rows()>0)
             return true;
         return false;

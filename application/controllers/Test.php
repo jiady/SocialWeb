@@ -43,14 +43,17 @@ class Test extends CI_Controller {
 		$obj=new Info_model;
 		var_dump($obj->addCity("郑州"));
 		var_dump($obj->updateCity("郑州","南阳"));
+		var_dump($obj->getCities();
 		var_dump($obj->deleteCity("南阳"));
 		
 		var_dump($obj->addSchool("郑州"));
 		var_dump($obj->updateSchool("郑州","南阳"));
+		var_dump($obj->getSchools();
 		var_dump($obj->deleteSchool("南阳"));
 		
 		var_dump($obj->addMajor("郑州"));
 		var_dump($obj->updateMajor("郑州","南阳"));
+		var_dump($obj->getMajors();
 		var_dump($obj->deleteMajor("南阳"));
 	}
 	public function TestRelation(){
