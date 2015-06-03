@@ -31,19 +31,26 @@ div {margin-top: 10px; margin-left: 10px;}
 <body>
 	<div class="container">
 		<form  method="post" action=<?=site_url('userinfo_control/change')?> class='form-horizontal'>
+			<div class="col-lg-8">
+		    	<div class="input-group">
+		    		<span class="input-group-addon">
+						姓名
+					</span>
+				    <input type="text" class="form-control" name="profile" value=<?=$info["name"]?> />
+			    </div>
+			</div>
+
 			<div class="row col-lg-8">
 				<div class="col-lg-6">
 					<div class="input-group">
-						<span class="input-group-addon">姓名</span>
-				      	<input type="text" class="form-control" name="name" value=<?=$info["name"]?> />
+						<span class="input-group-addon">出生年份</span>
+				      	<input type="text" class="form-control" name="name" value=<?=$info["birthyear"]?> />
 			    	</div>
 			    </div>
 			     
 			    <div class="col-lg-5">
 			    	<div class="input-group">
-						<span class="input-group-addon">
-							性别
-						</span>
+						<span class="input-group-addon">性别</span>
 						<input class="form-control typeahead" type="text" name="gender" value=<?php
 							if ($info['gender']==0)
 								echo "男";
@@ -60,7 +67,6 @@ div {margin-top: 10px; margin-left: 10px;}
 					</span>
 				    <input type="text" class="form-control" name="profile" value=<?=$info["profile"]?> />
 			    </div>
-			     
 			</div>
 			 
 			<div class="col-lg-8">
