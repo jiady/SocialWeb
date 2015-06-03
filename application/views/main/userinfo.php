@@ -23,6 +23,7 @@
 <![endif]-->
 <style type="text/css">
 div {margin-top: 10px; margin-left: 10px;}
+input {background-color: rgb(250,255,189);}
 </style>
 
 </head>
