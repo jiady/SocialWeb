@@ -1,4 +1,4 @@
-<div class="container" class='col-sm-5 col-sm-offset-1'>
+<div class="container">
 	<form  method="post" action=<?=site_url('info_control/add')?> class='form-horizontal'>
 		<div class="input-group">
 			<span class="input-group-addon" id="basic-addon1">
@@ -13,10 +13,10 @@
 		      	<input type="hidden" class="form-control" name="part" value=<?=$part?> placeholder="Old name..."/>
 	    </div>
 	</form>
-	</br>
+	<div></br></div>
 	<form  method="post" action=<?=site_url('info_control/update')?>>
 		<div class="row">
-			<div class="col-lg-6">
+			<div class="col-lg-12">
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1">
 						修改<?=$part?>
@@ -24,7 +24,7 @@
 			      	<input type="text" class="form-control" name="name_old" placeholder="Old name..."/>
 		    	</div>
 		    </div>
-		    <div class="col-lg-6">
+		    <div class="col-lg-12">
 				<div class="input-group">
 			      	<input type="text" class="form-control" name="name_new" placeholder="New name..."/>
 			      	<span class="input-group-btn">
@@ -37,7 +37,7 @@
 		      	<input type="hidden" class="form-control" name="part" value=<?=$part?> placeholder="Old name..."/>
 	    </div>
 	</form>
-	</br>
+	<div></br></div>
 	<form method="post" action=<?=site_url('info_control/delete')?>>
 		<div class="input-group">
 			<span class="input-group-addon" id="basic-addon1">
@@ -52,4 +52,5 @@
 		      	<input type="hidden" class="form-control" name="part" value=<?=$part?> placeholder="Old name..."/>
 	    </div>
 	</form>
+	<div></br></div>
 </div>
