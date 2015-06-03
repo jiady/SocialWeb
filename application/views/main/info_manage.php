@@ -1,5 +1,5 @@
 <style type="text/css">
-div {float:left; margin-top: 10px; margin-left: 10px;}
+div {float:left; margin-top: 5px; margin-left: 5px;}
 </style>
 
 	<form  method="post" action=<?=site_url('info_control/add')?> class='form-horizontal'>
