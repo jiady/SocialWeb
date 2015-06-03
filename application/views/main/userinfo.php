@@ -23,7 +23,6 @@
 <![endif]-->
 <style type="text/css">
 div {margin-top: 10px; margin-left: 10px;}
-input.text {background-color: rgb(250,255,189);}
 </style>
 
 </head>
@@ -123,7 +122,7 @@ input.text {background-color: rgb(250,255,189);}
 	</div>
 </body>
 
-<div class="footer">
+<div class="footer" style="position:relative;right:50%;">
     <p>© Team of Social Web</p>
 </div>
     
