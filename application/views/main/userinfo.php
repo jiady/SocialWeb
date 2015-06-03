@@ -16,15 +16,15 @@
 <link href="<?=base_url()?>dist/css/home_act.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
 
-<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-
-
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+<style>
+div {float:left;}
+</style>
+
 </head>
 <?php $this->load->model("Userinfo_model")?>
 
@@ -116,7 +116,7 @@
 			    </div>
 			</div>
 		    <br/>
-		    <div>
+		    <div >
 		    	<button type="submit" class="btn btn-default">提交</button>
 		    </div>
 		</form>

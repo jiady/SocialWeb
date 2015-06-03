@@ -1,3 +1,8 @@
+<style>
+div {float:left; margin-top: 10px;margin-bottom:10px;}
+form {margin-bottom: 10px; margin-top:10px;}
+</style>
+
 <div class="container">
 	<form  method="post" action=<?=site_url('info_control/add')?> class='form-horizontal'>
 		<div class="input-group">
