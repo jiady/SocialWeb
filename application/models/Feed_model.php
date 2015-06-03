@@ -113,9 +113,9 @@ class Feed_model extends CI_model{
 
     function getAll($limit,$offset){
         $uid=$this->session->userdata('uid');
-        list($fidseq,$fidct)=getFeeds($uid,$limit,$offset);
-        $comment=getComment($fidseq);
-        $gallery=getFeedGallery($fidseq);
+        list($fidseq,$fidct)=$this->getFeeds($uid,$limit,$offset);
+        $comment=$this->getComment($fidseq);
+        $gallery=$this->getFeedGallery($fidseq);
         $data=array();
         $data['comment']=$comment;
         $data['gallery']=$gallery;

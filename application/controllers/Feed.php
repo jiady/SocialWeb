@@ -22,12 +22,17 @@ class Feed extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('User_model');
-		$this->load->model('Feed');
+		$this->load->model('Feed_model');
 		
 	}
 
 	function index($offset=0){
-		$data=$this->Feed_model->getAll(20,$offset);
-		$this->load->view('block/')
+		
+		$this->load->view('block/header');
+		$data['activetag']="首页";
+		$this->load->view('block/navigation');
+		$feeddata=$this->Feed_model->getAll(20,$offset);
+		$this->load->view('feed/feed',$feeddata);
+		$this->load->view('block/footer');
 	}
 }
