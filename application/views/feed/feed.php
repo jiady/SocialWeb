@@ -2,9 +2,9 @@
 <?php
 function printk($url){
 	  		echo " <div class='col-xs-6 col-md-3'>
-			    <a href='# class='thumbnail'>
+			    <div class='thumbnail'>
 			      <img src=".$url." alt='...'>
-			    </a>
+			    </div>
 			  </div>";
 	  	}
 
@@ -51,18 +51,20 @@ function printk($url){
 
 	    <div class="media">
 		  <div class="media-left">
-		    <a href="#">
+		    
+		    
 		      <img class="media-object" src=<?=$row->putter_url?> alt="head">
-		    </a>
+
+		    
 		  </div>
 		  <div class="media-body">
 		    <p><?=$row->content?></p>
 		    <?php foreach ($comment[$row->fid] as $comrow): ?>
 				    <div class="media">
 					  <div class="media-left">
-					    <a href="#">
-					      <img class="media-object" src=<?=$row->commenter_url?> alt="head">
-					    </a>
+					    
+					      <img class="media-object" src=<?=$comrow->commenter_url?> alt="head">
+					    
 					  </div>
 					  <div class="media-body">
 					    <p><?=$comrow->content?></p>
