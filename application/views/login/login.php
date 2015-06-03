@@ -21,34 +21,30 @@
 </head>
 
 <body bgcolor="#c0c0c0" link="#999999" alink="#999999" vlink="#999999"
-	 align="center">
+	 >
 	<div class="container">
 		<div class="searchbox">
-			<div class="col-lg-6 col-md-6 col-sm-8 col-xs-10 
-			col-lg-offset-3 
-			col-md-offset-3 
+			<div class="col-lg-4 col-md-4 col-sm-8 col-xs-10 
+			col-lg-offset-4 
+			col-md-offset-4 
 			col-sm-offset-2 
 			col-xs-offset-1
 			">
-				<div class="title">Login</div>
-			</br>
-
+				<h2>Login</h2>
 				<form  method="post" action=<?=site_url('welcome/login')?> role="login">
 		        <div class='form-group'>
-	                <label class='col-sm-2 control-label' for='email'>Email</label>
-	                <div class='col-sm-10'>
 	                    <input type='text' class='form-control' id="email"  name="email" placeholder="Email" >
-	                </div>
+	
             	</div>
+            	
             	 <div class='form-group'>
-	                <label class='col-sm-2 control-label' for='password'>Password</label>
-	                <div class='col-sm-10'>
+	                
 	                    <input type='text' class='form-control' id="password"  name="password" placeholder="Password" >
-	                </div>
+	                
             	</div>
 
-		        <div class='form-actions col-sm-offset-11'>
-	                <input type='submit' class='btn btn-success btn-large'  value="Login">
+		        <div class='form-actions '>
+	                <input type='submit' class='btn btn-info col-sm-offset-10 col-md-offset-10 col-lg-offset-10'  value="Login">
 	            </div>
 
 		    	
@@ -79,7 +75,7 @@ $(document).ready(function(){
             $(".searchbox").addClass("flipOutX");
 	    }
 }       
-$("button").click( function(){
+$(".btn").click( function(){
 	$(".searchbox").addClass("flipOutX");})
 });
 

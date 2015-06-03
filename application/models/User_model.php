@@ -9,8 +9,6 @@ class User_model extends CI_model{
    
 
     function login($email,$password){
-        if($this->session->userdata('uid'))
-            return false;//already login
         $this->db->where('email',$email)->where('password',$password);
         $query=$this->db->get('user');
         if($query->num_rows()>0){
