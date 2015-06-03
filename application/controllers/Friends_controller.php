@@ -26,3 +26,4 @@ class Info_control extends CI_Controller {
 		}
 		$this->load->view('block/footer');
 	}
+}
