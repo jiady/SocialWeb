@@ -1,5 +1,5 @@
 <?php
-class Info_control extends CI_Controller {
+class Friends_control extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
