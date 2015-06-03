@@ -38,7 +38,7 @@ div {margin-top: 10px; margin-left: 10px;}
 				      	<input type="text" class="form-control" name="name" value=<?=$info["name"]?> />
 			    	</div>
 			    </div>
-			    <br/>
+			     
 			    <div class="col-lg-4">
 			    	<div class="input-group">
 						<span class="input-group-addon">
@@ -52,7 +52,7 @@ div {margin-top: 10px; margin-left: 10px;}
 			    	</div>
 			    </div>
 			</div>
-			<br/>
+			 
 			<div class="col-lg-8">
 		    	<div class="input-group">
 		    		<span class="input-group-addon">
@@ -60,9 +60,9 @@ div {margin-top: 10px; margin-left: 10px;}
 					</span>
 				    <input type="text" class="form-control" name="profile" value=<?=$info["profile"]?> />
 			    </div>
-			    <br/>
+			     
 			</div>
-			<br/>
+			 
 			<div class="col-lg-8">
 			    <div class="input-group">
 		    		<span class="input-group-addon">
@@ -71,7 +71,7 @@ div {margin-top: 10px; margin-left: 10px;}
 				    <input type="text" class="form-control" name="email" value=<?=$info["email"]?> />
 			    </div>
 			</div>
-		    <br/>
+		     
 		    <div class="col-lg-8">
 		    	<div class="col-lg-4">
 					<div class="input-group">
@@ -81,7 +81,6 @@ div {margin-top: 10px; margin-left: 10px;}
 				      	<input type="text" class="form-control typeahead" name="edu" value=<?=$info["edu"]?> />
 			    	</div>
 			    </div>
-			    <br/>
 			   	<div class="col-lg-4">
 			    	<div class="input-group">
 						<span class="input-group-addon">
@@ -91,7 +90,6 @@ div {margin-top: 10px; margin-left: 10px;}
 			    	</div>
 			    </div>
 			</div>
-		    <br/>
 		    <div class="col-lg-8">
 			    <div class="input-group">
 		    		<span class="input-group-addon">
@@ -100,7 +98,7 @@ div {margin-top: 10px; margin-left: 10px;}
 				    <input id="school_enter" type="text" class="form-control typeahead" name="school" data-provide="typeahead" value=<?=$info["school"]?> />
 			    </div>
 			</div>
-		    <br/>
+		     
 		    <div class="col-lg-8">
 			    <div class="input-group">
 		    		<span class="input-group-addon">
@@ -109,7 +107,7 @@ div {margin-top: 10px; margin-left: 10px;}
 				    <input id="major_enter" type="text" class="form-control typeahead" name="major" data-provide="typeahead" value=<?=$info["major"]?> />
 			    </div>
 			</div>
-		    <br/>
+		     
 		    <div class="col-lg-8">
 			    <div class="input-group">
 		    		<span class="input-group-addon">
@@ -118,7 +116,7 @@ div {margin-top: 10px; margin-left: 10px;}
 				    <input id="city_enter" type="text" class="form-control typeahead" name="city" data-provide="typeahead" value=<?=$info["city"]?> />
 			    </div>
 			</div>
-		    <br/>
+		     
 		    <div >
 		    	<button type="submit" class="btn btn-default"  style="margin-top:30px; float:right;">提交</button>
 		    </div>
