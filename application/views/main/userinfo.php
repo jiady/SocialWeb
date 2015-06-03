@@ -33,21 +33,18 @@
 		<form  method="post" action=<?=site_url('userinfo_control/change')?> class='form-horizontal'>
 			<div class="row">
 				<div class="input-group">
-					<span class="input-group-addon">
-						姓名
-					</span>
+					<span class="input-group-addon">姓名</span>
 			      	<input type="text" class="form-control" name="name" value=<?=$info["name"]?>/>
 		    	</div>
 		    	<div class="input-group">
 					<span class="input-group-addon">
 						性别
 					</span>
-					<input class="form-control" type="text" name="gender" value=<?
+					<input class="form-control" type="text" name="gender" data-provide="typeahead" data-source='["男", "女"]' value=<?php
 						if ($info['gender']==0)
 							echo "男";
-						else {
-							echo "女";
-						}?> data-provide="typeahead" data-source='["男", "女"]'/>
+						else 
+							echo "女" ?> />
 		    	</div>
 		    </div>
 
