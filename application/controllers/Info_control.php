@@ -3,6 +3,7 @@ class Info_control extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
+		$this->load->model('Info_model');
 	}
 
 	public function index() {
