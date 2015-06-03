@@ -22,7 +22,7 @@ class Test extends CI_Controller {
 	public function TestUserInfo(){
 		$this->load->model("Userinfo_model");
 //		$obj=new Userinfo_model;
-		echo $this->Userinfo_model->getInfo(2);
+		print_r $this->Userinfo_model->getInfo(2);
 /*		$newInfo=array();
 		$newInfo["edu"]="研究生";
 		var_dump($obj->updateInfo(2,$newInfo));
