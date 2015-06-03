@@ -116,7 +116,7 @@ div {margin-top: 10px; margin-left: 10px;}
 			</div>
 		    <br/>
 		    <div >
-		    	<button type="submit" class="btn btn-default">提交</button>
+		    	<button type="submit" class="btn btn-default"  style="margin-top:30px; float:right;">提交</button>
 		    </div>
 		</form>
 	</div>

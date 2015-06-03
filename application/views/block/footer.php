@@ -3,9 +3,8 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <div class="footer">
+<div class="footer">
     <p>© Team of Social Web</p>
-   
 </div>
     
    

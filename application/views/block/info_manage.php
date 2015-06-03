@@ -1,6 +1,5 @@
-<style>
-div {margin-top: 10px;margin-bottom:10px;}
-form {margin-bottom: 10px; margin-top:10px;}
+<style type="text/css">
+div {float:left; margin-top: 10px; margin-left: 10px;}
 </style>
 
 <div class="container">
@@ -17,7 +16,7 @@ form {margin-bottom: 10px; margin-top:10px;}
 	    	</div>
 	    </div>
     	<div class="input-group">
-		      	<input type="hidden" class="form-control" name="part" value=<?=$part?> placeholder="Old name..."/>
+		    <input type="hidden" class="form-control" name="part" value=<?=$part?> placeholder="Old name..."/>
 	    </div>
 	</form>
 	<br/>
@@ -39,9 +38,9 @@ form {margin-bottom: 10px; margin-top:10px;}
 		     		</span>
 		    	</div>
 		    </div>
-	    <div>
+	    </div>
     	<div class="input-group">
-		      	<input type="hidden" class="form-control" name="part" value=<?=$part?> placeholder="Old name..."/>
+		    <input type="hidden" class="form-control" name="part" value=<?=$part?> placeholder="Old name..."/>
 	    </div>
 	</form>
 	<br/>
@@ -58,7 +57,7 @@ form {margin-bottom: 10px; margin-top:10px;}
 	    	</div>
 	    </div>
     	<div class="input-group">
-		      	<input type="hidden" class="form-control" name="part" value=<?=$part?> placeholder="Old name..."/>
+		    <input type="hidden" class="form-control" name="part" value=<?=$part?> placeholder="Old name..."/>
 	    </div>
 	</form>
 	<br/>
