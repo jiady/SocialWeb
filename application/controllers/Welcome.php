@@ -34,7 +34,16 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		
-		$this->load->view('welcome_message');
+		$this->load->view('block/login');
 		
+	}
+	public function login(){
+		$input=$this->input->post();
+		var_dump($input);
+		if(true==$this->User_model->login($input['email'],$input['password'])){
+			redirect(site_url("feed"))；
+		}else{
+			echo "wrong password or account";
+		}
 	}
 }
