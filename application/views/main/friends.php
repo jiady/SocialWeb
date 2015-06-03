@@ -1,6 +1,6 @@
 <style type="text/css">
 div {margin-top: 10px;}
-.media {border-style: solid; border-width: 5px; border-color:blue;background-color: rgb(252,255,200);}
+.media {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(252,255,200);}
 </style>
 
 <div class="media">
