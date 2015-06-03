@@ -11,7 +11,7 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 
-<link rel="stylesheet" href=<?=base_url("dist/css/login.css")?> >
+<link rel="stylesheet" href=<?=base_url("dist/css/register.css")?> >
 <link rel="stylesheet" href=<?=base_url("dist/css/bootstrap.min.css")?>>
 <link rel="stylesheet" href=<?=base_url("dist/css/animate.css")?>>
 <!--
@@ -23,6 +23,7 @@
 <body bgcolor="#c0c0c0" link="#999999" alink="#999999" vlink="#999999"
 	 >
 	<div class="container">
+		<h2 class="pull-right"><a href=<?=site_url('welcome')?>>Login</a></h2>
 		<div class="searchbox">
 			<div class="col-lg-4 col-md-4 col-sm-8 col-xs-10 
 			col-lg-offset-4 
@@ -39,7 +40,7 @@
             	
             	 <div class='form-group'>
 	                
-	                    <input type='text' class='form-control' id="password"  name="password" placeholder="Password" >
+	                    <input type='password' class='form-control' id="password"  name="password" placeholder="Password" >
 	                
             	</div>
 

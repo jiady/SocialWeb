@@ -23,6 +23,7 @@
 <body bgcolor="#c0c0c0" link="#999999" alink="#999999" vlink="#999999"
 	 >
 	<div class="container">
+	<h2 class="pull-right"><a href=<?=site_url('welcome/register_view')?>>Register</a></h2>
 		<div class="searchbox">
 			<div class="col-lg-4 col-md-4 col-sm-8 col-xs-10 
 			col-lg-offset-4 
@@ -30,7 +31,7 @@
 			col-sm-offset-2 
 			col-xs-offset-1
 			">
-				<h2>Login</h2>
+				<h2>Login   </h2>
 				<form  method="post" action=<?=site_url('welcome/login')?> role="login">
 		        <div class='form-group'>
 	                    <input type='text' class='form-control' id="email"  name="email" placeholder="Email" >
@@ -39,7 +40,7 @@
             	
             	 <div class='form-group'>
 	                
-	                    <input type='text' class='form-control' id="password"  name="password" placeholder="Password" >
+	                    <input type='password' class='form-control' id="password"  name="password" placeholder="Password" >
 	                
             	</div>
 
