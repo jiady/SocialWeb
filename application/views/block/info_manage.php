@@ -1,8 +1,6 @@
 <style type="text/css">
 div {float:left; margin-top: 10px; margin-left: 10px;}
 </style>
-
-<div class="container">
 	<form  method="post" action=<?=site_url('info_control/add')?> class='form-horizontal'>
 		<div class="col-lg-12">
 			<div class="input-group">
@@ -61,4 +59,3 @@ div {float:left; margin-top: 10px; margin-left: 10px;}
 	    </div>
 	</form>
 	<br/>
-</div>
