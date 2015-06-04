@@ -87,8 +87,8 @@ function printk($url){
 <script type="text/javascript">
 	 var uploader = Qiniu.uploader({
                 runtimes: 'html5,html4,flash',    //上传模式,依次退化
-                browse_button: 'pickfiles',       //上传选择的点选按钮，**必需**
-                uptoken_url: 'xsjtu.com/index.php/callback/gettoken',            //Ajax请求upToken的Url，**强烈建议设置**（服务端提供）
+                browse_button: '#pickfiles',       //上传选择的点选按钮，**必需**
+                uptoken_url: 'http://xsjtu.com/index.php/callback/gettoken',            //Ajax请求upToken的Url，**强烈建议设置**（服务端提供）
                 // uptoken : '', //若未指定uptoken_url,则必须指定 uptoken ,uptoken由其他程序生成
                 // unique_names: true, // 默认 false，key为文件名。若开启该选项，SDK为自动生成上传成功后的key（文件名）。
                 // save_key: true,   // 默认 false。若在服务端生成uptoken的上传策略中指定了 `sava_key`，则开启，SDK会忽略对key的处理
@@ -143,6 +143,7 @@ function printk($url){
                     }
                 }
             });
+uploader.init();
 </script>
 
 
@@ -156,6 +157,7 @@ function printk($url){
       </div>
       <div class="modal-body">
         <input type='text'  rows="6" class='form-control' id="postx"  name="postx" placeholder="Email" >
+        <button id="pickfiles" type="button" class="btn btn-success" > 选取照片 </button>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
