@@ -71,13 +71,16 @@ $(function() {
                 progress.setStatus(errTip);
             }
              ,
-             // 'Key': function(up, file) {
-             //     var key = new Date().getTime().toString();
-             //     key=key+Math.floor(Math.random(4096)).toString();
-             //     key=key+"."
-             //     // do something with key
-             //     return key;
-             // }
+             'Key': function(up, file) {
+                 var name=file.name;
+                 var prefix=name.split('.');
+                 var key = new Date().getTime().toString();
+                 key=key+Math.floor(Math.random(4096)).toString();
+                 if(prefix.length>=2)
+                    key=key+"."+prefix[prefix.length-1];
+                 // do something with key
+                 return key;
+             }
         }
     });
 
