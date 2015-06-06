@@ -1,10 +1,10 @@
 <style type="text/css">
 div {margin-top: 10px;}
-.media {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(221,254,255);}
+#request.media {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(221,254,255);}
 </style>
 
 <div class="col-lg-10">
-	<div class="media">
+	<div class="media" id="request">
 	    <div class="media-left">
 	        <a href="#">
 	          <img class="media-object" src=<?=$url?> alt="HeadImage">
