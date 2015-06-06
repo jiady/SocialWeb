@@ -52,7 +52,7 @@ class Feed extends CI_Controller {
     	$pictures=json_decode($pictures);
     	$postfeed['content']=$feed;
     	$fid=$this->Feed_model->postFeed($postfeed);
-    	$this->addPictures($fid,$pictures);
+    	$this->Feed_model->addPictures($fid,$pictures);
 		$this->output
     		 ->set_output(json_encode(array('ret'=>true)));
 	}

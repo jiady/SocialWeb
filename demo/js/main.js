@@ -109,10 +109,10 @@ $(function() {
     });
 
     $('#post_button').on('click',function(){
-        var feed_content=$('feed_content').val();
+        var feed_content=$('#feed_content').val();
         var text='{ "feed_content":'+feed_content+',"pictures":[';
         for(var i=0;i<myArray.length;i++){
-            text+=myArray[i];
+            text+='"'+myArray[i]+'"';
             if(i<myArray.length-1)
                 text+=',';
         }
