@@ -59,7 +59,7 @@ function printk($url){
 
 		    
 		  </div>
-		  <div class="media-body">
+		  <div class="media-body ">
 		  	<h4><?=$row->putter_name?></h4>
 		    <p><?=$row->content?></p>
 		    <?php foreach ($comment[$row->fid] as $comrow): ?>
@@ -83,7 +83,8 @@ function printk($url){
 					  </div>
 					</div>
 			<?php endforeach?>
-			<button  type="button" class='btn btn-primary comment pull-right' data-toggle="modal" data-target="#myModal" fid=<?=$row->fid?>  >回复</button>
+
+			<button  type="button" class='btn btn-primary comment pull-right' data-toggle="modal" data-target="#myModal" fid=<?=$row->fid?> id=<?=$row->fid?> >回复</button>
 		  </div>
 		</div>
 

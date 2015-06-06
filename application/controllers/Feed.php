@@ -66,11 +66,13 @@ class Feed extends CI_Controller {
     		 ->set_content_type('application/json');
     	$to_uid=$this->input->post('to_uid');
     	$content=$this->input->post('content');
+    	$fid=$this->input->post('fid');
     	$map=array();
     	if(isset($to_uid) && $to_uid!=$this->session->userdata('uid') && $to_uid>0){
     		$map['to_uid']=$to_uid;
     	}
     	$map['content']=$content;
+    	$map['fid']=$this->input->post('fid');
     	$b=$this->Feed_model->postComments($map);
     	$ret=array();
     	$ret['cid']=$b;

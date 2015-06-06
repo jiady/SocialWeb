@@ -22,7 +22,19 @@ $(".comment_area").click(function(){
 
 $("#post_comment").click(function(){
 	console.log(fid);
-	
+	var postobject={};
+	postobject.to_uid=to_uid;
+	postobject.fid=fid;
+	postobject.content=$("#postx").val();
+	var url="http://xsjtu.com/index.php/feed/inner_comment";
+	$.post(url,postobject,function(data){
+             if(data.cid>0){
+                  window.location.href="http://xsjtu.com/index.php/feed/#"+fid.toString(); 
+             }
+             else{
+                alert("Something goes wrong");
+             }
+        },"json");
 });
 
 $(".comment_area").mouseenter(function(){
@@ -33,6 +45,8 @@ $(".comment_area").mouseenter(function(){
 $(".comment_area").mouseleave(function(){
   	$(this).removeClass("myactive");
 });
+
+
 
 </script>
 
