@@ -3,6 +3,15 @@ div {margin-top: 10px;}
 #request.col-lg-10 {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(221,254,255);}
 </style>
 
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js">
+	function accept() {
+		console.log("function called");
+		$.post(<?="\"".site_url('friends_control/accept')."\""?>, {"from_uid": <?="\"".$from_uid."\"" ?>}, function() {
+			window.location.assign(<?="\"".site_url('friends_control/accept')."\"" ?>);
+		});
+	}
+</script>
+
 <div  id="request" class="col-lg-10">
 	<div class="media col-lg-10">
 	    <div class="media-left">
@@ -25,12 +34,3 @@ div {margin-top: 10px;}
 	    </div>
 	</div>
 </div>
-
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js">
-	function accept() {
-		console.log("function called");
-		$.post(<?="\"".site_url('friends_control/accept')."\""?>, {"from_uid": <?="\"".$from_uid."\"" ?>}, function() {
-			window.location.assign(<?="\"".site_url('friends_control/accept')."\"" ?>);
-		});
-	}
-</script>
