@@ -28,7 +28,7 @@ div {margin-top: 10px;}
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js">
 $("#acc_button").click(function() {
-		$.post('/friends_control', {"from_uid": <?=$from_uid?>}, function() {
+		$.post('/friends_control/accept', {"from_uid": <?=$from_uid?>}, function() {
 			window.location.assign(<?=site_url('friend_control')?>);
 		});
 	});
