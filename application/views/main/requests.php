@@ -16,9 +16,9 @@ div {margin-top: 10px;}
     <div class="media-right">
         <?php 
         	if ($accepted)
-        		echo "<p>已接受</p>";
+        		echo "<p>已接受</p> ";
         	else {
-        		echo "<button id='acc_button' class='btn btn-default' type='button'>接受</button>";
+        		echo "<button id='acc_button' class='btn btn-default' type='button'>接受</button> ";
         	}
         ?>
     </div>

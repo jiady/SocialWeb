@@ -64,7 +64,7 @@ class Test extends CI_Controller {
 		var_dump($obj->sendFriendRequest(2,4));
 		var_dump($obj->deleteBlackList(4,2));
 		var_dump($obj->sendFriendRequest(2,4));
-		var_dump($obj->getFriendRequest(4));
+		var_dump($obj->getFriendRequests(2));
 		var_dump($obj->acceptFriendRequest(4,2));
 		var_dump($obj->getFriends(2));
 		var_dump($obj->deleteFriend(4,2));

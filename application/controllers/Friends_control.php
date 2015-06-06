@@ -40,11 +40,11 @@ class Friends_control extends CI_Controller {
 		if (count($res_request)>0) {
 			for ($i=count($res_request)-1;$i>=0;$i--) {
 				$user_info=$this->Userinfo_model->getInfo($res_request[$i]->from_uid);
-				$info['url']=$this->Userinfo_model->getHeadImage($res_request[$i]->from_uid);
-				$info['name']=$user_info['name'];
-				$info['reason']=$res_request[$i]->reason;
-				$info['accepted']=$res_request[$i]->accepted;
-				$info['from_uid']=$res_request[$i]->from_uid;
+				$info_request['url']=$this->Userinfo_model->getHeadImage($res_request[$i]->from_uid);
+				$info_request['name']=$user_info['name'];
+				$info_request['reason']=$res_request[$i]->reason;
+				$info_request['accepted']=$res_request[$i]->accepted;
+				$info_request['from_uid']=$res_request[$i]->from_uid;
 				$this->load->view('main/requests',$info_request);
 			}
 		}
