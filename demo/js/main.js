@@ -71,12 +71,13 @@ $(function() {
                 progress.setStatus(errTip);
             }
              ,
-             'Key': function(up, file) {
-                 var key = new Date().getTime().toString();
-                 key=key+Math.floor(1024).toString();
-                 // do something with key
-                 return key;
-             }
+             // 'Key': function(up, file) {
+             //     var key = new Date().getTime().toString();
+             //     key=key+Math.floor(Math.random(4096)).toString();
+             //     key=key+"."
+             //     // do something with key
+             //     return key;
+             // }
         }
     });
 
