@@ -30,9 +30,17 @@ class Feed extends CI_Controller {
 		
 		$this->load->view('block/header');
 		$data['activetag']="首页";
-		$this->load->view('block/navigation');
+		$this->load->view('block/navigation',$data);
 		$feeddata=$this->Feed_model->getAll(20,$offset);
 		$this->load->view('feed/feed',$feeddata);
 		$this->load->view('block/footer');
+	}
+
+	function feed_post(){
+		$this->load->view('upload/index');
+		//$this->load->view('block/header');
+		//$data['activetag']="发布";
+		//$this->load->view('block/navigation',$data);
+		//$this->load->view('block/footer');
 	}
 }

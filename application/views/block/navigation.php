@@ -15,22 +15,26 @@
             <ul class="nav navbar-nav navbar-left">
 
                <li
-               <?php if (isset($activetag)&&$activetag=="首页") echo "class=active"?>
+               <?php if (isset($activetag)&&$activetag=="首页") echo "class='active' "?>
                ><a href=<?=site_url("feed")?>>首页</a></li>
+               
+				<li
+               <?php if (isset($activetag)&&$activetag=="发布") echo "class='active' "?>
+               ><a href=<?=site_url("feed/feed_post")?>>发布</a></li>
               
                <li
-                <?php if (isset($activetag)&&$activetag=="个人资料") echo "class=active"?>
+                <?php if (isset($activetag)&&$activetag=="个人资料") echo "class='active' "?>
                ><a href=<?=base_url()?>>个人资料</a></li>
                
               <li
-                <?php if (isset($activetag)&&$activetag=="好友列表") echo "class=active"?>
+                <?php if (isset($activetag)&&$activetag=="好友列表") echo "class='active' "?>
                ><a href=<?=base_url()?>>好友列表</a></li>
 
                <li
-                <?php if (isset($activetag)&&$activetag=="黑名单") echo "class=active"?>
+                <?php if (isset($activetag)&&$activetag=="黑名单") echo "class='active' "?>
                ><a href=<?=base_url()?>>黑名单</a></li>
                <li
-                <?php if (isset($activetag)&&$activetag=="登出") echo "class=active"?>
+                <?php if (isset($activetag)&&$activetag=="登出") echo "class='active' "?>
                ><button type="button" class="btn btn-default"
                ><a href=<?=base_url()?>>登出</a></button></li>
 
