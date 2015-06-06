@@ -12,11 +12,10 @@ class Friends_control extends CI_Controller {
 		$this->load->view('block/header');
 		$this->load->view('block/navigation');
 		$parameter=array();
-		$parameter['status']=$this->status;
 		echo "<h1>Search</h1>";
-		$this->load->view('main/search',$parameter);
+		$this->load->view('main/search',0);
 		$id=$this->session->userdata("uid");
-		echo ">h1>Friends</h1>";
+		echo "<h1>Friends</h1>";
 		$info=array();
 		$res=$this->Relation_model->getFriends($id);
 		if (count($res)>0) {
