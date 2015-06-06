@@ -59,7 +59,7 @@ $(function() {
                 var progress = new FileProgress(file, 'fsUploadProgress');
                 progress.setComplete(up, info);
                 var domain = up.getOption('domain');
-                var res = parseJSON(info);
+                var res = $.parseJSON(info);
                 var sourceLink = domain + res.key; 
                 myArray.push(sourceLink);
             },
