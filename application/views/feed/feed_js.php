@@ -28,6 +28,7 @@ $("#post_comment").click(function(){
 	postobject.content=$("#postx").val();
 	var url="http://xsjtu.com/index.php/feed/inner_comment";
 	$.post(url,postobject,function(data){
+			console.log(data.toString());
              if(data.cid>0){
                   window.location.href="http://xsjtu.com/index.php/feed/#"+fid.toString(); 
              }

@@ -76,6 +76,7 @@ class Feed extends CI_Controller {
     	$b=$this->Feed_model->postComments($map);
     	$ret=array();
     	$ret['cid']=$b;
-    	return ret;
+    	$this->output
+    		 ->set_output(json_encode(array('cid'=>$b)));
 	}
 }
