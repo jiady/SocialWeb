@@ -77,8 +77,10 @@ class Feed_model extends CI_model{
     }
 
     function getComment($fid_array){
+        if(count($fid_array)==0){
+            return array();
+        }
         $this->db->where_in('fid', $fid_array);
-        
         $this->db->order_by('post_time',"desc");
         $query=$this->db->get('comment');
         $result=$query->result();
@@ -101,6 +103,9 @@ class Feed_model extends CI_model{
     }
 
     function getFeedGallery($fid_array){
+        if(count($fid_array)==0){
+            return array();
+        }
         $this->db->where_in('fid', $fid_array);
         $this->db->order_by('seq',"desc");
         $query=$this->db->get('feedgallery');
