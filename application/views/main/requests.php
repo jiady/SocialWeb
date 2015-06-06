@@ -26,6 +26,6 @@ div {margin-top: 10px;}
 
 <script type="text/javascript" src="jquery.js">
 $("#acc_button").click(function() {
-		$.post(<?=site_url('friend_control/accept')?>, {"from_uid": <?=$from_uid?>};
+		$.post(<?=site_url('friend_control/accept')?>, {"from_uid": <?=$from_uid?>});
 	});
 </script>
