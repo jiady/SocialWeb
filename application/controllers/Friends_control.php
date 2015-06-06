@@ -1,7 +1,7 @@
 <?php
 class Friends_control extends CI_Controller {
 
-	public static $status=0;
+	public $status=0;
 
 	function __construct() {
 		parent::__construct();
@@ -14,7 +14,7 @@ class Friends_control extends CI_Controller {
 		$this->load->view('block/header');
 		$this->load->view('block/navigation');
 		$parameter=array();
-		$parameter['$status']=$this->status;
+		$parameter['status']=$this->status;
 		echo "Search";
 		$this->load->view('main/search',$parameter);
 		$id=$this->session->userdata("uid");
