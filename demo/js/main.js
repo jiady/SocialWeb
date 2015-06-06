@@ -124,8 +124,15 @@ $(function() {
         postobject.pictures=myArray;
 
         $.post(url,postobject,function(data){
-             $('#print').append(data.responseText);
-             console.log(data.responseText);
+             //$('#print').append(data.responseText);
+             //console.log(data.responseText);
+             var a=$.parseJSON(data);
+             if(a.ret==true){
+                  window.location.href="http://xsjtu/index.php/feed"; 
+             }
+             else{
+                alert("Something goes wrong");
+             }
         },"json");
 
     });
