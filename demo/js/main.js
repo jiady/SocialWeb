@@ -52,8 +52,8 @@ $(function() {
             },
             'UploadComplete': function() {
                 $('#success').show();
-                $('#print').text("finsh:)")
-                doucument.write(myArray);
+                $('#print').text(myArray);
+                //doucument.write(myArray);
             },
             'FileUploaded': function(up, file, info) {
                 var progress = new FileProgress(file, 'fsUploadProgress');
