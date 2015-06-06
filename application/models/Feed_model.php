@@ -15,11 +15,12 @@ class Feed_model extends CI_model{
     } 
     function addPictures($fid,$array){
         $seq=1;
-        foreach ($array as $pic){
-            $ins=array("fid"=>$fid,"seq"=>$seq,"url"=>$pic);
-            $this->db->insert('feedgallery',$ins);
-            $seq++;
-        } 
+        if(count($array)>0)
+            foreach ($array as $pic){
+                $ins=array("fid"=>$fid,"seq"=>$seq,"url"=>$pic);
+                $this->db->insert('feedgallery',$ins);
+                $seq++;
+            } 
         return true;
     } 
 
