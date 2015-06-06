@@ -26,7 +26,7 @@
 				View Source on Github
 			</a>
 		</h1>
-        <input type="hidden" id="domain" value="http://7u2p6a.com1.z0.glb.clouddn.com">
+        <input type="hidden" id="domain" value="http://7u2p6a.com1.z0.glb.clouddn.com/">
         <input type="hidden" id="uptoken_url" value="http://xsjtu.com/index.php/callback/gettoken">
 		<ul class="tip col-md-12 text-mute">
 			<li>
