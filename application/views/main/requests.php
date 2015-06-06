@@ -25,12 +25,3 @@ div {margin-top: 10px;}
 	    </div>
 	</div>
 </div>
-
-<script type="text/javascript" >
-$("#acc_but").click(function() {
-		console.log("function called");
-		$.post(<?="\"".site_url('friends_control/accept')."\""?>, {"from_uid": $(this).attr("from_uid"), function() {
-			window.location.assign(<?="\"".site_url('friends_control/accept')."\"" ?>);
-		});
-	});
-</script>
