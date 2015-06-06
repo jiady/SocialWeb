@@ -2,9 +2,9 @@
 div {margin-top: 10px;}
 #friend.media {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(252,255,200);}
 </style>
-<div class="row col-lg-12">
+<div id="friend" class="row col-lg-12">
 	<div class="col-lg-9">
-		<div id="friend" class="media">
+		<div class="media">
 		    <div class="media-left">
 		        <a href="#">
 		          <img class="media-object" src=<?=$url?> alt="HeadImage">
@@ -19,14 +19,13 @@ div {margin-top: 10px;}
 	<div class="btn-group col-lg 2">
 			    <!-- Single button -->
 		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-		    Action <span class="caret"></span>
+		    操作 <span class="caret"></span>
 		</button>
 	  	<ul class="dropdown-menu" role="menu">
-	    	<li><a href="#">Action</a></li>
-	    	<li><a href="#">Another action</a></li>
-	    	<li><a href="#">Something else here</a></li>
-	    	<li class="divider"></li>
-	    	<li><a href="#">Separated link</a></li>
+	    	<li><a href="#">操作</a></li>
+	    	<li><a href="#">发消息</a></li>
+	    	<li><a href="#">删除好友</a></li>
+	    	<li><a href="#">移入黑名单</a></li>
 	  	</ul>
 	</div>
 </div>

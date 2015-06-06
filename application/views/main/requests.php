@@ -1,10 +1,10 @@
 <style type="text/css">
 div {margin-top: 10px;}
-#request.media {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(221,254,255);}
+#request.col-lg-12 {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(221,254,255);}
 </style>
 
-<div class="col-lg-12">
-	<div class="media" id="request">
+<div  id="request" class="col-lg-12">
+	<div class="media">
 	    <div class="media-left">
 	        <a href="#">
 	          <img class="media-object" src=<?=$url?> alt="HeadImage">
@@ -28,7 +28,7 @@ div {margin-top: 10px;}
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js">
 $("#acc_button").click(function() {
-		$.post(<?="\"".site_url('friends_control/accept')."\""?>, {from_uid: <?="\"".$from_uid."\"" ?>}, function() {
+		$.post(<?="\"".site_url('friends_control/accept')."\""?>, {"from_uid": <?="\"".$from_uid."\"" ?>}, function() {
 			window.location.assign(<?="\"".site_url('friends_control/accept')."\"" ?>);
 		});
 	});
