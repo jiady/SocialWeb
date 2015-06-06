@@ -32,12 +32,14 @@ class Feed extends CI_Controller {
 		$data['activetag']="首页";
 		$this->load->view('block/navigation',$data);
 		$feeddata=$this->Feed_model->getAll(20,$offset);
+		$feeddata['myinfo']=$this->session->all_userdata();
 		$this->load->view('feed/feed',$feeddata);
 		$this->load->view('block/footer');
 		$this->load->view('feed/feed_js');
 	}
 
 	function feed_post(){
+
 		$this->load->view('upload/index');
 		//$this->load->view('block/header');
 		//$data['activetag']="发布";
