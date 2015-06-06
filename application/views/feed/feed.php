@@ -60,20 +60,30 @@ function printk($url){
 		    
 		  </div>
 		  <div class="media-body">
+		  	<h4><?=$row->putter_name?></h4>
 		    <p><?=$row->content?></p>
 		    <?php foreach ($comment[$row->fid] as $comrow): ?>
-				    <div class="media">
+		    	<?php $touid=0;
+		    	if(isset($comrow->to_uid)) $touid=$comrow->to_uid;
+		    		$toname='无名氏';
+		    	if(isset($comrow->to_name) && strlen($comrow->to_name)>0) 
+					$toname=$comrow->to_name;
+		    	?>
+				    <div class="media comment_area" touid=<?=$touid?> fid=<?=$row->fid?> toname= <?=$toname?> data-toggle="modal" data-target="#myModal">
 					  <div class="media-left">
-					    
 					      <img class="media-object" src=<?=$comrow->commenter_url?> alt="head">
-					    
 					  </div>
 					  <div class="media-body">
+					  <?php if(isset($comrow->to_uid) && isset($comrow->to_name) && strlen($comrow->to_name)>0) :?>
+					  	<p><?=$comrow->commenter_name?> 回复 <?=$comrow->to_name?></p>
+					  <?php else:?>
+					  	<p><?=$comrow->commenter_name?> </p>
+					  <?php endif ?>
 					    <p><?=$comrow->content?></p>
 					  </div>
 					</div>
 			<?php endforeach?>
-			<button class='comment' cid=<?=$row->fid?> data-target="#myModal" >回复</button>
+			<button  type="button" class='btn btn-primary comment pull-right' data-toggle="modal" data-target="#myModal" fid=<?=$row->fid?>  >回复</button>
 		  </div>
 		</div>
 
@@ -97,25 +107,16 @@ function printk($url){
         <h4 class="modal-title" id="myModalLabel">回复</h4>
       </div>
       <div class="modal-body">
-        <input type='text'  rows="6" class='form-control' id="postx"  name="postx" placeholder="Email" >
+        <input type='text'   class='form-control' id="postx"  name="postx"  >
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary" id="post_comment">发布</button>
+        <button type="button" class="btn btn-primary" id="post_comment" data-dismiss="modal">发布</button>
       </div>
     </div>
   </div>
 </div>
-<script type="text/javascript">
-var cid=0;
-$(".comment").click(function(){
-	$cid=$(this).attr('cid');
-});
-$("#post_comment").click(function(){
-	console.log($cid);
-});
 
-</script>
 
 <script src=<?=base_url("/dist/qiniu.min.js")?>></script>
 <script src=<?=base_url("/dist/plupload-2.1.4/js/plupload.min.js")?>></script>

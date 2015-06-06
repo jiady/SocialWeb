@@ -34,6 +34,7 @@ class Feed extends CI_Controller {
 		$feeddata=$this->Feed_model->getAll(20,$offset);
 		$this->load->view('feed/feed',$feeddata);
 		$this->load->view('block/footer');
+		$this->load->view('feed/feed_js');
 	}
 
 	function feed_post(){
@@ -58,5 +59,21 @@ class Feed extends CI_Controller {
     	$this->Feed_model->addPictures($fid,$pictures);
 		$this->output
     		 ->set_output(json_encode(array('ret'=>true)));
+	}
+
+	function inner_comment(){
+		$this->output
+    		 ->set_content_type('application/json');
+    	$to_uid=$this->input->post('to_uid');
+    	$content=$this->input->post('content');
+    	$map=array();
+    	if(isset($to_uid) && $to_uid!=$this->session->userdata('uid') && $to_uid>0){
+    		$map['to_uid']=$to_uid;
+    	}
+    	$map['content']=$content;
+    	$b=$this->Feed_model->postComments($map);
+    	$ret=array();
+    	$ret['cid']=$b;
+    	return ret;
 	}
 }
