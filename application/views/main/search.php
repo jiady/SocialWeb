@@ -20,10 +20,8 @@
 	    </div>
 	</form>
 
-	<div role="alert" type="hidden" class="alert alert-success">
-		成功发送了好友申请
-	</div>
-
-	<div>
-		<p></br></p>
+	<div class="col-lg-10">
+		<div role="alert" type="hidden" class="alert alert-success">
+			成功发送了好友申请
+		</div>
 	</div>
