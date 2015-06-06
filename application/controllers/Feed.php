@@ -43,4 +43,17 @@ class Feed extends CI_Controller {
 		//$this->load->view('block/navigation',$data);
 		//$this->load->view('block/footer');
 	}
+
+	function inner_post(){
+		$this->output
+    		 ->set_content_type('application/json');
+    	$feed=$this->input->post('feed_content');
+    	$pictures=$this->input->post('pictures');
+    	$pictures=json_decode($pictures);
+    	$postfeed['content']=$feed;
+    	$fid=$this->Feed_model->postFeed($postfeed);
+    	$this->addPictures($fid,$pictures);
+		$this->output
+    		 ->set_output(json_encode(array('ret'=>true)));
+	}
 }

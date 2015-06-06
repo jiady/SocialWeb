@@ -52,7 +52,7 @@ $(function() {
             },
             'UploadComplete': function() {
                 $('#success').show();
-                $('#print').text(myArray);
+                $('#print').text(myArray.toString());
                 //doucument.write(myArray);
             },
             'FileUploaded': function(up, file, info) {
@@ -108,7 +108,23 @@ $(function() {
         e.stopPropagation();
     });
 
+    $('post_button').on('click',function(){
+        var feed_content=$('feed_content').attr('value');
+        //var pt=array();
+        var text='{ "feed_content":'+feed_content+',"pictures":[';
+        for(var i=0;i<myArray.length;i++){
+            text+=myArray[i];
+            if(i<myArray.length-1)
+                text+=',';
+        }
+        text+=']}';
+        $(#print).append(text);
+        var url="http://xsjtu.com/index.php/feed/inner_post";
+        $.post(url,text,function(data){
+             $(#print).append(data.toString());
+        },"json");
 
+    });
 
     $('#show_code').on('click', function() {
         $('#myModal-code').modal();

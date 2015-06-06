@@ -28,34 +28,30 @@
 		</h1>
         <input type="hidden" id="domain" value="http://7u2p6a.com1.z0.glb.clouddn.com/">
         <input type="hidden" id="uptoken_url" value="http://xsjtu.com/index.php/callback/gettoken">
-		<ul class="tip col-md-12 text-mute">
-			<li>
-				<small>
-					JavaScript SDK 基于 Plupload 开发，可以通过 Html5 或 Flash 等模式上传文件至七牛云存储。
-				</small>
-			</li>
-			<li>
-				<small>临时上传的空间不定时清空，请勿保存重要文件。</small>
-			</li>
-            <li>
-                <small>Html5模式大于4M文件采用分块上传。</small>
-            </li>
-            <li>
-                <small>上传图片可查看处理效果。</small>
-            </li>
-			<li>
-				<small>本示例限制最大上传文件100M。</small>
-			</li>
-		</ul>
-         <div id="print">heihei</div>
+		
+
+
+         
     </div>
+       
+       
+    <div id="print">heihei</div>
     <div class="body">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <div id="container">
+               
+                <div class="input-group input-group-lg">
+                  <input type="text" id="feed_content" class="form-control " placeholder="新鲜事...">
+                  <span class="input-group-btn">
+                    <button id="post_button" class="btn btn-success btn-large" type="button">发布</button>
+                  </span>
+                </div><!-- /input-group -->
+                </br>
                 <a class="btn btn-default btn-lg " id="pickfiles" href="#" >
                     <i class="glyphicon glyphicon-plus"></i>
-                    <sapn>选择文件</sapn>
+                    <sapn>选择图片</sapn>
                 </a>
+                
             </div>
         </div>
 
