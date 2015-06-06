@@ -20,24 +20,25 @@
 	    </div>
 	</form>
 
-	<div type=<? 
+	<div 
+		role="alert"
+		type=<?php
 				if ($status==0)
-					echo "hidden"; ?>
-		class=<?
+					echo "hidden "; ?>
+		class=<?php
 				if ($status==1)
 					echo "alert alert-success ";
 				else if ($status==2)
 					echo "alert alert-danger ";
 				else
 					echo "alert alert-warning "; ?>
-		role="alert">
-			<? 
-				if ($status==1)
-					echo "成功发送了好友申请！ ";
-				else if ($status==2)
-					echo "错误！用户不存在！ ";
-				else
-					echo "存在同名用户！请用ID查询！ "; ?>
+		><? 
+			if ($status==1)
+				echo "成功发送了好友申请！ ";
+			else if ($status==2)
+				echo "错误！用户不存在！ ";
+			else
+				echo "存在同名用户！请用ID查询！ "; ?>
 	</div>
 
 	<div>

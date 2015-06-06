@@ -56,14 +56,14 @@ class Friends_control extends CI_Controller {
 
 	function search() {
 		$input=$this->input->post();
-		$result=$this->Userinfo_model->getID($input->search_content);
+		$result=$this->Userinfo_model->getID($input['search_content']);
 		if (count($result)==0)
 			$this->status=2;
 		else if (count($result)>1)
 			$this->status=3;
 		else {
 			$this->status=1;
-			$this->Relation_model->sendFriendRequest($this->session->userdata("uid"), $result[0]->uid,$input->search_reason);
+			$this->Relation_model->sendFriendRequest($this->session->userdata("uid"), $result[0]->uid,$input['search_reason']);
 		}
 		redirect('/friends_control', 'refresh');
 	}
