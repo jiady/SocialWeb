@@ -49,12 +49,13 @@ class Feed extends CI_Controller {
     		 ->set_content_type('application/json');
     	$feed=$this->input->post('feed_content');
     	$pictures=$this->input->post('pictures');
-    	var_dump($pictures);
-    	$pictures=json_decode($pictures);
-    	var_dump($pictures);
-    	$postfeed['content']=$feed;
-    	$fid=$this->Feed_model->postFeed($postfeed);
-    	$this->Feed_model->addPictures($fid,$pictures);
+    	var_dump($_POST);
+    	//var_dump($pictures);
+    	//$pictures=json_decode($pictures);
+    	//var_dump($pictures);
+    	//$postfeed['content']=$feed;
+    	//$fid=$this->Feed_model->postFeed($postfeed);
+    	//$this->Feed_model->addPictures($fid,$pictures);
 		$this->output
     		 ->set_output(json_encode(array('ret'=>true)));
 	}
