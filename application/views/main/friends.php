@@ -3,7 +3,7 @@ div {margin-top: 10px;}
 #friend.media {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(252,255,200);}
 </style>
 
-<div class="col-lg-10">
+<div class="col-lg-12">
 	<div id="friend" class="media">
 	    <div class="media-left">
 	        <a href="#">
@@ -16,11 +16,10 @@ div {margin-top: 10px;}
 	    </div>
 	    <div class="media-right">
 	    	<div class="btn-group">
-			    <button type="button" class="btn btn-danger">Action</button>
-			    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-			  		<span class="caret"></span>
-			        <span class="sr-only">Toggle Dropdown</span>
-			  	</button>
+			    <!-- Single button -->
+				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+				    Action <span class="caret"></span>
+				</button>
 			  	<ul class="dropdown-menu" role="menu">
 			    	<li><a href="#">Action</a></li>
 			    	<li><a href="#">Another action</a></li>
