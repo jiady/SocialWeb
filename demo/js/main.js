@@ -70,12 +70,13 @@ $(function() {
                 progress.setError();
                 progress.setStatus(errTip);
             }
-            // ,
-            // 'Key': function(up, file) {
-            //     var key = "";
-            //     // do something with key
-            //     return key
-            // }
+             ,
+             'Key': function(up, file) {
+                 var key = new Date().getTime().toString();
+                 key=key+Math.floor(1024).toString();
+                 // do something with key
+                 return key;
+             }
         }
     });
 

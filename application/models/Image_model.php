@@ -20,8 +20,8 @@ class Image_model extends CI_model{
     {
         
         $putPolicy = new Qiniu_RS_PutPolicy($this->bucket);
-        $putPolicy->CallbackUrl='http://lovetransfer.me/index.php/callback/push';
-        $putPolicy->CallbackBody="key=$(key)";
+        //$putPolicy->CallbackUrl='http://lovetransfer.me/index.php/callback/push';
+        //$putPolicy->CallbackBody="key=$(key)";
         $upToken = $putPolicy->Token(null);
         return $upToken;
     }

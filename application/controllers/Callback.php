@@ -9,14 +9,14 @@ class Callback extends CI_Controller {
 
 	public function push()//post
 	{
-		$key=$this->input->post('key');
-		$ar=explode("_", $key);
-		$fid=$ar[0];
-		$url='http://7u2p6a.com1.z0.glb.clouddn.com/'.$key;
-		//$data=$this->Feed_model->addPictures($fid,$url);
-		$this->output
-    		 ->set_content_type('application/json')
-    		 ->set_output(json_encode($data));
+		// $key=$this->input->post('key');
+		// $ar=explode("_", $key);
+		// $fid=$ar[0];
+		// $url='http://7u2p6a.com1.z0.glb.clouddn.com/'.$key;
+		// //$data=$this->Feed_model->addPictures($fid,$url);
+		// $this->output
+  //   		 ->set_content_type('application/json')
+  //   		 ->set_output(json_encode($data));
 	}
 
 	public function gettoken(){
