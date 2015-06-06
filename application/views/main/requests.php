@@ -4,12 +4,12 @@ div {margin-top: 10px;}
 </style>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js">
-	function accept() {
+$("#acc_but").click(function accept() {
 		console.log("function called");
 		$.post(<?="\"".site_url('friends_control/accept')."\""?>, {"from_uid": <?="\"".$from_uid."\"" ?>}, function() {
 			window.location.assign(<?="\"".site_url('friends_control/accept')."\"" ?>);
 		});
-	}
+	});
 </script>
 
 <div  id="request" class="col-lg-10">
@@ -28,7 +28,7 @@ div {margin-top: 10px;}
 	        	if ($accepted)
 	        		echo "<p>已接受</p> ";
 	        	else {
-	        		echo "<button onclick='accept()' class='btn btn-default' type='button'>接受</button> ";
+	        		echo "<button id='acc_but' class='btn btn-default' type='button'>接受</button> ";
 	        	}
 	        ?>
 	    </div>
