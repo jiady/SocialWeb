@@ -19,18 +19,17 @@ div {margin-top: 10px;}
 	        	if ($accepted)
 	        		echo "<p>已接受</p> ";
 	        	else {
-	        		echo "<button id=\"acc_but\" class='btn btn-default'>接受</button> ";
+	        		echo "<button id=\"acc_but\" from_uid=".$from_uid." class='btn btn-default'>接受</button> ";
 	        	}
 	        ?>
 	    </div>
 	</div>
 </div>
 
-<scrip src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" >
 $("#acc_but").click(function() {
 		console.log("function called");
-		$.post(<?="\"".site_url('friends_control/accept')."\""?>, {"from_uid": <?="\"".$from_uid."\"" ?>}, function() {
+		$.post(<?="\"".site_url('friends_control/accept')."\""?>, {"from_uid": $(this).attr("from_uid"), function() {
 			window.location.assign(<?="\"".site_url('friends_control/accept')."\"" ?>);
 		});
 	});
