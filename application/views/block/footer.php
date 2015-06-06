@@ -12,11 +12,22 @@
    
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
 <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+
 <script type="text/javascript" >
-$("#acc_but").click(function() {
+$("#accept_button").click(function() {
     console.log("function called");
     $.post(<?="\"".site_url('friends_control/accept')."\""?>, {"from_uid": $(this).attr("from_uid")}, function() {
-      window.location.assign(<?="\"".site_url('friends_control/accept')."\"" ?>);
+      window.location.assign(<?="\"".site_url('friends_control')."\"" ?>);
+    });
+  });
+$("#delete_button").click(function() {
+    $.post(<?="\"".site_url('friends_control/delete')."\""?>, {"delete_uid": $(this).attr("to_uid")}, function() {
+      window.location.assign(<?="\"".site_url('friends_control')."\"" ?>);
+    });
+  });
+$("#moveBlack_button").click(function() {
+    $.post(<?="\"".site_url('friends_control/moveBlack')."\""?>, {"black_uid": $(this).attr("to_uid")}, function() {
+      window.location.assign(<?="\"".site_url('friends_control')."\"" ?>);
     });
   });
 </script>

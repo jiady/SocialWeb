@@ -24,9 +24,9 @@ div {margin-top: 10px;}
 	  	<ul class="dropdown-menu" role="menu">
 	    	<li><a href="#">操作</a></li>
 	    	<li class="divider"></li>
-	    	<li><a href="#">发消息</a></li>
-	    	<li><a href="#">删除好友</a></li>
-	    	<li><a href="#">移入黑名单</a></li>
+	    	<li><a id="send" to_uid=<?=$to_uid?>>发消息</a></li>
+	    	<li><a id="delete_button" to_uid=<?=$to_uid?>>删除好友</a></li>
+	    	<li><a id="moveBlack_button" to_uid=<?=$to_uid?>>移入黑名单</a></li>
 	  	</ul>
 	</div>
 </div>

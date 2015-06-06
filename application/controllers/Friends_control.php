@@ -67,7 +67,16 @@ class Friends_control extends CI_Controller {
 
 	function accept() {
 		$from_uid=$_POST['from_uid'];
-		echo $from_uid;
 		$this->Relation_model->acceptFriendRequest($this->session->userdata("uid"),$from_uid);
+	}
+
+	function delete() {
+		$delete_uid=$_POST['delete_uid'];
+		$this->Relation_model->deleteFriend($this->session->userdata("uid"),$delete_uid);
+	}
+
+	function moveBlack() {
+		$black_uid=$_POST['black_uid'];
+		$this->Relation_model->addBlackList($this->session->userdata("uid"),$black_uid);
 	}
 }
