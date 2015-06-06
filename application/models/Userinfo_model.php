@@ -11,6 +11,12 @@ class Userinfo_model extends CI_model{
     	return $this->db->query($query)->row_array();
     }
 
+    function getID($input) {
+        $query="SELECT uid FROM user WHERE uid=".$this->db->escape($input)." OR name=".$this->db->escape($input);
+        $res=$this->db->query($query);
+        return $res->result();
+    }
+
     function updateInfo($id, $newInfo) {
     	$this->db->where('uid',$id);
         $this->db->update('user',$newInfo);

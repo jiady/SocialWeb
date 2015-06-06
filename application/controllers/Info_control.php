@@ -20,7 +20,6 @@ class Info_control extends CI_Controller {
 
 	public function add() {
 		$input=$this->input->post();
-		var_dump($input);
 		if ($input['part']=='城市') {
 			if (true!=$this->Info_model->addCity($input['name_add']))
 				echo "Something wrong happened!";
@@ -37,7 +36,6 @@ class Info_control extends CI_Controller {
 
 	public function update() {
 		$input=$this->input->post();
-		var_dump($input);
 		if ($input['part']=='城市') {
 			if (true!=$this->Info_model->updateCity($input['name_old'],$input['name_new']))
 				echo "Something wrong happened!";
@@ -54,7 +52,6 @@ class Info_control extends CI_Controller {
 
 	public function delete() {
 		$input=$this->input->post();
-		var_dump($input);
 		if ($input['part']=='城市') {
 			if (true!=$this->Info_model->deleteCity($input['name_delete']))
 				echo "Something wrong happened!";
