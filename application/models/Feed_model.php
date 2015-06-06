@@ -71,9 +71,10 @@ class Feed_model extends CI_model{
                 WHERE from_uid=".$this->db->escape($id).") ORDER BY post_time DESC LIMIT ".$this->db->escape($limit)." OFFSET ".$this->db->escape($offset)." ");
         $result=$query->result();
         $fid_array=array();
-        foreach( $result as $value){
-            array_push($fid_array,$value->fid);
-        }
+        if(count($result)>0)
+            foreach( $result as $value){
+                array_push($fid_array,$value->fid);
+            }
         return array($fid_array,$result);
     }
 
