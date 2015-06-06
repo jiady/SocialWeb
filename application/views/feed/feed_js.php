@@ -44,7 +44,7 @@ $("#post_comment").click(function(){
 
 	inject+='<div class="media-body">';
 	inject+='<p>我 @ '+to_name+'</p>';
-	inject+='<p>我 @ '+postobject.content+'</p>';
+	inject+='<p> '+postobject.content+'</p>';
 	inject+='</div>';
 	inject+='</div>';
 
