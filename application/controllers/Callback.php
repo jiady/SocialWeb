@@ -23,7 +23,7 @@ class Callback extends CI_Controller {
 		$token=$this->Image_model->auth();
 		$this->output
     		 ->set_content_type('application/json')
-    		 ->set_output(json_encode(array('token'=>$token)));
+    		 ->set_output(json_encode(array('uptoken'=>$token)));
 	}
 
 	public function test(){
