@@ -123,7 +123,7 @@ $(function() {
         postobject.feed_content=feed_content;
         postobject.pictures=myArray;
 
-        $.post(url,text,function(postobject){
+        $.post(url,postobject,function(data){
              $('#print').append(data.responseText);
              console.log(data.responseText);
         },"json");
