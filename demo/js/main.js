@@ -121,7 +121,7 @@ $(function() {
         $('#print').append(text);
         var url="http://xsjtu.com/index.php/feed/inner_post";
         $.post(url,text,function(data){
-             $(#print).append(data.toString());
+             $('#print').append(data.toString());
         },"json");
 
     });
