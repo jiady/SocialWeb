@@ -110,7 +110,7 @@ $(function() {
 
     $('#post_button').on('click',function(){
         var feed_content=$('#feed_content').val();
-        var text='{ "feed_content":'+feed_content+',"pictures":[';
+        var text='{ "feed_content":'+'"'+feed_content+'"'+',"pictures":[';
         for(var i=0;i<myArray.length;i++){
             text+='"'+myArray[i]+'"';
             if(i<myArray.length-1)
@@ -119,9 +119,20 @@ $(function() {
         text+=']}';
         //$('#print').append(text);
         var url="http://xsjtu.com/index.php/feed/inner_post";
-        $.post(url,text,function(data){
-             $('#print').append(data.toString());
-             console.log(data.toString());
+        var postobject={};
+        postobject.feed_content=feed_content;
+        postobject.pictures=myArray;
+
+        $.post(url,postobject,function(data){
+             //$('#print').append(data.responseText);
+             //console.log(data.responseText);
+             //var a=$.parseJSON(data);
+             if(data.ret==true){
+                  window.location.href="http://xsjtu.com/index.php/feed"; 
+             }
+             else{
+                alert("Something goes wrong");
+             }
         },"json");
 
     });

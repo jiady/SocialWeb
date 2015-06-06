@@ -65,7 +65,8 @@ class Feed_model extends CI_model{
     }
 
     function getFeeds($id,$limit=20,$offset=0){
-        $query=$this->db->query("SELECT * From feed WHERE uid IN (SELECT to_uid FROM friend
+        $myid=$this->session->userdata('uid');
+        $query=$this->db->query("SELECT * From feed WHERE uid=".$this->db->escape($myid)."OR uid IN (SELECT to_uid FROM friend
                 WHERE from_uid=".$this->db->escape($id).") LIMIT ".$this->db->escape($limit)." OFFSET ".$this->db->escape($offset)." ");
         $result=$query->result();
         $fid_array=array();
