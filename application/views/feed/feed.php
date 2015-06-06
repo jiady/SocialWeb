@@ -122,5 +122,7 @@ function printk($url){
 <script src=<?=base_url("/dist/qiniu.min.js")?>></script>
 <script src=<?=base_url("/dist/plupload-2.1.4/js/plupload.min.js")?>></script>
 <script type="text/javascript">
-	var myimg=<?=$myinfo->headimage?>
+
+	var myimg=<?=$myinfo['headimage']?>
 </script>
+<?=var_dump($myinfo);?>
