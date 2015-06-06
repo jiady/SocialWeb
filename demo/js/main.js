@@ -108,9 +108,8 @@ $(function() {
         e.stopPropagation();
     });
 
-    $('post_button').on('click',function(){
-        var feed_content=$('feed_content').attr('value');
-        //var pt=array();
+    $('#post_button').on('click',function(){
+        var feed_content=$('feed_content').val();
         var text='{ "feed_content":'+feed_content+',"pictures":[';
         for(var i=0;i<myArray.length;i++){
             text+=myArray[i];

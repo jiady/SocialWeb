@@ -231,7 +231,7 @@ FileProgress.prototype.setComplete = function(up, info) {
     var Wrapper = $('<div class="Wrapper"/>');
     var imgWrapper = $('<div class="imgWrapper col-md-3"/>');
     var linkWrapper = $('<a class="linkWrapper" target="_blank"/>');
-    var showImg = $('<img src="loading.gif"/>');
+    var showImg = $('<img src="/demo/loading.gif"/>');
 
     progressNameTd.append(Wrapper);
 
