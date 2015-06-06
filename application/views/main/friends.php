@@ -1,9 +1,9 @@
 <style type="text/css">
-div {float:left; margin-top: 10px;}
+div {margin-top: 10px;}
 #friend.col-lg-12 {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(252,255,200);}
 </style>
 <div id="friend" class="row col-lg-10">
-	<div class="col-lg-7">
+	<div class="col-lg-8">
 		<div class="media">
 		    <div class="media-left">
 		        <a href="#">
