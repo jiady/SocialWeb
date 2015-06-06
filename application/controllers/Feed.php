@@ -51,7 +51,7 @@ class Feed extends CI_Controller {
     	$pictures=$this->input->post('pictures');
     	//var_dump($_POST);
     	//($pictures);
-    	$pictures=json_decode($pictures);
+    	//$pictures=json_decode($pictures);
     	//var_dump($pictures);
     	$postfeed['content']=$feed;
     	$fid=$this->Feed_model->postFeed($postfeed);
