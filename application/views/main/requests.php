@@ -26,7 +26,7 @@ div {margin-top: 10px;}
 	</div>
 </div>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js">
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js">
 $("#acc_button").click(function() {
 		$.post(<?="\"".site_url('friends_control/accept')."\""?>, {"from_uid": <?="\"".$from_uid."\"" ?>}, function() {
 			window.location.assign(<?="\"".site_url('friends_control/accept')."\"" ?>);
