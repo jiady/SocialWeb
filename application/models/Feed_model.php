@@ -83,7 +83,7 @@ class Feed_model extends CI_model{
             return array();
         }
         $this->db->where_in('fid', $fid_array);
-        $this->db->order_by('post_time',"desc");
+        $this->db->order_by('post_time',"asc");
         $query=$this->db->get('comment');
         $result=$query->result();
         $data=array();
@@ -109,7 +109,7 @@ class Feed_model extends CI_model{
             return array();
         }
         $this->db->where_in('fid', $fid_array);
-        $this->db->order_by('seq',"desc");
+        $this->db->order_by('seq',"asc");
         $query=$this->db->get('feedgallery');
         $result=$query->result();
         $data=array();

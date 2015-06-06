@@ -31,13 +31,13 @@ $("#post_comment").click(function(){
 	$.post(url,postobject,function(data){
 			console.log(data.toString());
              if(data.cid>0){
-                  window.location.href="http://xsjtu.com/index.php/feed/#"+fid.toString(); 
+                  //window.location.href="http://xsjtu.com/index.php/feed/#"+fid.toString(); 
              }
              else{
                 alert("Something goes wrong");
              }
         },"json");
-	$("#"+fid).before('<div class="media comment_area" touid='+to_uid+' fid='+fid+' toname= '+toname+' data-toggle="modal" data-target="#myModal">');
+	$("#"+fid).before('<div class="media comment_area" touid='+to_uid+' fid='+fid+' toname= '+to_name+' data-toggle="modal" data-target="#myModal">');
 	$("#"+fid).before('<div class="media-left">');
 	$("#"+fid).before('<img class="media-object" src='+myimg+' alt="head">');
 	$("#"+fid).before('</div>');
@@ -59,18 +59,6 @@ $(".comment_area").mouseleave(function(){
 
 
 </script>
-<div class="media comment_area" touid=<?=$touid?> fid=<?=$row->fid?> toname= <?=$toname?> data-toggle="modal" data-target="#myModal">
-					  <div class="media-left">
-					      <img class="media-object" src=<?=$comrow->commenter_url?> alt="head">
-					  </div>
-					  <div class="media-body">
-					  <?php if(isset($comrow->to_uid) && isset($comrow->to_name) && strlen($comrow->to_name)>0) :?>
-					  	<p><?=$comrow->commenter_name?> 回复 <?=$comrow->to_name?></p>
-					  <?php else:?>
-					  	<p><?=$comrow->commenter_name?> </p>
-					  <?php endif ?>
-					    <p><?=$comrow->content?></p>
-					  </div>
-					</div>
+
 
 
