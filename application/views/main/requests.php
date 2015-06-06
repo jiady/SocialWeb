@@ -4,7 +4,7 @@ div {margin-top: 10px;}
 </style>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js">
-$("#acc_but").click(function accept() {
+$("#acc_but").click(function() {
 		console.log("function called");
 		$.post(<?="\"".site_url('friends_control/accept')."\""?>, {"from_uid": <?="\"".$from_uid."\"" ?>}, function() {
 			window.location.assign(<?="\"".site_url('friends_control/accept')."\"" ?>);
