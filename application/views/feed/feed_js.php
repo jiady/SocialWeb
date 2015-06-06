@@ -37,14 +37,18 @@ $("#post_comment").click(function(){
                 alert("Something goes wrong");
              }
         },"json");
-	$("#"+fid).before('<div class="media comment_area" touid='+to_uid+' fid='+fid+' toname= '+to_name+' data-toggle="modal" data-target="#myModal">');
-	$("#"+fid).before('<div class="media-left">');
-	$("#"+fid).before('<img class="media-object" src='+myimg+' alt="head">');
-	$("#"+fid).before('</div>');
-	$("#"+fid).before('<div class="media-body">');
-	$("#"+fid).before('<p>我 @ '+to_name+'</p>');
-	$("#"+fid).before('</div>');
-	$("#"+fid).before('</div>');
+	var inject='<div class="media comment_area" touid='+to_uid+' fid='+fid+' toname= '+to_name+' data-toggle="modal" data-target="#myModal">';
+	inject+='<div class="media-left">';
+	inject+='<img class="media-object" src='+myimg+' alt="head">';
+	inject+='</div>';
+
+	inject+='<div class="media-body">';
+	inject+='<p>我 @ '+to_name+'</p>';
+	inject+='</div>';
+	inject+='</div>';
+
+	
+	$("#"+fid).before(inject);
 });
 
 $(".comment_area").mouseenter(function(){
