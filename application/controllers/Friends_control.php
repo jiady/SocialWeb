@@ -1,8 +1,6 @@
 <?php
 class Friends_control extends CI_Controller {
 
-	public $status=0;
-
 	function __construct() {
 		parent::__construct();
 		$this->load->model('Relation_model');
@@ -15,10 +13,10 @@ class Friends_control extends CI_Controller {
 		$this->load->view('block/navigation');
 		$parameter=array();
 		$parameter['status']=$this->status;
-		echo "Search";
+		echo "<h1>Search</h1>";
 		$this->load->view('main/search',$parameter);
 		$id=$this->session->userdata("uid");
-		echo "Friends";
+		echo ">h1>Friends</h1>";
 		$info=array();
 		$res=$this->Relation_model->getFriends($id);
 		if (count($res)>0) {
@@ -31,10 +29,10 @@ class Friends_control extends CI_Controller {
 			}
 		}
 		else {
-			echo "你还没有好友！";
+			echo "<h3>你还没有好友！</h3>";
 		}
 
-		echo "Requests";
+		echo "<h1>Requests</h1>";
 		$info_request=array();
 		$res_request=$this->Relation_model->getFriendRequests($id);
 		if (count($res_request)>0) {
@@ -49,7 +47,7 @@ class Friends_control extends CI_Controller {
 			}
 		}
 		else {
-			echo "你还没有好友请求！";
+			echo "<h4>你还没有好友请求！</h4>";
 		}
 		$this->load->view('block/footer');
 	}
@@ -70,7 +68,7 @@ class Friends_control extends CI_Controller {
 
 	function accept() {
 		$from_uid=$_POST['from_uid'];
+		echo $from_uid;
 		$this->Relation_model->acceptFriendRequest($this->session->userdata("uid"),$from_uid);
-		redirect('/friends_control', 'refresh');
 	}
 }
