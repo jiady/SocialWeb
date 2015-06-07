@@ -40,7 +40,7 @@ class Relation_model extends CI_model{
     }
 
     function getNonFriends($id, $limit=20) {
-        $query="SELECT uid FROM USER WHERE uid NOT IN (SELECT to_uid FROM friend WHERE from_uid=".$this->db->escape($id).") LIMIT ".$this->db->escape($limit);
+        $query="SELECT uid FROM user WHERE uid NOT IN (SELECT to_uid FROM friend WHERE from_uid=".$this->db->escape($id).") LIMIT ".$this->db->escape($limit);
         return $this->db->query($query)->result();
     }
 
