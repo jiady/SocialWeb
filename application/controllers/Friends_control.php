@@ -12,10 +12,9 @@ class Friends_control extends CI_Controller {
 		$this->load->view('block/header');
 		$this->load->view('block/navigation');
 		$parameter=array();
-		echo "<h1>Search</h1>";
 		$this->load->view('main/search',0);
 		$id=$this->session->userdata("uid");
-		echo "<h1>Friends</h1>";
+		$this->load->view('main/friend_head');
 		$info=array();
 		$res=$this->Relation_model->getFriends($id);
 		if (count($res)>0) {
@@ -32,7 +31,7 @@ class Friends_control extends CI_Controller {
 			echo "<h3>你还没有好友！</h3>";
 		}
 
-		echo "<h1>Requests</h1>";
+		$this->load->view('main/request_head');
 		$info_request=array();
 		$res_request=$this->Relation_model->getFriendRequests($id);
 		if (count($res_request)>0) {
@@ -50,6 +49,7 @@ class Friends_control extends CI_Controller {
 			echo "<h4>你还没有好友请求！</h4>";
 		}
 		$this->load->view('block/footer');
+		$this->load->view('main/script');
 	}
 
 	function search() {
