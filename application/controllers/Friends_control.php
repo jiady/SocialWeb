@@ -24,6 +24,7 @@ class Friends_control extends CI_Controller {
 				$info['url']=$this->Userinfo_model->getHeadImage($row->to_uid);
 				$info['name']=$user_info['name'];
 				$info['profile']=$user_info['profile'];
+				$info['to_uid']=$row->to_uid;
 				$this->load->view('main/friends',$info);
 			}
 		}
@@ -52,22 +53,40 @@ class Friends_control extends CI_Controller {
 	}
 
 	function search() {
-		$input=$this->input->post();
+		$input=array();
+		$input["search_content"]=$_POST['search_content'];
+		$input["search_reason"]=$_POST["search_reason"];
+		if (empty($input["search_content"])) {
+			echo "0";
+			return ;
+		}
+		if (empty($input["search_reason"])) {
+			$input["search_content"]="hello"
+		}
 		$result=$this->Userinfo_model->getID($input['search_content']);
 		if (count($result)==0)
-			$this->status=2;
+			echo "3";
 		else if (count($result)>1)
-			$this->status=3;
+			echo "3";
 		else {
-			$this->status=1;
+			echo "1";
 			$this->Relation_model->sendFriendRequest($this->session->userdata("uid"), $result[0]->uid,$input['search_reason']);
 		}
-		redirect('/friends_control', 'refresh');
+		#redirect('/friends_control', 'refresh');
 	}
 
 	function accept() {
 		$from_uid=$_POST['from_uid'];
-		echo $from_uid;
 		$this->Relation_model->acceptFriendRequest($this->session->userdata("uid"),$from_uid);
+	}
+
+	function delete() {
+		$delete_uid=$_POST['delete_uid'];
+		$this->Relation_model->deleteFriend($this->session->userdata("uid"),$delete_uid);
+	}
+
+	function moveBlack() {
+		$black_uid=$_POST['black_uid'];
+		$this->Relation_model->addBlackList($this->session->userdata("uid"),$black_uid);
 	}
 }
