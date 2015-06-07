@@ -1,9 +1,9 @@
 <style type="text/css">
 div {margin-top: 10px;}
-#request.col-lg-10 {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(221,254,255);}
+.request.col-lg-10 {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(221,254,255);}
 </style>
 
-<div  id="request" class="row col-lg-10">
+<div class="request row col-lg-10">
 	<div class="media col-lg-8">
 	    <div class="media-left">
 	        <a href="#">

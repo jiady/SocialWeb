@@ -1,8 +1,8 @@
 <style type="text/css">
 div {margin-top: 10px;}
-#blacklist.col-lg-10 {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(255,206,206);}
+.blacklist.col-lg-10 {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(255,206,206);}
 </style>
-<div id="blacklist" class="row col-lg-10">
+<div class="blacklist row col-lg-10">
 	<div class="col-lg-8">
 		<div class="media">
 		    <div class="media-left">
