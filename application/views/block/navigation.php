@@ -24,15 +24,15 @@
               
                <li
                 <?php if (isset($activetag)&&$activetag=="个人资料") echo "class='active' "?>
-               ><a href=<?=base_url("info_control")?>>个人资料</a></li>
+               ><a href=<?=site_url("info_control")?>>个人资料</a></li>
                
               <li
                 <?php if (isset($activetag)&&$activetag=="好友列表") echo "class='active' "?>
-               ><a href=<?=base_url("friends_control")?>>好友列表</a></li>
+               ><a href=<?=site_url("friends_control")?>>好友列表</a></li>
 
                <li
                 <?php if (isset($activetag)&&$activetag=="黑名单") echo "class='active' "?>
-               ><a href=<?=base_url("blacklist_control")?>>黑名单</a></li>
+               ><a href=<?=site_url("blacklist_control")?>>黑名单</a></li>
                <li
                 <?php if (isset($activetag)&&$activetag=="登出") echo "class='active' "?>
                ><button type="button" class="btn btn-default"
