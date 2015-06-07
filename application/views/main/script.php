@@ -12,6 +12,7 @@ $("#accept_button").click(function() {
         });
     });
 $("#delete_button").click(function() {
+    console.log("deleted");
     $.post(<?="\"".site_url('friends_control/delete')."\""?>, {"delete_uid": $(this).attr("to_uid")}, function() {
             window.location.assign(<?="\"".site_url('friends_control')."\"" ?>);
         });

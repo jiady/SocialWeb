@@ -21,11 +21,11 @@ div {margin-top: 10px;}
 		    操作 <span class="caret"></span>
 		</button>
 	  	<ul class="dropdown-menu" role="menu">
-	    	<li><a href="#">操作</a></li>
+	    	<li><button href="#">操作</button></li>
 	    	<li class="divider"></li>
-	    	<li><a id="send" to_uid=<?=$to_uid?>>发消息</a></li>
-	    	<li><a id="delete_button" to_uid=<?=$to_uid?>>删除好友</a></li>
-	    	<li><a id="moveBlack_button" to_uid=<?=$to_uid?>>移入黑名单</a></li>
+	    	<li><button id="send" to_uid=<?=$to_uid?>>发消息</button></li>
+	    	<li><button id="delete_button" to_uid=<?=$to_uid?>>删除好友</button></li>
+	    	<li><button id="moveBlack_button" to_uid=<?=$to_uid?>>移入黑名单</button></li>
 	  	</ul>
 	</div>
 </div>
