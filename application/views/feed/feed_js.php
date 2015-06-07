@@ -49,7 +49,22 @@ $("#delete_post").click(function(){
              }
         },"json");
 });
-
+$(".feed_delete").click(function(){
+	var fid_to_delete=$(this).attr('fid');
+	$("#feed"+fid_to_delete).hide();
+	var url="http://xsjtu.com/index.php/feed/inner_feed_delete";
+	var postobject={};
+	postobject.fid=fid_to_delete;
+	$.post(url,postobject,function(data){
+			console.log(data.toString());
+             if(data.ret==true){
+                  //window.location.href="http://xsjtu.com/index.php/feed/#"+fid.toString(); 
+             }
+             else{
+                alert("Something goes wrong");
+             }
+        },"json");
+});
 
 
 $("#post_comment").click(function(){

@@ -99,4 +99,18 @@ class Feed extends CI_Controller {
     	}
 
     }
+
+    function inner_feed_delete(){
+    	$this->output
+    		 ->set_content_type('application/json');
+    	$fid=$this->input->post('fid');
+    	if(isset($fid)){
+    		$this->Feed_model->deleteFeed($fid);
+    		$this->output
+    		 ->set_output(json_encode(array('ret'=>true)));
+    	}else{
+    		$this->output
+    		 ->set_output(json_encode(array('ret'=>false)));
+    	}
+    }
 }
