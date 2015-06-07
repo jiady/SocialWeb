@@ -22,15 +22,15 @@ $(".moveBlack_button").click(function() {
             window.location.assign(<?="\"".site_url('friends_control')."\"" ?>);
         });
     });
-$(".search_button").click(function() {
+$("#search_button").click(function() {
     var content=eval(document.getElementById("search_content")).value;
     var reason=eval(document.getElementById("search_reason")).value;
     $.post(<?="\"".site_url('friends_control/search')."\""?>, {"search_content": content, "search_reason": reason}, function(data) {
             if (data==0) {
-                $("#status_tag").hide();
+                $("#status_tag").hide("fast");
             }
             else {
-                $("#status_tag").show();
+                $("#status_tag").show("fast");
                 var tag=document.getElementById('status_tag');
                 if (data==1) {
                     tag.setAttribute("class","alert alert-success");

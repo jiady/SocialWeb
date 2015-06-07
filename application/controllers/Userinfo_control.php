@@ -7,6 +7,7 @@ class Userinfo_control extends CI_Controller {
 	}
 
 	public function index() {
+		$this->load->view('block/navigation');
 		$res['info']=$this->Userinfo_model->getInfo($this->session->userdata("uid"));
 		$this->load->view('main/userinfo',$res);
 	}

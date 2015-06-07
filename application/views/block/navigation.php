@@ -24,7 +24,7 @@
               
                <li
                 <?php if (isset($activetag)&&$activetag=="个人资料") echo "class='active' "?>
-               ><a href=<?=site_url("info_control")?>>个人资料</a></li>
+               ><a href=<?=site_url("userinfo_control")?>>个人资料</a></li>
                
               <li
                 <?php if (isset($activetag)&&$activetag=="好友列表") echo "class='active' "?>
