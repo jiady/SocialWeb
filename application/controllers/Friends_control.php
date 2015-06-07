@@ -24,6 +24,7 @@ class Friends_control extends CI_Controller {
 				$info['url']=$this->Userinfo_model->getHeadImage($row->to_uid);
 				$info['name']=$user_info['name'];
 				$info['profile']=$user_info['profile'];
+				$info['to_uid']=$row->to_uid;
 				$this->load->view('main/friends',$info);
 			}
 		}
