@@ -1,5 +1,5 @@
 <script>
-$(".colorful").each(function() {
+$("div.colorful").each(function() {
 	var r=getRandomNum(0, 255);
 	var g=getRandomNum(0, 255);
 	var b=getRandomNum(0, 255);

@@ -10,7 +10,8 @@ div.tags {margin-top: 5px; padding:1px;border-style: solid; border-width: 1px; b
 		<button type="button button-success changeTag_button" content=<?=$content?> status=<?=$status?> > <?
 			if ($status==0)
 				echo "添加";
-			else if ($status==2)
+			else if ($status==1)
 				echo "移除";
 		?></button>
+	</div>
 </div>
