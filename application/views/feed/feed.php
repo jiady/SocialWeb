@@ -13,7 +13,7 @@ function printk($url){
 ?>
 
 <?php foreach ($feed as $row):?>
-	<div class="panel panel-default col-md-8 col-lg-8" id=<?='feed'.$row->fid?>>
+	<div class="panel panel-default col-md-8 col-lg-8 animated" id=<?='feed'.$row->fid?>>
 	  <div class="panel-body">
 	  <?php
 	  	$grow=$gallery[$row->fid];

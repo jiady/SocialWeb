@@ -1,4 +1,5 @@
-
+<script src=<?=base_url("dist/js/waypoints.min.js")?>></script>
+<script src=<?=base_url("dist/js/headroom.min.js")?>></script>
 <script type="text/javascript">
 var to_uid=0;  
 var fid=0;
@@ -110,6 +111,53 @@ $(".comment_area").mouseleave(function(){
 $(document).ready(function(){
   // 在这里写你的代码...
   $("#delete_post").hide();
+  var animateIn="fadeInRight";
+  var animateOut="fadeOutRight";
+  var elem = document.querySelector("nav");
+  var headroom = new Headroom(elem, {
+	  "tolerance": 5,
+	  "offset": 0,
+	  "classes": {
+	    "initial": "animated",
+	    "pinned": "flipInX",
+	    "unpinned": "flipOutX"
+	  }
+	});
+	headroom.init();
+
+	$('.panel').waypoint(function(direction){
+		if(direction=="down"){
+			$(this).removeClass(animateIn);
+			$(this).addClass(animateOut);
+		}
+		},{
+		offset:'-5%'
+	});
+	$('.panel').waypoint(function(direction){
+		if(direction=="up"){
+			$(this).removeClass(animateOut);
+			$(this).addClass(animateIn);
+		}
+		},{
+		offset:'-5%'
+	});
+
+	$('.panel').waypoint(function(direction){
+		if(direction=="down"){
+			$(this).removeClass(animateOut);
+			$(this).addClass(animateIn);
+		}
+	},{
+		offset:'85%'
+	});
+	$('.panel').waypoint(function(direction){
+		if(direction=="up"){
+			$(this).removeClass(animateIn);
+			$(this).addClass(animateOut);
+		}
+	},{
+		offset:'85%'
+	});
 });
 
 

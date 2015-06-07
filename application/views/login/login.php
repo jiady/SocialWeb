@@ -62,6 +62,9 @@
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+	
+$(".searchbox").addClass("animated flipInX");
+
 	if (document.addEventListener) {
     //如果是Firefox  
     	document.addEventListener("keypress", enterEvent, false);
@@ -75,9 +78,13 @@ $(document).ready(function(){
 	         console.log("sss");
             $(".searchbox").addClass("flipOutX");
 	    }
-}       
+
+	}
+	       
 $(".btn").click( function(){
-	$(".searchbox").addClass("flipOutX");})
+	$(".searchbox").addClass("flipOutX");
+	
+})
 });
 
 </script>

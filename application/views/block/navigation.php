@@ -1,6 +1,6 @@
  <!-- Static navbar -->
    <!-- Static navbar -->
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -17,7 +17,7 @@
                <li
                <?php if (isset($activetag)&&$activetag=="首页") echo "class='active' "?>
                ><a href=<?=site_url("feed")?>>首页</a></li>
-               
+
 				<li
                <?php if (isset($activetag)&&$activetag=="发布") echo "class='active' "?>
                ><a href=<?=site_url("feed/feed_post")?>>发布</a></li>
@@ -41,7 +41,7 @@
             </ul>
             </div><!--/.nav-collapse -->
     </div>
-</div>
+</nav>
  </br>
  </br>
  </br>
