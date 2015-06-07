@@ -8,7 +8,7 @@ div.tags {margin-top: 5px; padding:1px;border-style: solid; border-width: 1px; b
 	</div>
 	<div class="col-lg-2">
 		<button type="button button-success changeTag_button" content=<?=$content?> status=<?=$status?>> 
-		<?
+		<?php
 			if ($status=="0")
 				echo "添加";
 			else ($status=="1")

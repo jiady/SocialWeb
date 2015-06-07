@@ -3,7 +3,7 @@ $("div.colorful").each(function(index, element) {
 	var r=getRandomNum(0, 255);
 	var g=getRandomNum(0, 255);
 	var b=getRandomNum(0, 255);
-	var value="rgb(".concat(r,",",g,",",b")";
+	var value="rgb("+r+","+g+","+b+")";
 	$(this).setAttribute("background-color",value);
 });
 $(".changeTag_button").click(function() {
