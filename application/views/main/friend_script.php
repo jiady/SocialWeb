@@ -64,5 +64,5 @@ $(".add_button").click(function() {
                 tag.innerHTML="错误！你在对方黑名单中！";
             }
         });
-    })；
+    });
 </script>
