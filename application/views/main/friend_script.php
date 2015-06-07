@@ -52,12 +52,13 @@ $("#search_button").click(function() {
         });
     });
 $(".add_button").click(function() {
-    $.post(<?="\"".site_url('friends_control/search')."\""?>, {"search_content": $(this).attr("to_uid"), "search_reason": "系统推荐"}, function() {
+    $.post(<?="\"".site_url('friends_control/search')."\""?>, {"search_content": $(this).attr("to_uid"), "search_reason": "系统推荐"}, function(data) {
             $("#status_tag").fadeIn("fast");
             var tag=document.getElementById('status_tag');
             if (data==1) {
                 tag.setAttribute("class","alert alert-success");
                 tag.innerHTML="成功发送了好友请求！";
+                window.location.assign(<?="\"".site_url('friends_control')."\"" ?>);
             }
             else if (data==4) {
                 tag.setAttribute("class","alert alert-info");
