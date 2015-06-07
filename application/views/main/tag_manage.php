@@ -1,5 +1,5 @@
 <style type="text/css">
-div.tags {margin-top: 5px; padding:1px;border-style: solid; border-width: 1px; border-color:black;}
+div.tags {margin-top: 5px; padding:1px; border-color:black;}
 </style>
 
 <div class="tags row col-lg-8 colorful">
