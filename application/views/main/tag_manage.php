@@ -1,5 +1,5 @@
 <style type="text/css">
-div.tags {margin-top: 5px;}
+div.tags {margin: 5px;}
 </style>
 
 <div class="row col-lg-10">
@@ -11,7 +11,7 @@ div.tags {margin-top: 5px;}
 			<p><?=$content?></p>
 		</div>
 		<div class="col-lg-3 pull-right">
-			<button <?php
+			<button style="padding:2px;" <?php
 				if ($status==0)
 					echo "class='btn btn-success changeTag_button'";
 				else
