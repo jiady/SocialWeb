@@ -13,7 +13,7 @@ div.tags {margin-top: 1px;}
 		<div class="col-lg-3 pull-right">
 			<button class=<?php
 				if ($status==0)
-					echo "btn btn-success changeTag_button";
+					echo 'btn btn-success changeTag_button';
 				else
 					echo "btn btn-warning changeTag_button";
 			?> content=<?=$content?> status=<?=$status?>> 

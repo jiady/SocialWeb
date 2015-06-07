@@ -4,6 +4,7 @@ class Userinfo_control extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('Userinfo_model');
+		$this->load->helper('url');
 	}
 
 	function index() {
@@ -43,6 +44,8 @@ class Userinfo_control extends CI_Controller {
 		$input=$this->input->post();
 		if (true!=$this->Userinfo_model->updateInfo($this->session->userdata("uid"),$input))
 			echo "Something wrong happened!";
+		else
+			redirect('/friends_control', 'refresh');
 	}
 
 	function changeTag() {
