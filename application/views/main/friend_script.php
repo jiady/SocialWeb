@@ -44,6 +44,10 @@ $(".search_button").click(function() {
                     tag.setAttribute("class","alert alert-danger");
                     tag.innerHTML="错误！用户不存在！";
                 }
+                else if (data==4) {
+                    tag.setAttribute("class","alert alert-info");
+                    tag.innerHTML="错误！你在对方黑名单中！";
+                }
             }
         });
     });

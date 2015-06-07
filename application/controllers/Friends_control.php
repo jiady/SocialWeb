@@ -71,10 +71,12 @@ class Friends_control extends CI_Controller {
 		if (count($result)==0)
 			echo "3";
 		else if (count($result)>1)
-			echo "3";
+			echo "2";
 		else {
-			echo "1";
-			$this->Relation_model->sendFriendRequest($this->session->userdata("uid"), $result[0]->uid,$input['search_reason']);
+			if (true==$this->Relation_model->sendFriendRequest($this->session->userdata("uid"), $result[0]->uid,$input['search_reason']))
+				echo "1";
+			else
+				echo "4";
 		}
 		#redirect('/friends_control', 'refresh');
 	}
