@@ -1,5 +1,5 @@
 <style type="text/css">
-div {margin-top: 10px;}
+div {margin-top: 10px;padding:5px;}
 .request.col-lg-10 {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(221,254,255);}
 </style>
 
