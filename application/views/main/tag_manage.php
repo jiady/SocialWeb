@@ -7,11 +7,11 @@ div.tags {margin-top: 1px;}
 		<p> </p>
 	</div>
 	<div class="tags row col-lg-6 pull-center colorful">
-		<div class="col-lg-4">
+		<div class="col-lg-3">
 			<p><?=$content?></p>
 		</div>
-		<div class="col-lg-2 pull-right">
-			<button type="button button-success changeTag_button" content=<?=$content?> status=<?=$status?>> 
+		<div class="col-lg-3 pull-right">
+			<button class="button button-success changeTag_button" content=<?=$content?> status=<?=$status?>> 
 			<?php
 				if ($status=="0")
 					echo "添加";
