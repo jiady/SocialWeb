@@ -36,7 +36,7 @@ class Userinfo_control extends CI_Controller {
 		}
 
 		$this->load->view('block/footer');
-		$this->load->view('userinfo_script');
+		$this->load->view('main/userinfo_script');
 	}
 
 	function change() {
