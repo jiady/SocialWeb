@@ -42,12 +42,15 @@ class Feed extends CI_Controller {
 	}
 
 	function feed_post(){
-
+		$this->load->view('block/header');
+		$data['activetag']="发布";
+		$this->load->view('block/navigation',$data);
+		
 		$this->load->view('upload/index');
-		//$this->load->view('block/header');
-		//$data['activetag']="发布";
-		//$this->load->view('block/navigation',$data);
-		//$this->load->view('block/footer');
+		
+		
+		
+		$this->load->view('block/footer');
 	}
 
 	function inner_post(){
@@ -84,4 +87,33 @@ class Feed extends CI_Controller {
     	$this->output
     		 ->set_output(json_encode(array('cid'=>$b)));
 	}
+
+	function inner_comment_delete(){
+		$this->output
+    		 ->set_content_type('application/json');
+    	$cid=$this->input->post('cid');
+    	if(isset($cid)){
+    		$this->Feed_model->deleteComments($cid);
+    		$this->output
+    		 ->set_output(json_encode(array('ret'=>true)));
+    	}else{
+    		$this->output
+    		 ->set_output(json_encode(array('ret'=>false)));
+    	}
+
+    }
+
+    function inner_feed_delete(){
+    	$this->output
+    		 ->set_content_type('application/json');
+    	$fid=$this->input->post('fid');
+    	if(isset($fid)){
+    		$this->Feed_model->deleteFeed($fid);
+    		$this->output
+    		 ->set_output(json_encode(array('ret'=>true)));
+    	}else{
+    		$this->output
+    		 ->set_output(json_encode(array('ret'=>false)));
+    	}
+    }
 }

@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
     <link href="<?=base_url()?>dist/css/home_act.min.css" rel="stylesheet">
+    
+  
+  <link rel="stylesheet" href=<?=base_url("/demo/js/highlight/highlight.css")?>>
     <!-- Custom styles for this template -->
 
 

@@ -13,7 +13,7 @@ function printk($url){
 ?>
 
 <?php foreach ($feed as $row):?>
-	<div class="panel panel-default col-md-8 col-lg-8">
+	<div class="panel panel-default col-md-8 col-lg-8" id=<?='feed'.$row->fid?>>
 	  <div class="panel-body">
 	  <?php
 	  	$grow=$gallery[$row->fid];
@@ -60,7 +60,7 @@ function printk($url){
 		    
 		  </div>
 		  <div class="media-body ">
-		  	<h4><?=$row->putter_name?></h4>
+		  	<h4><?=$row->putter_name?><small> 发表于<?=$row->post_time?></small></h4>
 		    <p><?=$row->content?></p>
 		    <?php foreach ($comment[$row->fid] as $comrow): ?>
 		    	<?php $touid=0;
@@ -69,21 +69,24 @@ function printk($url){
 		    	if(isset($comrow->to_name) && strlen($comrow->to_name)>0) 
 					$toname=$comrow->to_name;
 		    	?>
-				    <div class="media comment_area" touid=<?=$touid?> fid=<?=$row->fid?> toname= <?=$toname?> data-toggle="modal" data-target="#myModal">
+				    <div class="media comment_area" touid=<?=$touid?> fid=<?=$row->fid?> toname= <?=$toname?> fromuid=<?=$comrow->uid?>  cid=<?=$comrow->cid?>   data-toggle="modal" data-target="#myModal">
 					  <div class="media-left">
 					      <img class="media-object" src=<?=$comrow->commenter_url?> alt="head">
 					  </div>
 					  <div class="media-body">
+
 					  <?php if(isset($comrow->to_uid) && isset($comrow->to_name) && strlen($comrow->to_name)>0) :?>
-					  	<p><?=$comrow->commenter_name?> 回复 <?=$comrow->to_name?></p>
+					  	<p><?=$comrow->commenter_name?> 回复 <?=$comrow->to_name?> &nbsp;&nbsp;<small><?= $comrow->post_time?></small></p>
 					  <?php else:?>
-					  	<p><?=$comrow->commenter_name?> </p>
+					  	<p><?=$comrow->commenter_name?>&nbsp;&nbsp;<small><?= $comrow->post_time?></small> </p>
 					  <?php endif ?>
 					    <p><?=$comrow->content?></p>
 					  </div>
 					</div>
 			<?php endforeach?>
-
+			<?php if($myinfo['uid']==$row->uid):?>
+			<button  type="button" class='btn btn-success feed_delete pull-right'  fid=<?=$row->fid?>  >删除</button>	
+			<?php endif?>
 			<button  type="button" class='btn btn-primary comment pull-right' data-toggle="modal" data-target="#myModal" fid=<?=$row->fid?> id=<?=$row->fid?> >回复</button>
 		  </div>
 		</div>
@@ -111,6 +114,7 @@ function printk($url){
         <input type='text'   class='form-control' id="postx"  name="postx"  >
       </div>
       <div class="modal-footer">
+      	<button type="button" class="btn btn-default" data-dismiss="modal" id='delete_post'>删除该评论</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
         <button type="button" class="btn btn-primary" id="post_comment" data-dismiss="modal">发布</button>
       </div>
@@ -122,7 +126,7 @@ function printk($url){
 <script src=<?=base_url("/dist/qiniu.min.js")?>></script>
 <script src=<?=base_url("/dist/plupload-2.1.4/js/plupload.min.js")?>></script>
 <script type="text/javascript">
-
+	var myid='<?=$myinfo['uid']?>';
 	var myimg='<?=$myinfo['headimage']?>';
 </script>
 <?=var_dump($myinfo);?>
