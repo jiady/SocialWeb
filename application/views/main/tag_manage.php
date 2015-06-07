@@ -1,5 +1,5 @@
 <style type="text/css">
-div.tags {margin: 5px;}
+div.tags {margin: 3px;}
 </style>
 
 <div class="row col-lg-10">
@@ -11,9 +11,9 @@ div.tags {margin: 5px;}
 			<p><?=$content?></p>
 		</div>
 		<div class="col-lg-3 pull-right">
-			<button style="padding:2px;" <?php
+			<button style="padding-top:1px; padding-bottom:1px" <?php
 				if ($status==0)
-					echo "class='btn btn-success changeTag_button'";
+					echo "class='btn btn-info changeTag_button'";
 				else
 					echo "class='btn btn-warning changeTag_button'";
 			?> content=<?=$content?> status=<?=$status?>> 
