@@ -1,9 +1,9 @@
 <style type="text/css">
-div {margin-top: 5px; padding:1px;}
+div.tags {margin-top: 5px; padding:1px;}
 .col-lg-6 {border-style: solid; border-width: 1px; border-color:black;}
 </style>
 
-<div class="row col-lg-6 colorful">
+<div class="tags row col-lg-6 colorful">
 	<div class="col-lg-4">
 		<p><?=$content?></p>
 	</div>
