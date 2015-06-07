@@ -6,7 +6,7 @@ div.tags {margin-top: 5px; padding:1px;border-style: solid; border-width: 1px; b
 	<div class="col-lg-6">
 		<p><?=$content?></p>
 	</div>
-	<div class="col-lg-2">
+	<div class="col-lg-2 pull-right">
 		<button type="button button-success changeTag_button" content=<?=$content?> status=<?=$status?>> 
 		<?php
 			if ($status=="0")

@@ -1,8 +1,8 @@
 <script>
 $("div.colorful").each(function(index, element) {
-	var r=getRandomNum(0, 255);
-	var g=getRandomNum(0, 255);
-	var b=getRandomNum(0, 255);
+	var r=Math.round(Math.random()*256);
+	var g=Math.round(Math.random()*256);
+	var b=Math.round(Math.random()*256);
 	var value="rgb("+r+","+g+","+b+")";
 	$(this).setAttribute("background-color",value);
 });
