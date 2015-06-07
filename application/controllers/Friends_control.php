@@ -24,6 +24,10 @@ class Friends_control extends CI_Controller {
 				$info['name']=$user_info['name'];
 				$info['profile']=$user_info['profile'];
 				$info['to_uid']=$row->to_uid;
+				if ($row->to_uid==$id)
+					$info['self']="true";
+				else
+					$info['self']="false";
 				$this->load->view('main/friends',$info);
 			}
 		}
