@@ -19,16 +19,33 @@ class Friends_control extends CI_Controller {
 		$res=$this->Relation_model->getFriends($id);
 		if (count($res)>0) {
 			foreach ($res as $row) {
-				$user_info=$this->Userinfo_model->getInfo($row->to_uid);
-				$info['url']=$this->Userinfo_model->getHeadImage($row->to_uid);
-				$info['name']=$user_info['name'];
-				$info['profile']=$user_info['profile'];
-				$info['to_uid']=$row->to_uid;
-				if ($row->to_uid==$id)
-					$info['self']="true";
-				else
-					$info['self']="false";
-				$this->load->view('main/friends',$info);
+				if ($row->to_uid==$id) {
+					$user_info=$this->Userinfo_model->getInfo($row->to_uid);
+					$info['url']=$this->Userinfo_model->getHeadImage($row->to_uid);
+					$info['name']=$user_info['name'];
+					$info['profile']=$user_info['profile'];
+					$info['to_uid']=$row->to_uid;
+					if ($row->to_uid==$id)
+						$info['self']="true";
+					else
+						$info['self']="false";
+					$this->load->view('main/friends',$info);
+					break;
+				}
+			}
+			foreach ($res as $row) {
+				if ($row->to_uid!=$id) {
+					$user_info=$this->Userinfo_model->getInfo($row->to_uid);
+					$info['url']=$this->Userinfo_model->getHeadImage($row->to_uid);
+					$info['name']=$user_info['name'];
+					$info['profile']=$user_info['profile'];
+					$info['to_uid']=$row->to_uid;
+					if ($row->to_uid==$id)
+						$info['self']="true";
+					else
+						$info['self']="false";
+					$this->load->view('main/friends',$info);
+				}
 			}
 		}
 		else {
