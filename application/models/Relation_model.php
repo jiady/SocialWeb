@@ -12,8 +12,6 @@ class Relation_model extends CI_model{
     		return false;
         $delete="DELETE FROM friend WHERE from_uid=".$this->db->escape($id)." AND to_uid=".$this->db->escape($blackid);
         $this->db->query($delete);
-        if ($this->db->affected_rows()==0)
-            return false;
     	$insert="INSERT INTO blacklist(from_uid, to_uid) VALUES(".$this->db->escape($id).",".$this->db->escape($blackid).")";
     	$this->db->query($insert);
     	if ($this->db->affected_rows()>0)
