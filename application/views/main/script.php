@@ -1,6 +1,6 @@
 
 <script type="text/javascript" >
-$document.ready(function() {
+$(document).ready(function() {
     var self=$("#buttons").attr("self");
     if (self=="true")
         $("#buttons").hide();
