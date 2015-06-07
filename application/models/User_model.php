@@ -40,8 +40,13 @@ class User_model extends CI_model{
         $to_insert['email']=$email;
         $to_insert['password']=$password;
         $this->db->insert('user',$to_insert);
+        $url_base="http://7u2p6a.com1.z0.glb.clouddn.com/";
+        $postfix=".jpg";
+
         $ins=array();
         $ins['uid']= $this->db->insert_id();
+        $image_url=$url_base.($ins['uid']%9+1).$postfix;
+        $ins['url']=$image_url;
         $this->db->insert('usergallery',$ins);
         return $this->login($email,$password);
         

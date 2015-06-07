@@ -48,7 +48,7 @@ class Welcome extends CI_Controller {
 		var_dump($input);
 		if(true==$this->User_model->register($input['email'],$input['password'])){
 			$this->Userinfo_model->updateInfo($this->session->userdata('uid'),$input);
-			redirect(site_url("feed"));
+			redirect(site_url("userinfo_control"));
 		}else{
 			echo "wrong password or account";
 		}
