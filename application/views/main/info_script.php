@@ -6,9 +6,9 @@ $(".changeTag_button").click(function() {
         });
 });
 $("div.colorful").each(function(index, element) {
-	var r=Math.round(Math.random()*192)+64;
-	var g=Math.round(Math.random()*192)+64;
-	var b=Math.round(Math.random()*192)+64;
+	var r=Math.round(Math.random()*96)+160;
+	var g=Math.round(Math.random()*96)+160;
+	var b=Math.round(Math.random()*96)+160;
 	var value="background-color: rgb("+r+","+g+","+b+")";
 	$(this).attr("style",value);
 });
