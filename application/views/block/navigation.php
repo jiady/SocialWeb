@@ -35,7 +35,7 @@
                ><a href=<?=site_url("blacklist_control")?>>黑名单</a></li>
                <li
                 <?php if (isset($activetag)&&$activetag=="登出") echo "class='active'"?>
-               ><button type="button" style='float:right' class="btn btn-default"
+               ><button type="button" class="btn btn-default"
                ><a href=<?=base_url()?>>登出</a></button></li>
 
             </ul>

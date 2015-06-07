@@ -10,6 +10,7 @@ class Userinfo_control extends CI_Controller {
 		$this->load->view('block/navigation');
 		$res['info']=$this->Userinfo_model->getInfo($this->session->userdata("uid"));
 		$this->load->view('main/userinfo',$res);
+		$this->load->view('block/footer');
 	}
 
 	public function change() {
