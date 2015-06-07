@@ -39,7 +39,7 @@
             <ul class="nav navbar-nav navbar-right">
             	<li
                 <?php if (isset($activetag)&&$activetag=="登出") echo "class='active'"?>
-               ><a href=<?=base_url("welcome/logout")?>>登出</a></li>
+               ><a href=<?=site_url("welcome/logout")?>>登出</a></li>
             </ul>
 
             </div><!--/.nav-collapse -->
