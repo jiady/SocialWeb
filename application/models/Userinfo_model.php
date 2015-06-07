@@ -91,4 +91,9 @@ class Userinfo_model extends CI_model{
         $query="SELECT tag FROM hastag WHERE uid=".$this->db->escape($id);
         return $this->db->query($query)->result();
     }
+
+    function getOtherTags($id) {
+        $query="SELECT tag_name FROM tag WHERE tag_name NOT IN (SELECT tag FROM hastag WHERE uid=".$this->db->escape($id).")";
+        return $this->db->query($query)->result();
+    }
 }

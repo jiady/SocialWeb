@@ -95,7 +95,7 @@ div {margin-top: 10px;}
 			    </div>
 			</div>
 		     
-		    <div >
-		    	<button type="submit" class="btn btn-default"  style="margin-top:30px; float:right;">提交</button>
+		    <div class="col-lg-8">
+		    	<button type="submit" class="btn btn-default pull-right" style="margin-top:30px; float:right;">提交</button>
 		    </div>
 		</form>
