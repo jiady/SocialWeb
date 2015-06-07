@@ -15,7 +15,7 @@ div {margin-top: 10px;padding:3px;}
 	        <p> <?=$reason?></p>
 	    </div>
 	</div>
-	<div class="col-lg-2" style="float:right">
+	<div class="col-lg-2 pull-right">
 	        <?php 
 	        	if ($accepted)
 	        		echo "<p>已接受</p> ";

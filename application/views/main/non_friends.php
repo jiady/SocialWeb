@@ -19,7 +19,7 @@ div {margin-top: 10px; padding:3px;}
 	<?php 
 		if ($has_request==0)
 			echo '
-				<div class="btn-group col-lg-2">
+				<div class="btn-group col-lg-2 pull-right">
 					<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 					    操作 <span class="caret"></span>
 					</button>
@@ -31,7 +31,7 @@ div {margin-top: 10px; padding:3px;}
 				</div>';
 		else
 			echo '
-				<div class="col-lg 2">
+				<div class="col-lg 2 pull-right">
 					<p>等待对方接受</p>
 				</div>';
 	?>

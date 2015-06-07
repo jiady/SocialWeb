@@ -1,3 +1,7 @@
+<style type="text/css">
+div {margin-top: 10px;}
+</style>
+
 		<form  method="post" action=<?=site_url('userinfo_control/change')?> class='form-horizontal'>
 			<div class="col-lg-8">
 		    	<div class="input-group">
