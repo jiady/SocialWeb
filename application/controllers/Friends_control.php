@@ -53,7 +53,7 @@ class Friends_control extends CI_Controller {
 			echo "<h4>你还没有好友请求！</h4>";
 		}
 		$this->load->view('block/footer');
-		$this->load->view('main/script');
+		$this->load->view('main/friend_script');
 	}
 
 	function search() {
