@@ -1,5 +1,5 @@
 <style type="text/css">
-div {margin-top: 10px;padding:5px;}
+div {margin-top: 10px;padding:3px;}
 .request.col-lg-10 {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(221,254,255);}
 </style>
 
@@ -15,7 +15,7 @@ div {margin-top: 10px;padding:5px;}
 	        <p> <?=$reason?></p>
 	    </div>
 	</div>
-	<div class="col-lg-2">
+	<div class="col-lg-2" style="float:right">
 	        <?php 
 	        	if ($accepted)
 	        		echo "<p>已接受</p> ";
