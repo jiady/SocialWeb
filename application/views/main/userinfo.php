@@ -96,6 +96,6 @@ div.line {margin-top: 10px;}
 			</div>
 		     
 		    <div class="col-lg-8 line">
-		    	<button type="submit" class="btn btn-default pull-right" style="margin-top:30px; float:right;">提交</button>
+		    	<button type="submit" class="btn btn-success pull-right" style="margin-top:30px; float:right;">提交</button>
 		    </div>
 		</form>

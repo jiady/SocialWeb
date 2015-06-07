@@ -1,5 +1,5 @@
 <style type="text/css">
-div.tags {margin-top: 1px;}
+div.tags {margin-top: 5px;}
 </style>
 
 <div class="row col-lg-10">
