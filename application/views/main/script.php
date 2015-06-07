@@ -5,24 +5,24 @@ $(document).ready(function() {
     if (self=="true")
         $("#buttons").hide();
     });
-$("#accept_button").click(function() {
+$(".accept_button").click(function() {
     console.log("function called");
     $.post(<?="\"".site_url('friends_control/accept')."\""?>, {"from_uid": $(this).attr("from_uid")}, function() {
             window.location.assign(<?="\"".site_url('friends_control')."\"" ?>);
         });
     });
-$("#delete_button").click(function() {
+$(".delete_button").click(function() {
     console.log("deleted");
     $.post(<?="\"".site_url('friends_control/delete')."\""?>, {"delete_uid": $(this).attr("to_uid")}, function() {
             window.location.assign(<?="\"".site_url('friends_control')."\"" ?>);
         });
     });
-$("#moveBlack_button").click(function() {
+$(".moveBlack_button").click(function() {
     $.post(<?="\"".site_url('friends_control/moveBlack')."\""?>, {"black_uid": $(this).attr("to_uid")}, function() {
             window.location.assign(<?="\"".site_url('friends_control')."\"" ?>);
         });
     });
-$("#search_button").click(function() {
+$(".search_button").click(function() {
     var content=eval(document.getElementById("search_content")).value;
     var reason=eval(document.getElementById("search_reason")).value;
     $.post(<?="\"".site_url('friends_control/search')."\""?>, {"search_content": content, "search_reason": reason}, function(data) {

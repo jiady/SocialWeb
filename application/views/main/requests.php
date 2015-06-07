@@ -20,7 +20,7 @@ div {margin-top: 10px;}
 	        	if ($accepted)
 	        		echo "<p>已接受</p> ";
 	        	else {
-	        		echo "<button id='accept_button' from_uid=".$from_uid." class='btn btn-default'>接受</button> ";
+	        		echo "<button from_uid=".$from_uid." class='accept_button btn btn-default'>接受</button> ";
 	        	}
 	        ?>
 	</div>
