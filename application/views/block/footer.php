@@ -12,7 +12,7 @@
    
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
 <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-<<<<<<< HEAD
+
 <!--
 =======
 
