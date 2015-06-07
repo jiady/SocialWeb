@@ -70,6 +70,11 @@ class Relation_model extends CI_model{
     	return $this->db->query($query)->result();
     }
 
+    function hasFriendRequest($id，$to_id) {
+        $query="SELECT * FROM friendrequest WHERE to_uid=".$this->db->escape($to_id)." AND from_uid=".$this->db->escape($id);
+        return $this->db->query($query)->num_rows()>0;
+    }
+
     function acceptFriendRequest($id, $from_id) {
     	$update="UPDATE friendrequest SET accepted=true WHERE from_uid=".$this->db->escape($from_id)." AND to_uid=".$this->db->escape($id);
     	$this->db->query($update);

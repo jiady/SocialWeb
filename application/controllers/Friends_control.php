@@ -80,6 +80,7 @@ class Friends_control extends CI_Controller {
 				$info_nonfriend['name']=$user_info['name'];
 				$info_nonfriend['profile']=$user_info['profile'];
 				$info_nonfriend['to_uid']=$row->uid;
+				$info_nonfriend['has_request']=$this->Relation_model->hasFriendRequest($id, $row->uid);
 				$this->load->view('main/non_friends',$info_nonfriend);
 			}
 		}
