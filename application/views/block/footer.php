@@ -33,7 +33,7 @@ $("#moveBlack_button").click(function() {
 $("#search_button").click(function() {
     var content=eval(document.getElementById("search_content")).value;
     var reason=eval(document.getElementById("search_reason")).value;
-    $.post(<?="\"".site_url('friends_control/search')."\""?>, {"search_content": content, "reason": reason}, function(data) {
+    $.post(<?="\"".site_url('friends_control/search')."\""?>, {"search_content": content, "search_reason": reason}, function(data) {
         if (data==0) {
             $("#status_tag").hide();
         }

@@ -60,6 +60,9 @@ class Friends_control extends CI_Controller {
 			echo "0";
 			return ;
 		}
+		if (empty($input["search_reason"])) {
+			$input["search_content"]="hello"
+		}
 		$result=$this->Userinfo_model->getID($input['search_content']);
 		if (count($result)==0)
 			echo "3";
