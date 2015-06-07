@@ -16,7 +16,7 @@
 
     <link href="<?=base_url()?>dist/css/home_act.min.css" rel="stylesheet">
     
-  <link rel="stylesheet" href=<?=base_url("/demo/main.css")?>>
+  
   <link rel="stylesheet" href=<?=base_url("/demo/js/highlight/highlight.css")?>>
     <!-- Custom styles for this template -->
 

@@ -1,5 +1,5 @@
 
-
+<link rel="stylesheet" href=<?=base_url("/demo/main.css")?>>
 	<div class="text-left col-md-12 wrapper">
 		<h1 class="text-left col-md-12 ">
 			发布新鲜事
