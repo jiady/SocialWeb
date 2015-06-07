@@ -1,6 +1,6 @@
 <style type="text/css">
 div {margin-top: 10px; padding:3px;}
-.non-friend.col-lg-10 {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(255,216,151);}
+.non-friend.col-lg-10 {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(255,245,227);}
 </style>
 <div class="non-friend row col-lg-10">
 	<div class="col-lg-8">
@@ -16,14 +16,23 @@ div {margin-top: 10px; padding:3px;}
 		    </div>
 		</div>
 	</div>
-	<div id="buttons" class="btn-group col-lg 2">
-		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-		    操作 <span class="caret"></span>
-		</button>
-	  	<ul class="dropdown-menu" role="menu" style="float:right">
-	    	<li><a href="#">操作</a></li>
-	    	<li class="divider"></li>
-	    	<li><a class="add_button" to_uid=<?=$to_uid?>>加为好友</a></li>
-	  	</ul>
-	</div>
+	<?php 
+		if ($has_request)
+			echo '
+				<div class="buttons btn-group col-lg 2">
+					<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+					    操作 <span class="caret"></span>
+					</button>
+				  	<ul class="dropdown-menu" role="menu" style="float:right">
+				    	<li><a href="#">操作</a></li>
+				    	<li class="divider"></li>
+				    	<li><a class="add_button" to_uid='.$to_uid.'>加为好友</a></li>
+				  	</ul>
+				</div>';
+		else
+			echo '
+				<div class="info btn-group col-lg 2">
+					<p>等待对方接受</p>
+				</div>';
+	?>
 </div>
