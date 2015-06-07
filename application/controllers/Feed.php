@@ -84,4 +84,19 @@ class Feed extends CI_Controller {
     	$this->output
     		 ->set_output(json_encode(array('cid'=>$b)));
 	}
+
+	function inner_comment_delete(){
+		$this->output
+    		 ->set_content_type('application/json');
+    	$cid=$this->input->post('cid');
+    	if(isset($cid)){
+    		$this->Feed_model->deleteComments($cid);
+    		$this->output
+    		 ->set_output(json_encode(array('ret'=>true)));
+    	}else{
+    		$this->output
+    		 ->set_output(json_encode(array('ret'=>false)));
+    	}
+
+    }
 }

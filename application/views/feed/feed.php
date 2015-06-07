@@ -69,11 +69,12 @@ function printk($url){
 		    	if(isset($comrow->to_name) && strlen($comrow->to_name)>0) 
 					$toname=$comrow->to_name;
 		    	?>
-				    <div class="media comment_area" touid=<?=$touid?> fid=<?=$row->fid?> toname= <?=$toname?> data-toggle="modal" data-target="#myModal">
+				    <div class="media comment_area" touid=<?=$touid?> fid=<?=$row->fid?> toname= <?=$toname?> fromuid=<?=$comrow->uid?>  cid=<?=$comrow->cid?>   data-toggle="modal" data-target="#myModal">
 					  <div class="media-left">
 					      <img class="media-object" src=<?=$comrow->commenter_url?> alt="head">
 					  </div>
 					  <div class="media-body">
+
 					  <?php if(isset($comrow->to_uid) && isset($comrow->to_name) && strlen($comrow->to_name)>0) :?>
 					  	<p><?=$comrow->commenter_name?> 回复 <?=$comrow->to_name?></p>
 					  <?php else:?>
@@ -111,6 +112,7 @@ function printk($url){
         <input type='text'   class='form-control' id="postx"  name="postx"  >
       </div>
       <div class="modal-footer">
+      	<button type="button" class="btn btn-default" data-dismiss="modal" id='delete_post'>删除该评论</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
         <button type="button" class="btn btn-primary" id="post_comment" data-dismiss="modal">发布</button>
       </div>
@@ -122,7 +124,7 @@ function printk($url){
 <script src=<?=base_url("/dist/qiniu.min.js")?>></script>
 <script src=<?=base_url("/dist/plupload-2.1.4/js/plupload.min.js")?>></script>
 <script type="text/javascript">
-
+	var myid='<?=$myinfo['uid']?>';
 	var myimg='<?=$myinfo['headimage']?>';
 </script>
 <?=var_dump($myinfo);?>
