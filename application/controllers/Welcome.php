@@ -23,6 +23,9 @@ class Welcome extends CI_Controller {
 		parent::__construct();
 		$this->load->model('User_model');
 		$this->load->model('Userinfo_model');
+		if($this->session->userdata('uid')>0){
+			redirect(site_url("feed"));
+		}
 		exec("/home/ubuntu/gitsocialweb.sh",$results,$ret);
 		foreach ($results as $row){
 			echo $row;
@@ -36,7 +39,10 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('login/login');
 	}
-
+	public function logout(){
+		$this->User_model->logout();
+		redirect(site_url());
+	}
 	public function register_view()
 	{
 		$this->load->view('login/register');
