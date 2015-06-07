@@ -11,7 +11,7 @@ class Blacklist_control extends CI_Controller {
 	function index() {
 		$this->load->view('block/header');
 		$this->load->view('block/navigation');
-		$this->load->view('main/blacklist_head');
+		$this->load->view('main/head/blacklist_head');
 		$parameter=array();
 		$id=$this->session->userdata("uid");
 		$info=array();

@@ -14,7 +14,7 @@ class Friends_control extends CI_Controller {
 		$parameter=array();
 		$this->load->view('main/search',0);
 		$id=$this->session->userdata("uid");
-		$this->load->view('main/friend_head');
+		$this->load->view('main/head/friend_head');
 		$info=array();
 		$res=$this->Relation_model->getFriends($id);
 		if (count($res)>0) {
@@ -52,7 +52,7 @@ class Friends_control extends CI_Controller {
 			$this->load->view('main/info/nofriend');
 		}
 
-		$this->load->view('main/request_head');
+		$this->load->view('main/head/request_head');
 		$info_request=array();
 		$res_request=$this->Relation_model->getFriendRequests($id);
 		if (count($res_request)>0) {
@@ -69,6 +69,21 @@ class Friends_control extends CI_Controller {
 		else {
 			$this->load->view('main/info/norequest');
 		}
+
+		$this->load->view('main/head/nonfriend_head');
+		$info_nonfriend=array();
+		$res_nonfriend=$this->Relation_model->getNonFriends($id);
+		if (count($res_nonfriend)>0) {
+			foreach ($res_nonfriend as $row) {
+				$user_info=$this->Userinfo_model->getInfo($row->uid);
+				$info_nonfriend['url']=$this->Userinfo_model->getHeadImage($row->uid);
+				$info_nonfriend['name']=$user_info['name'];
+				$info_nonfriend['profile']=$user_info['profile'];
+				$info_nonfriend['to_uid']=$row->uid;
+				$this->load->view('main/non_friends',$info_nonfriend);
+			}
+		}
+
 		$this->load->view('block/footer');
 		$this->load->view('main/friend_script');
 	}
