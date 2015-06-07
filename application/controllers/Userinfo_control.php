@@ -30,7 +30,7 @@ class Userinfo_control extends CI_Controller {
 		if (count($result_other)>0) {
 			foreach ($result_other as $row) {
 				$info_other['status']=0;
-				$info_other['content']=$row->tag;
+				$info_other['content']=$row->tag_name;
 				$this->load->view('main/tag_manage',$info_other);
 			}
 		}
