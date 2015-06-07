@@ -42,12 +42,15 @@ class Feed extends CI_Controller {
 	}
 
 	function feed_post(){
-
+		$this->load->view('block/header');
+		$data['activetag']="发布";
+		$this->load->view('block/navigation',$data);
+		
 		$this->load->view('upload/index');
-		//$this->load->view('block/header');
-		//$data['activetag']="发布";
-		//$this->load->view('block/navigation',$data);
-		//$this->load->view('block/footer');
+		
+		
+		
+		$this->load->view('block/footer');
 	}
 
 	function inner_post(){

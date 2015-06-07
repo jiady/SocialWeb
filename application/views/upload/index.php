@@ -1,30 +1,9 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>七牛云存储 - JavaScript SDK</title>
-	<link href="favicon.ico" rel="shortcut icon">
-	<link rel="stylesheet" href=<?=base_url("/demo/bootstrap/css/bootstrap.css")?>>
-	<link rel="stylesheet" href=<?=base_url("/demo/main.css")?>>
-	<link rel="stylesheet" href=<?=base_url("/demo/js/highlight/highlight.css")?>>
 
-	<!--[if lt IE 9]>
-      <script src="js/Respond-1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-<div class="container">
 
 	<div class="text-left col-md-12 wrapper">
 		<h1 class="text-left col-md-12 ">
-			七牛云存储 - JavaScript SDK
-            <a class="btn btn-default view_code" id="show_code">
-                查看初始化代码
-            </a>
-            <a class="btn btn-default view_github" href="https://github.com/qiniupd/qiniu-js-sdk" target="_blank">
-				<img src="http://qtestbucket.qiniudn.com/GitHub-Mark-32px.png">
-				View Source on Github
-			</a>
+			发布新鲜事
+            
 		</h1>
         <input type="hidden" id="domain" value="http://7u2p6a.com1.z0.glb.clouddn.com/">
         <input type="hidden" id="uptoken_url" value="http://xsjtu.com/index.php/callback/gettoken">
@@ -33,9 +12,9 @@
 
          
     </div>
-     <p id='print'>origin</p>  
+     <p id='print'>debug info</p>  
        
-    <div id="print">heihei</div>
+
     <div class="body">
         <div class="col-md-8">
             <div id="container">
@@ -228,7 +207,7 @@
         </div>
       </div>
     </div>
-</div>
+
 
 
 
@@ -241,5 +220,4 @@
 <script type="text/javascript" src=<?=base_url("/demo/js/qiniu.js")?>></script>
 <script type="text/javascript" src=<?=base_url("/demo/js/highlight/highlight.js")?>></script>
 <script type="text/javascript" src=<?=base_url("/demo/js/main.js")?>></script>
-</body>
-</html>
+
