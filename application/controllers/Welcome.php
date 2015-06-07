@@ -23,9 +23,9 @@ class Welcome extends CI_Controller {
 		parent::__construct();
 		$this->load->model('User_model');
 		$this->load->model('Userinfo_model');
-		if($this->session->userdata('uid')>0){
-			redirect(site_url("feed"));
-		}
+		//if($this->session->userdata('uid')>0){
+		//	redirect(site_url("feed"));
+		//}
 		exec("/home/ubuntu/gitsocialweb.sh",$results,$ret);
 		foreach ($results as $row){
 			echo $row;
