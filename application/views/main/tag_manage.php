@@ -8,7 +8,7 @@ div.tags {margin: 3px;}
 	</div>
 	<div class="tags row col-lg-6 pull-center colorful">
 		<div class="col-lg-3">
-			<p><?=$content?></p>
+			<p style="margin-top:1px; margin-bottom:1px"><?=$content?></p>
 		</div>
 		<div class="col-lg-3 pull-right">
 			<button style="margin-top:1px; margin-bottom:1px" <?php
