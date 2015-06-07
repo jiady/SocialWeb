@@ -29,7 +29,7 @@ div {margin-top: 10px;padding:3px;}
 	    				<li class="divider"></li>
 	    				<li><a class="accept_button" to_uid='.$to_uid.'>接受</a></li>
 	    				<li><a class="moveBlack_button" to_uid='.$to_uid.'>移入黑名单</a></li>
-	  				</ul>'
+	  				</ul>';
 	        	}
 	        ?>
 	</div>

@@ -11,7 +11,12 @@ div.tags {margin-top: 1px;}
 			<p><?=$content?></p>
 		</div>
 		<div class="col-lg-3 pull-right">
-			<button class="btn btn-success changeTag_button" content=<?=$content?> status=<?=$status?>> 
+			<button class=<?
+				if ($status==0)
+					echo "btn btn-success changeTag_button";
+				else
+					echo "btn btn-warning changeTag_button";
+			?> content=<?=$content?> status=<?=$status?>> 
 			<?php
 				if ($status=="0")
 					echo "添加";
