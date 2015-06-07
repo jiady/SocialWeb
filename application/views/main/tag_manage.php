@@ -11,7 +11,7 @@ div.tags {margin: 3px;}
 			<p><?=$content?></p>
 		</div>
 		<div class="col-lg-3 pull-right">
-			<button style="padding-top:1px; padding-bottom:1px" <?php
+			<button style="margin-top:1px; margin-bottom:1px" <?php
 				if ($status==0)
 					echo "class='btn btn-info changeTag_button'";
 				else
