@@ -1,9 +1,7 @@
 
 <script type="text/javascript" >
 $(document).ready(function() {
-    var self=$("#buttons").attr("self");
-    if (self=="true")
-        $("#buttons").hide();
+    $("div.buttons[self='true']").hide();
     });
 $(".accept_button").click(function() {
     console.log("function called");
@@ -56,8 +54,6 @@ $(".add_button").click(function() {
             $("#status_tag").fadeIn("fast");
             var tag=document.getElementById('status_tag');
             if (data==1) {
-                tag.setAttribute("class","alert alert-success");
-                tag.innerHTML="成功发送了好友请求！";
                 window.location.assign(<?="\"".site_url('friends_control')."\"" ?>);
             }
             else if (data==4) {

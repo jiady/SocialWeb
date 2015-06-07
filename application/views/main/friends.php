@@ -16,7 +16,7 @@ div {margin-top: 10px; padding:3px;}
 		    </div>
 		</div>
 	</div>
-	<div id="buttons" self=<?=$self?> class="btn-group col-lg-2">
+	<div self=<?=$self?> class="buttons btn-group col-lg-2">
 		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 		    操作 <span class="caret"></span>
 		</button>
