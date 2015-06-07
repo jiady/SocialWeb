@@ -11,7 +11,7 @@ div.tags {margin-top: 5px; padding:1px;border-style: solid; border-width: 1px; b
 		<?php
 			if ($status=="0")
 				echo "添加";
-			else ($status=="1")
+			else
 				echo "移除";
 		?></button>
 	</div>
