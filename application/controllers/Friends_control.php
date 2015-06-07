@@ -32,7 +32,7 @@ class Friends_control extends CI_Controller {
 			}
 		}
 		else {
-			echo "<h3>你还没有好友！</h3>";
+			$this->load->view('main/info/nofriend');
 		}
 
 		$this->load->view('main/request_head');
@@ -50,7 +50,7 @@ class Friends_control extends CI_Controller {
 			}
 		}
 		else {
-			echo "<h4>你还没有好友请求！</h4>";
+			$this->load->view('main/info/norequest');
 		}
 		$this->load->view('block/footer');
 		$this->load->view('main/friend_script');

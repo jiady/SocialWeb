@@ -27,7 +27,7 @@ class Blacklist_control extends CI_Controller {
 			}
 		}
 		else {
-			echo "<h3>你没有黑名单！</h3>";
+			$this->load->view('main/info/noblacklist');
 		}
 
 		$this->load->view('block/footer');
