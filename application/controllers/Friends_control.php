@@ -69,7 +69,7 @@ class Friends_control extends CI_Controller {
 			echo "1";
 			$this->Relation_model->sendFriendRequest($this->session->userdata("uid"), $result[0]->uid,$input['search_reason']);
 		}
-		redirect('/friends_control', 'refresh');
+		#redirect('/friends_control', 'refresh');
 	}
 
 	function accept() {
