@@ -1,8 +1,8 @@
 <style type="text/css">
-form {float:left; margin-top: 5px; margin-bottom: 5px;}
+form.sheet {float:left; margin-top: 5px; margin-bottom: 5px;}
 </style>
 
-	<form  method="post" action=<?=site_url('info_control/add')?> class='form-horizontal'>
+	<form  method="post" action=<?=site_url('info_control/add')?> class='sheet form-horizontal'>
 		<div class="col-lg-10">
 			<div class="input-group">
 				<span class="input-group-addon">
@@ -18,7 +18,7 @@ form {float:left; margin-top: 5px; margin-bottom: 5px;}
 		    <input type="hidden" class="form-control" name="part" value=<?=$part?> placeholder="Old name..."/>
 	    </div>
 	</form>
-	<form  method="post" action=<?=site_url('info_control/update')?> class='form-horizontal'>
+	<form  method="post" action=<?=site_url('info_control/update')?> class='sheet form-horizontal'>
 		<div class="row col-lg-10">
 			<div class="col-lg-6">
 				<div class="input-group">
@@ -41,7 +41,7 @@ form {float:left; margin-top: 5px; margin-bottom: 5px;}
 		    <input type="hidden" class="form-control" name="part" value=<?=$part?> placeholder="Old name..."/>
 	    </div>
 	</form>
-	<form method="post" action=<?=site_url('info_control/delete')?> class='form-horizontal'>
+	<form method="post" action=<?=site_url('info_control/delete')?> class='sheet form-horizontal'>
 		<div class="col-lg-10">
 			<div class="input-group">
 				<span class="input-group-addon">
@@ -61,7 +61,7 @@ form {float:left; margin-top: 5px; margin-bottom: 5px;}
 	<div class="col-lg-12">
 		<h3>标签管理</h3>
 	</div>
-	<form method="post" action=<?=site_url('info_control/addTag')?> class='form-horizontal'>
+	<form method="post" action=<?=site_url('info_control/addTag')?> class='sheet form-horizontal'>
 		<div class="col-lg-10">
 			<div class="input-group">
 				<span class="input-group-addon">

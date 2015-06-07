@@ -1,22 +1,22 @@
 <style type="text/css">
-div {margin-top: 10px;}
+div.line {margin-top: 10px;}
 </style>
 
 		<form  method="post" action=<?=site_url('userinfo_control/change')?> class='form-horizontal'>
-			<div class="col-lg-8">
+			<div class="col-lg-8 line">
 		    	<div class="input-group">
 		    		<span class="input-group-addon">
 						姓名
 					</span>
-				    <input type="text" class="form-control" name="profile" value=<?=$info["name"]?> />
+				    <input type="text" class="form-control" name="name" value=<?=$info["name"]?> />
 			    </div>
 			</div>
 
-			<div class="row col-lg-8">
+			<div class="row col-lg-8 line">
 				<div class="col-lg-6">
 					<div class="input-group">
 						<span class="input-group-addon">出生年份</span>
-				      	<input type="text" class="form-control" name="name" value=<?=$info["birthyear"]?> />
+				      	<input type="text" class="form-control" name="birthyear" value=<?=$info["birthyear"]?> />
 			    	</div>
 			    </div>
 			     
@@ -32,7 +32,7 @@ div {margin-top: 10px;}
 			    </div>
 			</div>
 			 
-			<div class="col-lg-8">
+			<div class="col-lg-8 line">
 		    	<div class="input-group">
 		    		<span class="input-group-addon">
 						个性签名
@@ -41,7 +41,7 @@ div {margin-top: 10px;}
 			    </div>
 			</div>
 			 
-			<div class="col-lg-8">
+			<div class="col-lg-8 line">
 			    <div class="input-group">
 		    		<span class="input-group-addon">
 						电子邮箱
@@ -50,7 +50,7 @@ div {margin-top: 10px;}
 			    </div>
 			</div>
 		     
-		    <div class="row col-lg-8">
+		    <div class="row col-lg-8 line">
 		    	<div class="col-lg-6">
 					<div class="input-group">
 						<span class="input-group-addon">
@@ -68,7 +68,7 @@ div {margin-top: 10px;}
 			    	</div>
 			    </div>
 			</div>
-		    <div class="col-lg-8">
+		    <div class="col-lg-8 line">
 			    <div class="input-group">
 		    		<span class="input-group-addon">
 						所在学校
@@ -77,7 +77,7 @@ div {margin-top: 10px;}
 			    </div>
 			</div>
 		     
-		    <div class="col-lg-8">
+		    <div class="col-lg-8 line">
 			    <div class="input-group">
 		    		<span class="input-group-addon">
 						所学专业
@@ -86,7 +86,7 @@ div {margin-top: 10px;}
 			    </div>
 			</div>
 		     
-		    <div class="col-lg-8">
+		    <div class="col-lg-8 line">
 			    <div class="input-group">
 		    		<span class="input-group-addon">
 						所在城市
@@ -95,7 +95,7 @@ div {margin-top: 10px;}
 			    </div>
 			</div>
 		     
-		    <div class="col-lg-8">
+		    <div class="col-lg-8 line">
 		    	<button type="submit" class="btn btn-default pull-right" style="margin-top:30px; float:right;">提交</button>
 		    </div>
 		</form>

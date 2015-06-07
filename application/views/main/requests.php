@@ -1,6 +1,5 @@
 <style type="text/css">
-div {margin-top: 10px;padding:3px;}
-.request.col-lg-10 {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(221,254,255);}
+.request.col-lg-10 {margin-top: 10px;padding:3px; border-style: solid; border-width: 1px; border-color:black;background-color: rgb(221,254,255);}
 </style>
 
 <div class="request row col-lg-10">
@@ -27,8 +26,8 @@ div {margin-top: 10px;padding:3px;}
 	  				<ul class="dropdown-menu" role="menu" style="float:right">
 	    				<li><a href="#">操作</a></li>
 	    				<li class="divider"></li>
-	    				<li><a class="accept_button" to_uid='.$to_uid.'>接受</a></li>
-	    				<li><a class="moveBlack_button" to_uid='.$to_uid.'>移入黑名单</a></li>
+	    				<li><a class="accept_button" from_uid='.$from_uid.'>接受</a></li>
+	    				<li><a class="moveBlack_button" to_uid='.$from_uid.'>移入黑名单</a></li>
 	  				</ul>';
 	        	}
 	        ?>
