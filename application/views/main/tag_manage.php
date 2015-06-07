@@ -11,7 +11,7 @@ div.tags {margin-top: 1px;}
 			<p><?=$content?></p>
 		</div>
 		<div class="col-lg-3 pull-right">
-			<button class=<?
+			<button class=<?php
 				if ($status==0)
 					echo "btn btn-success changeTag_button";
 				else
