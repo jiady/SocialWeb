@@ -23,6 +23,9 @@ class Feed extends CI_Controller {
 		parent::__construct();
 		$this->load->model('User_model');
 		$this->load->model('Feed_model');
+		if(!$this->session->userdata('uid')){
+			redirect(site_url());
+		}
 		
 	}
 
