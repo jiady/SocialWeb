@@ -1,6 +1,6 @@
 <style type="text/css">
 div {margin-top: 10px; padding:3px;}
-.non-friend.col-lg-10 {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(255,245,227);}
+.non-friend.col-lg-10 {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(253,241,206);}
 </style>
 <div class="non-friend row col-lg-10">
 	<div class="col-lg-8">
@@ -17,7 +17,7 @@ div {margin-top: 10px; padding:3px;}
 		</div>
 	</div>
 	<?php 
-		if ($has_request)
+		if ($has_request==0)
 			echo '
 				<div class="buttons btn-group col-lg 2">
 					<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
