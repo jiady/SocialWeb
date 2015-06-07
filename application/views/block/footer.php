@@ -12,8 +12,6 @@
    
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
 <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-<<<<<<< HEAD
-=======
 
 <!--
 =======
@@ -64,7 +62,6 @@ $("#search_button").click(function() {
 </script>
   footer 是全局的，不要改，会导致报错，写一个php,里面放js脚本，在load footer 之后再load!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 -->
->>>>>>> origin/master
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src=<?=base_url("dist/js/bootstrap-typeahead.js")?>></script>
