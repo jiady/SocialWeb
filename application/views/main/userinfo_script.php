@@ -3,8 +3,8 @@ $("div.colorful").each(function(index, element) {
 	var r=getRandomNum(0, 255);
 	var g=getRandomNum(0, 255);
 	var b=getRandomNum(0, 255);
-	var start="rgb(";
-	$(this).setAttribute("background-color",start.concat(r,",",g,",",b")");
+	var value="rgb(".concat(r,",",g,",",b")";
+	$(this).setAttribute("background-color",value);
 });
 $(".changeTag_button").click(function() {
     $.post(<?="\"".site_url('userinfo_control/changeTag')."\""?>, {"tag": $(this).attr("content"), "status": $(this).attr("status")}, function() {
