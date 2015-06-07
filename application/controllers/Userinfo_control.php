@@ -24,7 +24,7 @@ class Userinfo_control extends CI_Controller {
 			}
 		}
 
-		$this->load->view('main/head/tag_not_head');
+		$this->load->view('main/head/tagNot_head');
 		$result_other=$this->Userinfo_model->getOtherTags($id);
 		$info_other=array();
 		if (count($result_other)>0) {
