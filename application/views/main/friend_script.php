@@ -27,10 +27,10 @@ $("#search_button").click(function() {
     var reason=eval(document.getElementById("search_reason")).value;
     $.post(<?="\"".site_url('friends_control/search')."\""?>, {"search_content": content, "search_reason": reason}, function(data) {
             if (data==0) {
-                $("#status_tag").hide("fast");
+                $("#status_tag").fadeOut("fast");
             }
             else {
-                $("#status_tag").show("fast");
+                $("#status_tag").fadeIn("fast");
                 var tag=document.getElementById('status_tag');
                 if (data==1) {
                     tag.setAttribute("class","alert alert-success");
