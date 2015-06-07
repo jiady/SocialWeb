@@ -1,0 +1,5 @@
+body{
+	background-image:url("http://bcs.duapp.com/lovetransfer/pic%2Fback.png");
+	background-repeat: repeat-y, repeat;
+	background-position: 0 0, 0 50%;
+}

@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href=<?=base_url("dist/css/background.css")?> >
 
 <div class='col-md-12 col-lg-12'>
 <?php
@@ -129,4 +129,4 @@ function printk($url){
 	var myid='<?=$myinfo['uid']?>';
 	var myimg='<?=$myinfo['headimage']?>';
 </script>
-<?=var_dump($myinfo);?>
+
