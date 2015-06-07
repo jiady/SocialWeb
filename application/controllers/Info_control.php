@@ -15,7 +15,17 @@ class Info_control extends CI_Controller {
 		$this->load->view('main/info_manage',$data);
 		$data['part']='专业';
 		$this->load->view('main/info_manage',$data);
+
+		$result=$this->Info_model->getTags();
+		if (count($result)>0) {
+			foreach ($result as $row) {
+				$info['status']=1;
+				$info['content']=$row->tag_name;
+				$this->load->view('main/tag_manage',$info);
+			}
+		}
 		$this->load->view('block/footer');
+		$this->load->view('main/info_script');
 	}
 
 	public function add() {
@@ -64,5 +74,19 @@ class Info_control extends CI_Controller {
 			if (true!=$this->Info_model->deleteMajor($input['name_delete']))
 				echo "Something wrong happened!";
 		}
+	}
+
+	function addTag() {
+		$input=$this->input->post();
+		if (true==$this->Info_model->addTag($input['name_tag']))
+			redirect('/info_control', 'refresh');
+	}
+
+	function deleteTag() {
+		$input=$_POST['tag'];
+		if (true==$this->Info_model->deleteTag($input['tag']))
+			echo "0";
+		else
+			echo "1";
 	}
 }

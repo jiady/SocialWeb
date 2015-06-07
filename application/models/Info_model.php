@@ -136,4 +136,9 @@ class Info_model extends CI_model{
             return true;
         return false;
     }
+
+    function getTags() {
+        $query="SELECT tag_name FROM tag";
+        return $result=$this->db->query($query)->result();
+    }
 }
