@@ -16,6 +16,7 @@ class People extends CI_Controller {
 		$info['headimage']=$this->Userinfo_model->getHeadImage($id);
 		$myid=$this->session->userdata('uid');
 		$info['isFriend']=$this->Relation_model->checkFriends($myid,$id);
+		$info['isFriendRequest']=$this->Relation_model->checkFriendsRequest($myid,$id);
 		$this->load->view('block/header');
 		$this->load->view('block/navigation');
 		$this->load->view('people/people',$info);

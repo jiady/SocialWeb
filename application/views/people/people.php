@@ -13,11 +13,13 @@
         <p><?="专业：".$info['major']?></p>
         <p><?="城市：".$info['city']?></p>
         <p><?="签名：".$info['profile']?></p>
-        <?php if($isFriend): ?>
+        <?php if(!$isFriend && !$isFriendRequest): ?>
         <p class="text-right"><a href="#" class="btn btn-danger " id='add' role="button">Add<span class="badge">+</span></a> </p>
         <p class="text-right" style="display: none"  id='added'><a href="#" class="btn btn-default disabled " role="button">已经发出请求</a> </p>
-    	<?php else :?>
+        <?php elseif($isFriend) :?>
     	<p class="text-right"><a href="#" class="btn btn-default disabled"  role="button">已经是好友了</a> </p>	
+    	<?php elseif(!$isFriend && $isFriendRequest) :?>
+    	<p class="text-right" style="display: none"  ><a href="#" class="btn btn-default disabled " role="button">已经发出请求</a> </p>
     	<?php endif;?>
       </div>
     </div>
