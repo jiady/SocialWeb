@@ -20,7 +20,7 @@ div.line {margin-top: 10px;}
 			    	</div>
 			    </div>
 			     
-			    <div class="col-lg-5 pull-right">
+			    <div class="col-lg-5">
 			    	<div class="input-group">
 						<span class="input-group-addon">性别</span>
 						<input class="form-control typeahead" type="text" name="gender" value=<?php
@@ -60,7 +60,7 @@ div.line {margin-top: 10px;}
 			    	</div>
 			    </div>
 			   	<div class="col-lg-5">
-			    	<div class="input-group pull-right">
+			    	<div class="input-group">
 						<span class="input-group-addon">
 							入学年份
 						</span>
