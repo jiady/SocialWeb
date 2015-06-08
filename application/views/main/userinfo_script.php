@@ -1,4 +1,7 @@
 <script>
+var to_delete;
+var to_add;
+var add=0;
 $("div.colorful").each(function(index, element) {
 	var r=Math.round(Math.random()*96)+160;
 	var g=Math.round(Math.random()*96)+160;
@@ -8,7 +11,20 @@ $("div.colorful").each(function(index, element) {
 });
 $(".changeTag_button").click(function() {
     $.post(<?="\"".site_url('userinfo_control/changeTag')."\""?>, {"tag": $(this).attr("content"), "status": $(this).attr("status")}, function() {
-            window.location.assign(<?="\"".site_url('userinfo_control')."\"" ?>);
+            console.log("succeed");
+            add=$(this).attr("status");
+            if (add==0) {
+            	to_delete=$(this).parent().parent().parent();
+            	to_delete.hide("fast");
+            	to_add=to_delete.html();
+            	$("#current-tag").after(to_add);
+            }
+            else {
+            	to_delete=$(this).parent().parent().parent();
+            	to_delete.hide("fast");
+            	to_add=to_delete.html();
+            	$("#current-not-tag").after(to_add);
+            }
         });
 });
 </script>
