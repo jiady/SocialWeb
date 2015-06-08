@@ -6,7 +6,7 @@ div.tags {margin: 3px;}
 	<div class="col-lg-2">
 		<p> </p>
 	</div>
-	<div class="tags row col-lg-6 pull-center colorful">
+	<div class="tags row col-lg-6 pull-center colorful well">
 		<div class="col-lg-3">
 			<p style="margin-top:2px; margin-bottom:2px"><?=$content?></p>
 		</div>

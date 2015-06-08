@@ -1,8 +1,8 @@
 <style type="text/css">
-.request.col-lg-10 {margin-top: 10px;padding:3px; border-style: solid; border-width: 1px; border-color:black;background-color: rgb(221,254,255);}
+.request.col-lg-10 {background-color: rgb(221,254,255);}
 </style>
 
-<div class="request row col-lg-10">
+<div class="request well row col-lg-10">
 	<div class="media col-lg-8">
 	    <div class="media-left">
 	        <a href="#">
