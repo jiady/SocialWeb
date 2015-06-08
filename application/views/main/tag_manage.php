@@ -1,31 +1,16 @@
-<style type="text/css">
-div.tags {margin: 3px;}
-</style>
-
-<div class="row col-lg-10">
-	<div class="col-lg-2">
-		<p> </p>
+	<div class="col-lg-12">
+		<h3>标签管理</h3>
 	</div>
-	<div class="tags row col-lg-6 pull-center colorful">
-		<div class="col-lg-3">
-			<p style="margin-top:1px; margin-bottom:1px"><?=$content?></p>
-		</div>
-		<div class="col-lg-3 pull-right">
-			<button style="margin-top:1px; margin-bottom:1px" <?php
-				if ($status==0)
-					echo "class='btn btn-info changeTag_button'";
-				else
-					echo "class='btn btn-warning changeTag_button'";
-			?> content=<?=$content?> status=<?=$status?>> 
-			<?php
-				if ($status=="0")
-					echo "添加";
-				else
-					echo "移除";
-			?></button>
-		</div>
-	</div>
-	<div class="col-lg-2">
-		<p> </p>
-	</div>
-</div>
+	<form method="post" action=<?=site_url('info_control/addTag')?> class='sheet form-horizontal'>
+		<div class="col-lg-10">
+			<div class="input-group">
+				<span class="input-group-addon">
+					标签：
+				</span>
+		      	<input type="text" class="form-control" name="name_tag" placeholder="Name..."/>
+		      	<span class="input-group-btn">
+		        	<button class="btn btn-default" type="submit">添加</button>
+	     		</span>
+	    	</div>
+	    </div>
+	</form>

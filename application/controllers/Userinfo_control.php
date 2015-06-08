@@ -21,7 +21,7 @@ class Userinfo_control extends CI_Controller {
 			foreach ($result as $row) {
 				$info['status']=1;
 				$info['content']=$row->tag;
-				$this->load->view('main/tag_manage',$info);
+				$this->load->view('main/tag',$info);
 			}
 		}
 

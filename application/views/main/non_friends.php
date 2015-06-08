@@ -1,6 +1,5 @@
 <style type="text/css">
-div {margin-top: 10px; padding:3px;}
-.non-friend.col-lg-10 {border-style: solid; border-width: 1px; border-color:black;background-color: rgb(253,241,206);}
+.non-friend.col-lg-10 {margin-top: 10px; padding:3px; border-style: solid; border-width: 1px; border-color:black;background-color: rgb(253,241,206);}
 </style>
 <div class="non-friend row col-lg-10">
 	<div class="col-lg-8">

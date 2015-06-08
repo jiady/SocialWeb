@@ -16,12 +16,13 @@ class Info_control extends CI_Controller {
 		$data['part']='专业';
 		$this->load->view('main/info_manage',$data);
 
+		$this->load->view('main/tag_manage');
 		$result=$this->Info_model->getTags();
 		if (count($result)>0) {
 			foreach ($result as $row) {
 				$info['status']=1;
 				$info['content']=$row->tag_name;
-				$this->load->view('main/tag_manage',$info);
+				$this->load->view('main/tag',$info);
 			}
 		}
 		$this->load->view('block/footer');
