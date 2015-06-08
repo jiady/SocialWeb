@@ -32,7 +32,7 @@ class Userinfo_control extends CI_Controller {
 			foreach ($result_other as $row) {
 				$info_other['status']=0;
 				$info_other['content']=$row->tag_name;
-				$this->load->view('main/tag_manage',$info_other);
+				$this->load->view('main/tag',$info_other);
 			}
 		}
 
