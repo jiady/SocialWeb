@@ -31,7 +31,7 @@ form.sheet {float:left; margin-top: 5px; margin-bottom: 5px;}
 			      	<input type="text" class="form-control" name="name_old" placeholder="Old name..."/>
 		    	</div>
 		    </div>
-	    	<div class="col-lg-6">
+	    	<div class="col-lg-6 pull-right">
 				<div class="input-group">
 			      	<input type="text" class="form-control" name="name_new" placeholder="New name..."/>
 			      	<span class="input-group-btn">
