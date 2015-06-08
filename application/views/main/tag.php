@@ -1,17 +1,13 @@
-<style type="text/css">
-div.tags {margin: 3px;}
-</style>
-
 <div class="row col-lg-10">
 	<div class="col-lg-2">
 		<p> </p>
 	</div>
 	<div class="tags row col-lg-6 pull-center colorful well">
 		<div class="col-lg-3">
-			<p style="margin-top:2px; margin-bottom:2px"><?=$content?></p>
+			<p><?=$content?></p>
 		</div>
 		<div class="col-lg-3 pull-right">
-			<button style="margin-top:2px; margin-bottom:2px" <?php
+			<button <?php
 				if ($status==0)
 					echo "class='btn btn-info changeTag_button'";
 				else
