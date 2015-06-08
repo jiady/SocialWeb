@@ -1,11 +1,11 @@
 <style type="text/css">
-.blacklist.col-lg-10 {margin-top: 10px; padding:3px; border-style: solid; border-width: 1px; border-color:black;background-color: rgb(255,206,206);}
+.blacklist.col-lg-10 {background-color: rgb(255,206,206);}
 </style>
-<div class="blacklist row col-lg-10">
+<div class="blacklist row well col-lg-10">
 	<div class="col-lg-8">
 		<div class="media">
 		    <div class="media-left">
-		        <a href="#">
+		        <a href=<?=site_url('people/index/'.$to_uid)?>>
 		          <img class="media-object" src=<?=$url?> alt="HeadImage">
 		        </a>
 		    </div>
@@ -22,6 +22,7 @@
 	  	<ul class="dropdown-menu" role="menu">
 	    	<li><a href="#">操作</a></li>
 	    	<li class="divider"></li>
+	    	<li><a href=<?=site_url('people/index/'.$to_uid)?>>查看详细资料</a></li>
 	    	<li><a class="moveOutBlack_button" to_uid=<?=$to_uid?>>移出黑名单</a></li>
 	  	</ul>
 	</div>

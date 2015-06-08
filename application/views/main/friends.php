@@ -1,11 +1,11 @@
 <style type="text/css">
-.friend.col-lg-10 {margin-top: 10px; padding:3px; border-style: solid; border-width: 1px; border-color:black;background-color: rgb(203,254,192);}
+.friend.col-lg-10 {background-color: rgb(203,254,192);}
 </style>
-<div class="friend row col-lg-10">
+<div class="friend row well col-lg-10">
 	<div class="col-lg-8">
 		<div class="media">
 		    <div class="media-left">
-		        <a href="#">
+		        <a href=<?=site_url('people/index/'.$to_uid)?>>
 		          <img class="media-object" src=<?=$url?> alt="HeadImage">
 		        </a>
 		    </div>
@@ -23,6 +23,7 @@
 	    	<li><a href="#">操作</a></li>
 	    	<li class="divider"></li>
 	    	<li><a class="send" to_uid=<?=$to_uid?>>发消息</a></li>
+	    	<li><a href=<?=site_url('people/index/'.$to_uid)?>>查看详细资料</a></li>
 	    	<li><a class="delete_button" to_uid=<?=$to_uid?>>删除好友</a></li>
 	    	<li><a class="moveBlack_button" to_uid=<?=$to_uid?>>移入黑名单</a></li>
 	  	</ul>

@@ -5,7 +5,7 @@
 <div class="request well row col-lg-10">
 	<div class="media col-lg-8">
 	    <div class="media-left">
-	        <a href="#">
+	        <a href=<?=site_url('people/index/'.$to_uid)?>>
 	          <img class="media-object" src=<?=$url?> alt="HeadImage">
 	        </a>
 	    </div>
@@ -26,6 +26,7 @@
 	  				<ul class="dropdown-menu" role="menu" style="float:right">
 	    				<li><a href="#">操作</a></li>
 	    				<li class="divider"></li>
+	    				<li><a href='.site_url('people/index/'.$to_uid).'>查看详细资料</a></li>
 	    				<li><a class="accept_button" from_uid='.$from_uid.'>接受</a></li>
 	    				<li><a class="moveBlack_button" to_uid='.$from_uid.'>移入黑名单</a></li>
 	  				</ul>';
