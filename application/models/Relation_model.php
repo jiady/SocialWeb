@@ -42,6 +42,19 @@ class Relation_model extends CI_model{
         return $this->db->query($query)->result();
     }
 
+    function checkFriends($from_uid,$to_uid){
+        $check=array();
+        $check['from_uid']=$from_uid;
+        $check['to_uid']=$to_uid;
+        $this->db->where($check);
+        $query=$this->db->get('friend');
+        if($query->num_rows()>0)
+            return true;
+        else 
+            return false;
+
+    }
+
     function deleteFriend($id, $delete_id) {
     	$delete="DELETE FROM friend WHERE from_uid=".$this->db->escape($id)." AND to_uid=".$this->db->escape($delete_id);
     	$this->db->query($delete);

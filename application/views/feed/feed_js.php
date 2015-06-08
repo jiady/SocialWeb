@@ -14,8 +14,8 @@ $(".comment").click(function(){
 	fid=$(this).attr('fid');
 	$("#postx").removeAttr('placeholder');
 	$("#postx").attr('placeholder',"回复");
-	
 });
+
 $(".comment_area").click(function(){
 	console.log('to_name');
 	to_delete=$(this);
@@ -35,6 +35,7 @@ $(".comment_area").click(function(){
 	$("#postx").removeAttr('placeholder');
 	$("#postx").attr('placeholder',"@"+to_name);
 });
+
 $("#delete_post").click(function(){
 	to_delete.hide();
 	var postobject={};
@@ -50,6 +51,7 @@ $("#delete_post").click(function(){
              }
         },"json");
 });
+
 $(".feed_delete").click(function(){
 	var fid_to_delete=$(this).attr('fid');
 	$("#feed"+fid_to_delete).hide();

@@ -64,7 +64,10 @@ class Userinfo_model extends CI_model{
 
     function getHeadImage($id) {
         $query="SELECT url FROM usergallery WHERE uid=".$this->db->escape($id)." AND seq=(SELECT MIN(seq) FROM usergallery WHERE uid=".$this->db->escape($id).")";
-        return $this->db->query($query)->row()->url;
+        if($this->db->query($query)->num_rows()>0)
+            return $this->db->query($query)->row()->url;
+        else
+            return 'http://7u2p6a.com1.z0.glb.clouddn.com/headimage.jpg';
     }
 
     function addTag($id,$tag_name) {

@@ -48,8 +48,19 @@ class User_model extends CI_model{
         $image_url=$url_base.($ins['uid']%9+1).$postfix;
         $ins['url']=$image_url;
         $this->db->insert('usergallery',$ins);
-        return $this->login($email,$password);
         
+        if($this->login($email,$password)){
+            $id=$this->session->userdata('uid');
+            $this->addmyself($id);
+        }
+        return true;
+    }
+
+    function addmyself($id){
+        $insert=array();
+        $insert['from_uid']=$id;
+        $insert['to_uid']=$id;
+        $this->db->insert('friend',$insert);
     }
     
 
