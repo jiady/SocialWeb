@@ -19,7 +19,7 @@
 		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 		    操作 <span class="caret"></span>
 		</button>
-	  	<ul class="dropdown-menu" role="menu" style="float:right">
+	  	<ul class="dropdown-menu" role="menu">
 	    	<li><a href="#">操作</a></li>
 	    	<li class="divider"></li>
 	    	<li><a class="send" to_uid=<?=$to_uid?>>发消息</a></li>
