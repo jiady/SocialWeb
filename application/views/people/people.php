@@ -19,7 +19,7 @@
         <?php elseif($isFriend) :?>
     	<p class="text-right"><a href="#" class="btn btn-default disabled"  role="button">已经是好友了</a> </p>	
     	<?php elseif(!$isFriend && $isFriendRequest) :?>
-    	<p class="text-right" style="display: none"  ><a href="#" class="btn btn-default disabled " role="button">已经发出请求</a> </p>
+    	<p class="text-right"  ><a href="#" class="btn btn-default disabled " role="button">已经发出请求</a> </p>
     	<?php endif;?>
       </div>
     </div>
