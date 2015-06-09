@@ -1,4 +1,4 @@
-<div class="row col-lg-10">
+<div class="row col-lg-10" <?="id=".$content?>>
 	<div class="col-lg-2">
 		<p> </p>
 	</div>

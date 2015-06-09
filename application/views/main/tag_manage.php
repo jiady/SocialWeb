@@ -1,7 +1,7 @@
 	<div class="col-lg-12">
 		<h3>标签管理</h3>
 	</div>
-	<form method="post" action=<?=site_url('info_control/addTag')?> class='sheet form-horizontal'>
+	<form id="tag_management" method="post" action=<?=site_url('info_control/addTag')?> class='sheet form-horizontal'>
 		<div class="col-lg-10">
 			<div class="input-group">
 				<span class="input-group-addon">

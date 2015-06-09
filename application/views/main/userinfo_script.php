@@ -14,9 +14,9 @@ $(".changeTag_button").click(function() {
             console.log("succeed");
             add=$(this).attr("status");
             if (add==0) {
-            	to_delete=$(this).parent().parent().parent();
-            	to_delete.hide("fast");
-            	to_add=to_delete.html();
+            	to_delete=$("#"+$(this).attr("content")));
+            	to_delete.hide();
+            	to_add='<div class="row col-lg-10" id='+$(this).attr("content")+'>'+to_delete.html()+'</div>';
             	$("#current-tag").after(to_add);
             }
             else {
