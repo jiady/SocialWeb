@@ -7,7 +7,7 @@ $(".changeTag_button").click(function() {
 });
 $("#submit_tag").click(function() {
 	var content=$("#tag_name_input").val();
-	var to_add='<div class="row col-lg-10" id=\"'+content+'\"" >';
+	var to_add='<div class="row col-lg-10" id=\"'+content+'\" >';
 	to_add+='<div class="col-lg-2">';
 	to_add+='<p> </p>';
 	to_add+='</div>';
@@ -16,7 +16,7 @@ $("#submit_tag").click(function() {
 	to_add+='<p>'+content+'</p>';
 	to_add+='</div>';
 	to_add+='<div class="col-lg-3 pull-right">';
-	to_add+='<button class="btn btn-warning changeTag_button" content=\"'+content+'\"" status="1" >移除</button>';
+	to_add+='<button class="btn btn-warning changeTag_button" content=\"'+content+'\" status="1" >移除</button>';
 	to_add+='</div>';
 	to_add+='</div>';
 	to_add+='<div class="col-lg-2">';
