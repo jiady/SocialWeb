@@ -27,11 +27,11 @@ $(".submit_tag").click(function() {
 				<p> </p>
 			</div>
 		</div>';
-        $("#rag_management").before(to_add);
-    }
+    $("#rag_management").after(to_add);
     $.post(<?="\"".site_url('userinfo_control/addTag')."\""?>, {"tag": $(this).attr("content")}, function(data) {
             console.log("succeed");
         });
+}
 $("div.colorful").each(function(index, element) {
 	var r=Math.round(Math.random()*96)+160;
 	var g=Math.round(Math.random()*96)+160;
