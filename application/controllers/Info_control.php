@@ -78,14 +78,14 @@ class Info_control extends CI_Controller {
 	}
 
 	function addTag() {
-		$input=$this->input->post();
-		if (true==$this->Info_model->addTag($input['name_tag']))
-			redirect('/info_control', 'refresh');
+		$input=$_POST['tag'];
+		if (true==$this->Info_model->addTag($input))
+			echo "1";
 	}
 
 	function deleteTag() {
 		$input=$_POST['tag'];
-		if (true==$this->Info_model->deleteTag($input['tag']))
+		if (true==$this->Info_model->deleteTag($input))
 			echo "0";
 		else
 			echo "1";
