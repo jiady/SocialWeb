@@ -13,7 +13,7 @@ $(".submit_tag").click(function() {
     $.post(<?="\"".site_url('userinfo_control/addTag')."\""?>, {"tag": $(this).attr("content")}, function(data) {
             console.log("succeed");
         });
-}
+	});
 $("div.colorful").each(function(index, element) {
 	var r=Math.round(Math.random()*96)+160;
 	var g=Math.round(Math.random()*96)+160;
