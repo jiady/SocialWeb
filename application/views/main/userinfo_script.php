@@ -25,7 +25,7 @@ $(document).on("click", ".changeTag_button", function() {
         var g=Math.round(Math.random()*96)+160;
         var b=Math.round(Math.random()*96)+160;
         var value="background-color: rgb("+r+","+g+","+b+")";
-        added.attr("style",value);
+        added.find("colorful").attr("style",value);
     }
     else {
         $("#current-not-tag").after(to_add);
