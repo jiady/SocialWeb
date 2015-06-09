@@ -4,6 +4,7 @@ class Relation_model extends CI_model{
 	function __construct()
     {
         parent::__construct();
+        $this->load->model('Userinfo_model');
     }
 
     function addBlackList($id, $blackid) {
@@ -36,6 +37,16 @@ class Relation_model extends CI_model{
     	$query="SELECT to_uid FROM friend WHERE from_uid=".$this->db->escape($id);
     	return $this->db->query($query)->result();
     }
+
+    function getSecondaryFriends($id){
+    	$id=$this->db->escape($id);
+    	$query="SELECT * FROM user WHERE uid IN (SELECT distinct f2.to_uid FROM friend f1,friend f2 Where f1.from_uid=".$id." AND f1.to_uid=f2.from_uid AND f2.to_uid NOT IN (SELECT to_uid FROM friend WHERE  from_uid=".$id.") )";
+    	$result=$this->db->query($query)->result_array();
+    	for ($i=0;$i<sizeof($result);$i++){
+    		$result[$i]['headimage']=$this->Userinfo_model->getHeadImage($result[$i]['uid']);
+    	}
+    	return $result;
+    }	
 
     function getNonFriends($id, $limit=20) {
         $query="SELECT uid FROM user WHERE uid NOT IN (SELECT to_uid FROM friend WHERE from_uid=".$this->db->escape($id).") LIMIT ".$this->db->escape($limit);

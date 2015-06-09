@@ -34,5 +34,16 @@ class People extends CI_Controller {
 		 ->set_output(json_encode($ret));
 	}
 
+	function secondary(){
+		$myid=$this->session->userdata('uid');
+		$data['friends']=$this->Relation_model->getSecondaryFriends($myid);
+		$this->load->view('block/header');
+		$ac=array();
+		$ac['activetag']='二度人脉';
+		$this->load->view('block/navigation',$ac);
+		$this->load->view('people/secondary',$data);
+		$this->load->view('block/footer');
+		$this->load->view('people/secondary_js');
+	}
 
 }
