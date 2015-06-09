@@ -8,8 +8,8 @@ $(".changeTag_button").click(function() {
 $("#submit_tag").click(function() {
 	var content=$("#tag_name_input").attr("value");
 	console.log(content);
-	var to_add='
-		<div class="row col-lg-10" id='+content+' >
+	var to_add=
+		'<div class="row col-lg-10" id='+content+' >
 			<div class="col-lg-2">
 				<p> </p>
 			</div>
