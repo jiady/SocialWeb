@@ -8,8 +8,7 @@ $(".changeTag_button").click(function() {
 $(".submit_tag").click(function() {
 	var content=$("#tag_name_input").val();
 	console.log(content);
-	var to_add='
-		<div class="row col-lg-10" <?="id='".$content."'"?> >
+	var to_add='<div class="row col-lg-10" id='+content+' >
 			<div class="col-lg-2">
 				<p> </p>
 			</div>
@@ -18,7 +17,7 @@ $(".submit_tag").click(function() {
 					<p><?=$content?></p>
 				</div>
 				<div class="col-lg-3 pull-right">
-					<button class=\'btn btn-warning changeTag_button\' content='+' status="1" > 
+					<button class=\'btn btn-warning changeTag_button\' content='+content+' status="1" > 
 						"移除";
 					</button>
 				</div>
