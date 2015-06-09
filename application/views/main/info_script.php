@@ -4,6 +4,7 @@ $(".changeTag_button").click(function() {
 	to_delete.remove();
     $.post(<?="\"".site_url('info_control/deleteTag')."\""?>, {"tag": $(this).attr("content"), "status": $(this).attr("status")}, function(data) {
     		console.log("succeed");
+    	};
 });
 $("#submit_tag").click(function() {
 	var content=$("#tag_name_input").val();
