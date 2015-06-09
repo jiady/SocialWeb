@@ -39,7 +39,6 @@ $(".changeTag_button").live("click", function() {
         var value="background-color: rgb("+r+","+g+","+b+")";
         added.attr("style",value);
     }
-    }
     to_delete.remove();
     $.post(<?="\"".site_url('userinfo_control/changeTag')."\""?>, {"tag": $(this).attr("content"), "status": $(this).attr("status")}, function(data) {
             console.log("succeed");
