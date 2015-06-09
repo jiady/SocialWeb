@@ -107,6 +107,7 @@ $(function() {
         $('#container').addClass('draging');
         e.stopPropagation();
     });
+    $('.myclass').addClass('fadeInRight');
 
     $('#post_button').on('click',function(){
         var feed_content=$('#feed_content').val();

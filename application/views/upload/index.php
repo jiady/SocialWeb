@@ -1,7 +1,7 @@
 
 <link rel="stylesheet" href=<?=base_url("/demo/main.css")?>>
 	<div class="text-left col-md-12 wrapper">
-		<h1 class="text-left col-md-12 ">
+		<h1 class="text-left col-md-12 myclass animated">
 			发布新鲜事
             
 		</h1>
@@ -12,11 +12,11 @@
 
          
     </div>
-     <p id='print'>debug info</p>  
+    <p id='print'></p>  
        
 
     <div class="body">
-        <div class="col-md-8">
+        <div class="col-md-8 " >
             <div id="container">
                
                 <div class="input-group input-group-lg">
@@ -26,7 +26,7 @@
                   </span>
                 </div><!-- /input-group -->
                 </br>
-                <a class="btn btn-default btn-lg " id="pickfiles" href="#" >
+                <a class="btn btn-default btn-lg myclass animated" id="pickfiles" href="#" >
                     <i class="glyphicon glyphicon-plus"></i>
                     <sapn>选择图片</sapn>
                 </a>
