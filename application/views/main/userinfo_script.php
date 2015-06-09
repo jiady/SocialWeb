@@ -10,13 +10,13 @@ $("div.colorful").each(function(index, element) {
 	$(this).attr("style",value);
 });
 $(".changeTag_button").click(function() {
-    $.post(<?="\"".site_url('userinfo_control/changeTag')."\""?>, {"tag": $(this).attr("content"), "status": $(this).attr("status")}, function() {
+    $.post(<?="\"".site_url('userinfo_control/changeTag')."\""?>, {"tag": $(this).attr("content"), "status": $(this).attr("status")}, function(data) {
             console.log("succeed");
             add=$(this).attr("status");
             to_delete=$("#"+$(this).attr("content"));
             to_delete.hide();
             to_add='<div class="row col-lg-10" id='+$(this).attr("content")+'>'+to_delete.html()+'</div>';
-            if (add==0)
+            if (add=="0")
             	$("#current-tag").after(to_add);
             else
                 $("#current-not-tag").after(to_add);
