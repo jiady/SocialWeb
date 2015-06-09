@@ -81,6 +81,8 @@ class Info_control extends CI_Controller {
 		$input=$_POST['tag'];
 		if (true==$this->Info_model->addTag($input))
 			echo "1";
+		else
+			echo "0";
 	}
 
 	function deleteTag() {
