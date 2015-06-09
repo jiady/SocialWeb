@@ -24,7 +24,7 @@ $("#submit_tag").click(function() {
 	to_add+='<p> </p>';
 	to_add+='</div>';
 	to_add+='</div>';
-    $("#rag_management").after(to_add);
+    $("#tag_management").after(to_add);
     $.post(<?="\"".site_url('info_control/addTag')."\""?>, {"tag": $(this).attr("content")}, function(data) {
             console.log("succeed");
         });
