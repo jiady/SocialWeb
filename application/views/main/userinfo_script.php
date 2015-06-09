@@ -37,7 +37,7 @@ $(document).on("click", ".changeTag_button", function() {
         var g=Math.round(Math.random()*96)+160;
         var b=Math.round(Math.random()*96)+160;
         var value="background-color: rgb("+r+","+g+","+b+")";
-        added.attr("style",value);
+        added.find("colorful").attr("style",value);
     }
     to_delete.remove();
     $.post(<?="\"".site_url('userinfo_control/changeTag')."\""?>, {"tag": $(this).attr("content"), "status": $(this).attr("status")}, function(data) {

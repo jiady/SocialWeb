@@ -34,7 +34,6 @@ $("#submit_tag").click(function() {
     var b=Math.round(Math.random()*96)+160;
     var value="background-color: rgb("+r+","+g+","+b+")";
     added.find("colorful").attr("style",value);
-    }
 });
 $("div.colorful").each(function(index, element) {
 	var r=Math.round(Math.random()*96)+160;
