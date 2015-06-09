@@ -13,7 +13,7 @@ $(".changeTag_button").click(function() {
     $.post(<?="\"".site_url('userinfo_control/changeTag')."\""?>, {"tag": $(this).attr("content"), "status": $(this).attr("status")}, function() {
             console.log("succeed");
             add=$(this).attr("status");
-            to_delete=$("#"+$(this).attr("content")));
+            to_delete=$("#"+$(this).attr("content"));
             to_delete.hide();
             to_add='<div class="row col-lg-10" id='+$(this).attr("content")+'>'+to_delete.html()+'</div>';
             if (add==0)
