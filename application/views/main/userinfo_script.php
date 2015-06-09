@@ -18,12 +18,14 @@ $(".changeTag_button").click(function() {
     if (add=="0") {
         $("#current-not-tag").before(to_add);
         added=$("#current-not-tag").prev();
+        added.find(".changeTag_button").attr("class",'btn btn-warning changeTag_button');
         added.find(".changeTag_button").html("移除");
         added.find(".changeTag_button").attr("status","1");
     }
     else {
         $("#current-not-tag").after(to_add);
         added=$("#current-not-tag").next();
+        added.find(".changeTag_button").attr("class",'btn btn-info changeTag_button')
         added.find(".changeTag_button").html("添加");
         added.find(".changeTag_button").attr("status","0");
     }
