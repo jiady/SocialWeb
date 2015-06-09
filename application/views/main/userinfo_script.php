@@ -16,12 +16,12 @@ $(".changeTag_button").click(function() {
     to_add='<div class="row col-lg-10" id='+$(this).attr("content")+'>'+to_delete.html()+'</div>';
     if (add=="0") {
         $("#current-not-tag").before(to_add);
-        to_add.find(".changeTag_button").innerHTML("移除");
+        to_add.find(".changeTag_button").html("移除");
         to_add.find(".changeTag_button").attr("status","1");
     }
     else {
         $("#current-not-tag").after(to_add);
-        to_add.find(".changeTag_button").innerHTML("添加");
+        to_add.find(".changeTag_button").html("添加");
         to_add.find(".changeTag_button").attr("status","0");
     }
     to_delete.remove();
