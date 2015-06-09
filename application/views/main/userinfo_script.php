@@ -13,18 +13,14 @@ $(".changeTag_button").click(function() {
     $.post(<?="\"".site_url('userinfo_control/changeTag')."\""?>, {"tag": $(this).attr("content"), "status": $(this).attr("status")}, function() {
             console.log("succeed");
             add=$(this).attr("status");
-            if (add==0) {
-            	to_delete=$("#"+$(this).attr("content")));
-            	to_delete.hide();
-            	to_add='<div class="row col-lg-10" id='+$(this).attr("content")+'>'+to_delete.html()+'</div>';
+            to_delete=$("#"+$(this).attr("content")));
+            to_delete.hide();
+            to_add='<div class="row col-lg-10" id='+$(this).attr("content")+'>'+to_delete.html()+'</div>';
+            if (add==0)
             	$("#current-tag").after(to_add);
-            }
-            else {
-            	to_delete=$(this).parent().parent().parent();
-            	to_delete.hide("fast");
-            	to_add=to_delete.html();
-            	$("#current-not-tag").after(to_add);
-            }
+            else
+                $("#current-not-tag").after(to_add);
+            to_delete.remove();
         });
 });
 </script>
