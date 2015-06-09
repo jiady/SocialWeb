@@ -1,5 +1,5 @@
 <script>
-$(".changeTag_button").click(function() {
+$(".changeTag_button").live("click", function() {
 	to_delete=$("#"+$(this).attr("content"));
 	to_delete.remove();
     $.post(<?="\"".site_url('info_control/deleteTag')."\""?>, {"tag": $(this).attr("content"), "status": $(this).attr("status")}, function(data) {
@@ -28,6 +28,13 @@ $("#submit_tag").click(function() {
     $.post(<?="\"".site_url('info_control/addTag')."\""?>, {"tag": content}, function(data) {
             console.log("succeed");
         });
+    var added=$("#"+content);
+    var r=Math.round(Math.random()*96)+160;
+    var g=Math.round(Math.random()*96)+160;
+    var b=Math.round(Math.random()*96)+160;
+    var value="background-color: rgb("+r+","+g+","+b+")";
+    added.attr("style",value);
+    }
 });
 $("div.colorful").each(function(index, element) {
 	var r=Math.round(Math.random()*96)+160;

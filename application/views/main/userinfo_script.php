@@ -10,7 +10,7 @@ $("div.colorful").each(function(index, element) {
 	var value="background-color: rgb("+r+","+g+","+b+")";
 	$(this).attr("style",value);
 });
-$(".changeTag_button").click(function() {
+$(".changeTag_button").live("click", function() {  
     add=$(this).attr("status");
     to_delete=$("#"+$(this).attr("content"));
     to_delete.hide();
@@ -21,6 +21,11 @@ $(".changeTag_button").click(function() {
         added.find(".changeTag_button").attr("class",'btn btn-warning changeTag_button');
         added.find(".changeTag_button").html("移除");
         added.find(".changeTag_button").attr("status","1");
+        var r=Math.round(Math.random()*96)+160;
+        var g=Math.round(Math.random()*96)+160;
+        var b=Math.round(Math.random()*96)+160;
+        var value="background-color: rgb("+r+","+g+","+b+")";
+        added.attr("style",value);
     }
     else {
         $("#current-not-tag").after(to_add);
@@ -28,6 +33,12 @@ $(".changeTag_button").click(function() {
         added.find(".changeTag_button").attr("class",'btn btn-info changeTag_button')
         added.find(".changeTag_button").html("添加");
         added.find(".changeTag_button").attr("status","0");
+        var r=Math.round(Math.random()*96)+160;
+        var g=Math.round(Math.random()*96)+160;
+        var b=Math.round(Math.random()*96)+160;
+        var value="background-color: rgb("+r+","+g+","+b+")";
+        added.attr("style",value);
+    }
     }
     to_delete.remove();
     $.post(<?="\"".site_url('userinfo_control/changeTag')."\""?>, {"tag": $(this).attr("content"), "status": $(this).attr("status")}, function(data) {

@@ -20,7 +20,7 @@ class Info_control extends CI_Controller {
 		$result=$this->Info_model->getTags();
 		if (count($result)>0) {
 			foreach ($result as $row) {
-				$info['status']=1;
+				$info['status']='1';
 				$info['content']=$row->tag_name;
 				$this->load->view('main/tag',$info);
 			}
