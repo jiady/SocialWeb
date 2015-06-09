@@ -12,7 +12,6 @@ $("div.colorful").each(function(index, element) {
 $(".changeTag_button").click(function() {
     add=$(this).attr("status");
     to_delete=$("#"+$(this).attr("content"));
-    console.log(to_delete);
     to_delete.hide();
     to_add='<div class="row col-lg-10" id='+$(this).attr("content")+'>'+to_delete.html()+'</div>';
     if (add=="0") {
