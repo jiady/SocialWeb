@@ -1,5 +1,5 @@
 <script>
-$(".changeTag_button").live("click", function() {
+$(document).on("click", ".changeTag_button", function() { 
 	to_delete=$("#"+$(this).attr("content"));
 	to_delete.remove();
     $.post(<?="\"".site_url('info_control/deleteTag')."\""?>, {"tag": $(this).attr("content"), "status": $(this).attr("status")}, function(data) {

@@ -10,7 +10,7 @@ $("div.colorful").each(function(index, element) {
 	var value="background-color: rgb("+r+","+g+","+b+")";
 	$(this).attr("style",value);
 });
-$(".changeTag_button").live("click", function() {  
+$(document).on("click", ".changeTag_button", function() {  
     add=$(this).attr("status");
     to_delete=$("#"+$(this).attr("content"));
     to_delete.hide();
