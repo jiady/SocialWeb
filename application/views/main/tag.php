@@ -1,4 +1,4 @@
-<div class="row col-lg-10" <?="id=".$content?>>
+<div class="row col-lg-10" <?="id='".$content."'"?> >
 	<div class="col-lg-2">
 		<p> </p>
 	</div>
@@ -8,11 +8,11 @@
 		</div>
 		<div class="col-lg-3 pull-right">
 			<button <?php
-				if ($status==0)
+				if ($status=='0')
 					echo "class='btn btn-info changeTag_button'";
 				else
 					echo "class='btn btn-warning changeTag_button'";
-			?> content=<?=$content?> status=<?=$status?>> 
+			?> content=<?="'".$content."'"?> status=<?="'".$status."'"?> > 
 			<?php
 				if ($status=="0")
 					echo "添加";

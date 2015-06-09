@@ -19,7 +19,7 @@ class Userinfo_control extends CI_Controller {
 		$info=array();
 		if (count($result)>0) {
 			foreach ($result as $row) {
-				$info['status']=1;
+				$info['status']='1';
 				$info['content']=$row->tag;
 				$this->load->view('main/tag',$info);
 			}
@@ -30,7 +30,7 @@ class Userinfo_control extends CI_Controller {
 		$info_other=array();
 		if (count($result_other)>0) {
 			foreach ($result_other as $row) {
-				$info_other['status']=0;
+				$info_other['status']='0';
 				$info_other['content']=$row->tag_name;
 				$this->load->view('main/tag',$info_other);
 			}
