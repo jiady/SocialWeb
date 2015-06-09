@@ -1,7 +1,7 @@
 <style type="text/css">
 div.line {margin-top: 10px;}
 </style>
-
+<link rel="stylesheet" href=<?=base_url("dist/css/background.css")?> >
 		<form  method="post" action=<?=site_url('userinfo_control/change')?> class='form-horizontal'>
 			<div class="col-lg-8 line">
 		    	<div class="input-group">
