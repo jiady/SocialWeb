@@ -23,6 +23,7 @@ class Gallery extends CI_Controller {
 		parent::__construct();
 		$this->load->model('User_model');
 		$this->load->model('Feed_model');
+		$this->load->model('UserInfo_model');
 		if(!$this->session->userdata('uid')){
 			redirect(site_url());
 		}
@@ -34,10 +35,25 @@ class Gallery extends CI_Controller {
 		$this->load->view('block/header');
 		$data['activetag']="相册";
 		$this->load->view('block/navigation',$data);
+		$id=$this->session->userdata('uid');
+		$data['gallery']=$this->UserInfo_model->getGallery($id);
+		$this->load->view('upload/gallery',$data);
 		
-		$this->load->view('upload/gallery');
 		
 		$this->load->view('block/footer');
+	}
+
+	function inner_gallery_delete($gid){
+		$myid=$this->session->userdata('uid');
+		$a=$this->UserInfo_model->deleteImage($myid,$gid);
+		$this->output
+    		 ->set_content_type('application/json');
+		$this->output
+    		 ->set_output(json_encode(array('ret'=>$a)));
+	}
+
+	function inner_gallery_setashead($gid){
+		
 	}
 
 

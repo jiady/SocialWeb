@@ -109,29 +109,6 @@ $(function() {
     });
     $('.myclass').addClass('fadeInRight');
 
-    $('#post_button').on('click',function(){
-        var feed_content=$('#feed_content').val();
-       
-        //$('#print').append(text);
-        var url="http://xsjtu.com/index.php/feed/inner_post";
-        var postobject={};
-        postobject.feed_content=feed_content;
-        postobject.pictures=myArray;
-
-        $.post(url,postobject,function(data){
-             //$('#print').append(data.responseText);
-             //console.log(data.responseText);
-             //var a=$.parseJSON(data);
-             if(data.ret==true){
-                  window.location.href="http://xsjtu.com/index.php/feed"; 
-             }
-             else{
-                alert("Something goes wrong");
-             }
-        },"json");
-
-    });
-
     $('#show_code').on('click', function() {
         $('#myModal-code').modal();
         $('pre code').each(function(i, e) {
@@ -144,6 +121,23 @@ $(function() {
         $(this).parents('tr').next().toggle();
     });
 
+    $('#delete').on('click', function() {
+
+        var url="http://xsjtu.com/index.php/feed/inner_post";
+        var postobject={};
+        postobject.feed_content=feed_content;
+        postobject.pictures=myArray;
+
+        $.post(url,postobject,function(data){
+            
+             if(data.ret==true){
+                  window.location.href="http://xsjtu.com/index.php/feed"; 
+             }
+             else{
+                alert("Something goes wrong");
+             }
+        },"json");
+    });
 
     var getRotate = function(url) {
         if (!url) {

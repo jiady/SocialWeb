@@ -19,13 +19,7 @@
         <div class="col-md-8 " >
             <div id="container">
                
-                <div class="input-group input-group-lg">
-                  <input type="text" id="feed_content" class="form-control " placeholder="新鲜事...">
-                  <span class="input-group-btn">
-                    <button id="post_button" class="btn btn-success btn-large" type="button">发布</button>
-                  </span>
-                </div><!-- /input-group -->
-                </br>
+                
                 <a class="btn btn-default btn-lg myclass animated" id="pickfiles" href="#" >
                     <i class="glyphicon glyphicon-plus"></i>
                     <sapn>选择图片</sapn>
@@ -55,8 +49,25 @@
     </div>
    
 
-   
+<?php $count=0; ?>
 
+<?php foreach($gallery as $info): $uid=$info->uid; $url=$info->url ?>
+<?php if($count%3==0) echo "<div class='row' >"; $count++ ?>
+<div class=" col-md-4 myclass animated">
+    <div class="thumbnail ">
+      <img src=<?=$url ?> alt="...">
+      <div class="caption">
+
+        <p class="text-right">
+        <a href="#" class="btn btn-success set_head" role="button" uid=<?=$uid?> >设为头像</a>
+        <a href="#" class="btn btn-danger delete"  role="delete_button" uid=<?=$uid?> >删除</a>
+        </p>
+
+      </div>
+    </div>
+  </div>
+<?php if($count>0  && ($count%3==0||$count==sizeof($gallery) ) ) echo "</div>" ?>
+<?php endforeach ?>
 
 
 
