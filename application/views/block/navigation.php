@@ -34,6 +34,10 @@
                 <?php if (isset($activetag)&&$activetag=="二度人脉") echo "class='active' "?>
                ><a href=<?=site_url("people/secondary")?>>二度人脉</a></li>
 
+                <li
+                <?php if (isset($activetag)&&$activetag=="今日匹配") echo "class='active' "?>
+               ><a href=<?=site_url("people/match")?>>今日匹配</a></li>
+
                <li
                 <?php if (isset($activetag)&&$activetag=="黑名单") echo "class='active' "?>
                ><a href=<?=site_url("blacklist_control")?>>黑名单</a></li>

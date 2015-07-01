@@ -5,6 +5,7 @@ class People extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Userinfo_model');
 		$this->load->model('Relation_model');
+		$this->load->model('Match_model');
 		//$this->load->helper('url');
 		if(null ==$this->session->userdata('uid')){
 			redirect(site_url());
@@ -45,5 +46,21 @@ class People extends CI_Controller {
 		$this->load->view('block/footer');
 		$this->load->view('people/secondary_js');
 	}
+
+	function match(){
+		$myid=$this->session->userdata('uid');
+		$id=$this->Match_model->getmatch();
+		$info['info']=$this->Userinfo_model->getInfo($id);
+		$info['headimage']=$this->Userinfo_model->getHeadImage($id);
+		$myid=$this->session->userdata('uid');
+		$info['isFriend']=$this->Relation_model->checkFriends($myid,$id);
+		$info['isFriendRequest']=$this->Relation_model->checkFriendsRequest($myid,$id);
+		$this->load->view('block/header');
+		$this->load->view('block/navigation');
+		$this->load->view('people/people',$info);
+		$this->load->view('block/footer');
+		$this->load->view('people/people_js');
+	}
+
 
 }

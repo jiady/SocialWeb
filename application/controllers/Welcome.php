@@ -31,6 +31,9 @@ class Welcome extends CI_Controller {
 			echo $row;
 			echo "</br>";
 		}
+		if(!$this->session->userdata('id')){
+			redirect(site_app());
+		}
 		//echo $ret;
 	}
 
