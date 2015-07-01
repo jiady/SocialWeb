@@ -1,7 +1,7 @@
 <style type="text/css">
 .blacklist.col-lg-10 {background-color: rgb(255,206,206);}
 </style>
-<div class="blacklist row well col-lg-10">
+<div class="blacklist row well-sm col-lg-10">
 	<div class="col-lg-8">
 		<div class="media">
 		    <div class="media-left">

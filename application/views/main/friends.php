@@ -1,7 +1,7 @@
 <style type="text/css">
 .friend.col-lg-10 {background-color: rgb(203,254,192);}
 </style>
-<div class="friend row well col-lg-10">
+<div class="friend row well-sm col-lg-10">
 	<div class="col-lg-8">
 		<div class="media">
 		    <div class="media-left">
