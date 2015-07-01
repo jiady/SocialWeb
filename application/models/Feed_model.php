@@ -10,6 +10,7 @@ class Feed_model extends CI_model{
         $map['uid']=$this->session->userdata('uid');
         $map['putter_name']=$this->session->userdata('name');
         $map['putter_gender']=$this->session->userdata('gender');
+        $map['putter_url']=$this->session->userdata('headimage');
         $this->db->insert('feed',$map);
         return $this->db->insert_id();
     } 
@@ -55,6 +56,7 @@ class Feed_model extends CI_model{
         $map['uid']=$this->session->userdata('uid');
         $map['commenter_name']=$this->session->userdata('name');
         $map['commenter_gender']=$this->session->userdata('gender');
+        $map['commenter_url']=$this->session->userdata('headimage');
         $this->db->insert('comment',$map);
         return $this->db->insert_id();
     }

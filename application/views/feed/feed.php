@@ -84,10 +84,11 @@ function printk($url){
 					  </div>
 					</div>
 			<?php endforeach?>
-			<?php if($myinfo['uid']==$row->uid):?>
+			
+			<button  type="button" class='btn btn-primary comment pull-right' data-toggle="modal" data-target="#myModal" fid=<?=$row->fid?> id=<?=$row->fid?> >回复</button>
+		    <?php if($myinfo['uid']==$row->uid):?>
 			<button  type="button" class='btn btn-success feed_delete pull-right'  fid=<?=$row->fid?>  >删除</button>	
 			<?php endif?>
-			<button  type="button" class='btn btn-primary comment pull-right' data-toggle="modal" data-target="#myModal" fid=<?=$row->fid?> id=<?=$row->fid?> >回复</button>
 		  </div>
 		</div>
 

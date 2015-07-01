@@ -67,6 +67,7 @@ class Gallery extends CI_Controller {
 		$gid=$this->input->post('gid');
 		$myid=$this->session->userdata('uid');
 		$a=$this->UserInfo_model->setImageAsHead($myid,$gid);
+		$this->User_model->refresh_session($this->session->userdata('uid'));
 		$this->output
     		 ->set_content_type('application/json');
 		$this->output
