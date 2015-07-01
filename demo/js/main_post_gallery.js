@@ -53,6 +53,21 @@ $(function() {
             'UploadComplete': function() {
                 $('#success').show();
                 $('#print').text(myArray.toString());
+                var postobject={};
+                postobject.pictures=myArray;
+                //postobject.pictures=myArray;
+                var url="http://xsjtu.com/index.php/gallery/inner_gallery_add";
+                $.post(url,postobject,function(data){
+                    
+                     if(data.ret==true){
+                         console.log('sda');
+                     }
+                     else{
+                        alert("Something goes wrong");
+                     }
+                },"json");
+
+
                 //doucument.write(myArray);
             },
             'FileUploaded': function(up, file, info) {
@@ -121,18 +136,31 @@ $(function() {
         $(this).parents('tr').next().toggle();
     });
 
-    $('#delete').on('click', function() {
+    $('#delete_button').on('click', function() {
 
         var url="http://xsjtu.com/index.php/gallery/inner_gallery_delete";
         var postobject={};
         postobject.gid=$(this).attr('gid');
         //postobject.pictures=myArray;
-
-
         $.post(url,postobject,function(data){
             
              if(data.ret==true){
                  $("image"+postobject.gid).hide();
+             }
+             else{
+                alert("Something goes wrong");
+             }
+        },"json");
+    });
+
+    $('#set_head').on('click',function)(){
+        var url="http://xsjtu.com/index.php/gallery/inner_gallery_sethead";
+        var postobject={};
+        postobject.gid=$(this).attr('gid');
+        $.post(url,postobject,function(data){
+            
+             if(data.ret==true){
+                 console.log('success');
              }
              else{
                 alert("Something goes wrong");
