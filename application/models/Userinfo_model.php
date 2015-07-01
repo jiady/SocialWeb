@@ -20,6 +20,7 @@ class Userinfo_model extends CI_model{
     function updateInfo($id, $newInfo) {
     	$this->db->where('uid',$id);
         $this->db->update('user',$newInfo);
+        $this->User_model->refresh_session($id);
     	return true;
     }
 
@@ -74,7 +75,7 @@ class Userinfo_model extends CI_model{
     }
 
     function getGallery($id) {
-        $query="SELECT * FROM usergallery WHERE uid=".$this->db->escape($id);
+        $query="SELECT * FROM usergallery WHERE uid=".$this->db->escape($id)." ORDER BY seq ASC";
         return $this->db->query($query)->result();
     }
 

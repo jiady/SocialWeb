@@ -51,7 +51,10 @@
 
 <?php $count=0; ?>
 
-<?php foreach($gallery as $info): $gid=$info->gid; $url=$info->url; $seq=$info->seq; ?>
+<?php foreach($gallery as $info): $gid=$info->gid; $url=$info->url; $seq=$info->seq;
+
+
+ ?>
 <?php if($count%3==0) echo "<div class='row' >"; $count++ ?>
 <div class=" col-md-4 myclass animated"  id=<?="image".$gid?>>
     <div class="thumbnail ">
@@ -60,7 +63,7 @@
 
         <p class="text-right">
 
-        <?php var_dump($seq) ;if($seq==0):?>
+        <?php if($seq==0):?>
             <button  class="btn btn-default disabled" role="button" gid=<?=$gid?> >已经设为头像，不可删除</button>
         <?php else:?>
             <button  class="btn btn-success set_head" role="button" gid=<?=$gid?> >设为头像</button>

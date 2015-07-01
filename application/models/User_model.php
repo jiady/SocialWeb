@@ -61,6 +61,23 @@ class User_model extends CI_model{
         return true;
     }
 
+    function refresh_session($id){
+        $this->db->where('uid',$id);
+        $query=$this->db->get('user');
+        if($query->num_rows()>0){
+            $row=$query->row_array();
+            $this->db->where('uid',$this->session->userdata('uid'));
+            $this->db->order_by('seq','asc');
+            $query=$this->db->get('usergallery');
+            $r=$query->row();
+            $row['headimage']=$r->url;
+            unset($row['password']);
+            $this->session->set_userdata($row);
+            return true;
+        }
+        return false;
+    }
+
     function addmyself($id){
         $insert=array();
         $insert['from_uid']=$id;
