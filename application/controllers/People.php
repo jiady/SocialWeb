@@ -12,7 +12,8 @@ class People extends CI_Controller {
 		}
 	}
 
-	function index($id) {
+	function index($id=0) {
+		if(!isset($id)||$id==0) show_404();
 		$info['info']=$this->Userinfo_model->getInfo($id);
 		$info['headimage']=$this->Userinfo_model->getHeadImage($id);
 		$myid=$this->session->userdata('uid');
@@ -49,7 +50,9 @@ class People extends CI_Controller {
 
 	function match(){
 		$myid=$this->session->userdata('uid');
-		$id=$this->Match_model->getmatch();
+		$ret=$this->Match_model->getmatch_safe();
+		$id=$ret['match_id'];
+		if(!isset($id)||$id==0) show_404();
 		$info['info']=$this->Userinfo_model->getInfo($id);
 		$info['headimage']=$this->Userinfo_model->getHeadImage($id);
 		$myid=$this->session->userdata('uid');

@@ -46,6 +46,10 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
             	<li
+                <?php if (isset($activetag)&&$activetag=="相册") echo "class='active'"?>
+               ><a href=<?=site_url("gallery/gallery_post")?>>相册</a></li>
+
+            	<li
                 <?php if (isset($activetag)&&$activetag=="登出") echo "class='active'"?>
                ><a href=<?=site_url("welcome/logout")?>>登出</a></li>
             </ul>
