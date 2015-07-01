@@ -47,7 +47,7 @@ class Userinfo_control extends CI_Controller {
 			$input['gender']='1';
 		else
 			$input['gender']='0';
-		$pass=array();
+		//$pass=array();
 		foreach ($input as $key => $val) {
 			if ($key!="genderF" and $key!="genderM")
 				$pass[$key]=$val;
@@ -56,7 +56,8 @@ class Userinfo_control extends CI_Controller {
 		if (true!=$this->Userinfo_model->updateInfo($this->session->userdata("uid"),$pass))
 			echo "Something wrong happened!";
 		else
-			redirect('/userinfo_control', 'refresh');
+			//redirect('/userinfo_control', 'refresh');
+			echo "ss";
 	}
 
 	function changeTag() {
