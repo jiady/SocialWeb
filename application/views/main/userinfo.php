@@ -21,20 +21,20 @@ div.line {margin-top: 10px;}
 			    </div>
 			     
 			    <div class="col-lg-5">
-			    	<div class="input-group">
-						<span class="input-group-addon">性别</span>
-							<span class="col-lg-2 pull-left">
-								<input type="radio" id="gendM" name="genderM" <?php
-									if ($info['gender']==0)
-										echo "checked"?> />
-								<label>男</label>
-							</span>
-							<span class="col-lg-2 pull-right">
-								<input type="radio" id="gendF" name="genderF" <?php
-									if ($info['gender']==1)
-										echo "checked"?> />
-								<label>女</label>
-							</span>
+			    	<div class="panel">
+						<span class="pull-left">性别</span>
+						<span class="col-lg-2">
+							<input type="radio" id="gendM" name="genderM" <?php
+								if ($info['gender']==0)
+									echo "checked"?> />
+							<label>男</label>
+						</span>
+						<span class="col-lg-2 pull-right">
+							<input type="radio" id="gendF" name="genderF" <?php
+								if ($info['gender']==1)
+									echo "checked"?> />
+							<label>女</label>
+						</span>
 			    	</div>
 			    </div>
 			</div>
