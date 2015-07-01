@@ -22,7 +22,7 @@ div.line {margin-top: 10px;}
 			    
 			    <div class="col-lg-5">
 			    	<div class="input-group">
-						<span class="input-group-addon col-lg-3">性别</span>
+						<span class="input-group-addon">性别</span>
 						<div class="pull-right">
 							<span class="col-lg-1">
 								<input type="radio" id="gendM" name="genderM" <?php
