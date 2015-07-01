@@ -2,7 +2,7 @@
 .request.col-lg-10 {background-color: rgb(221,254,255);}
 </style>
 
-<div class="request well-sm row col-lg-10">
+<div class="request well row col-lg-10">
 	<div class="media col-lg-8">
 	    <div class="media-left">
 	        <a href=<?=site_url('people/index/'.$from_uid)?>>
