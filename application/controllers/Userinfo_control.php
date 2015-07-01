@@ -43,7 +43,7 @@ class Userinfo_control extends CI_Controller {
 
 	function change() {
 		$input=$this->input->post();
-		if ($input['genderF']=="on")
+		if (isset($input['genderF']))
 			$input['gender']='1';
 		else
 			$input['gender']='0';
