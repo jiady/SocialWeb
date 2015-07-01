@@ -50,7 +50,7 @@ class Userinfo_control extends CI_Controller {
 		$pass=array();
 		foreach ($input as $key => $val) {
 			if ($key!="genderF" and $key!="genderM")
-				$pass['$key']=$val;
+				$pass[$key]=$val;
 		}
 		var_dump($pass);
 		if (true!=$this->Userinfo_model->updateInfo($this->session->userdata("uid"),$pass))
