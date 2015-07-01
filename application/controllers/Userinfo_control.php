@@ -12,6 +12,7 @@ class Userinfo_control extends CI_Controller {
 		$this->load->view('block/navigation');
 		$id=$this->session->userdata("uid");
 		$res['info']=$this->Userinfo_model->getInfo($id);
+		var_dump($res['info']);
 		$this->load->view('main/userinfo',$res);
 
 		$this->load->view('main/head/tag_head');
@@ -42,10 +43,11 @@ class Userinfo_control extends CI_Controller {
 
 	function change() {
 		$input=$this->input->post();
-		if (true!=$this->Userinfo_model->updateInfo($this->session->userdata("uid"),$input))
+		var_dump($input);
+		/*if (true!=$this->Userinfo_model->updateInfo($this->session->userdata("uid"),$input))
 			echo "Something wrong happened!";
 		else
-			redirect('/userinfo_control', 'refresh');
+			redirect('/userinfo_control', 'refresh');*/
 	}
 
 	function changeTag() {
