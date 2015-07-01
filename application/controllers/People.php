@@ -52,7 +52,7 @@ class People extends CI_Controller {
 		$myid=$this->session->userdata('uid');
 		$ret=$this->Match_model->getmatch_safe();
 		$id=$ret['match_id'];
-		if(!isset($id)||$id==0) show_error('没有匹配到的人！');
+		if(!isset($id)||$id==0) show_error('没有匹配到的人！',200, '没有匹配到的人！！');
 		$info['info']=$this->Userinfo_model->getInfo($id);
 		$info['headimage']=$this->Userinfo_model->getHeadImage($id);
 		$myid=$this->session->userdata('uid');
