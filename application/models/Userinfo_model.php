@@ -3,6 +3,7 @@
 class Userinfo_model extends CI_model{
 	function __construct()
     {
+        $this->load->model('User_model');
         parent::__construct();
     }
 
