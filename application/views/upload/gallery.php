@@ -53,7 +53,7 @@
 
 <?php foreach($gallery as $info): $uid=$info->uid; $url=$info->url ?>
 <?php if($count%3==0) echo "<div class='row' >"; $count++ ?>
-<div class=" col-md-4 myclass animated">
+<div class=" col-md-4 myclass animated"  id=<?="image".$uid?>>
     <div class="thumbnail ">
       <img src=<?=$url ?> alt="...">
       <div class="caption">

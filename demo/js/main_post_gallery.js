@@ -123,15 +123,16 @@ $(function() {
 
     $('#delete').on('click', function() {
 
-        var url="http://xsjtu.com/index.php/feed/inner_post";
+        var url="http://xsjtu.com/index.php/gallery/inner_gallery_delete";
         var postobject={};
-        postobject.feed_content=feed_content;
-        postobject.pictures=myArray;
+        postobject.gid=$(this).attr('gid');
+        //postobject.pictures=myArray;
+
 
         $.post(url,postobject,function(data){
             
              if(data.ret==true){
-                  window.location.href="http://xsjtu.com/index.php/feed"; 
+                 $("image"+postobject.gid).hide();
              }
              else{
                 alert("Something goes wrong");

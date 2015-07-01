@@ -25,6 +25,24 @@ class Userinfo_model extends CI_model{
     	return true;
     }
 
+    function setImageAsHead($uid,$gid){
+        $this->db->select('url');
+        $this->db->where('gid',$gid);
+        $q=$this->db->get('usergallery');
+        $r=$q->first_row();
+        $url=$r->url;
+        $this->db->where('uid',$uid);
+        $this->db->where('seq',0);
+        $this->db->update('url',$url);
+        return true;
+    }
+
+    function addImages($id,$pictures){
+        foreach($pictures as $pic){
+            $this->addImage($id,$pic);
+        }
+    }
+
     function addImage($id, $image_url) {
         $query="SELECT MAX(seq)+1 AS n FROM usergallery WHERE uid=".$this->db->escape($id);
         $seq=$this->db->query($query)->row()->n;

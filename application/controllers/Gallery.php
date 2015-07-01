@@ -43,7 +43,8 @@ class Gallery extends CI_Controller {
 		$this->load->view('block/footer');
 	}
 
-	function inner_gallery_delete($gid){
+	function inner_gallery_delete(){
+		$gid=$this->input->post('gid');
 		$myid=$this->session->userdata('uid');
 		$a=$this->UserInfo_model->deleteImage($myid,$gid);
 		$this->output
@@ -52,8 +53,25 @@ class Gallery extends CI_Controller {
     		 ->set_output(json_encode(array('ret'=>$a)));
 	}
 
-	function inner_gallery_setashead($gid){
-		
+	function inner_gallery_add(){
+		$pictures=$this->input->post('pictures');
+		$myid=$this->session->userdata('uid');
+		$a=$this->UserInfo_model->addImages($myid,$pictures);
+		$this->output
+    		 ->set_content_type('application/json');
+		$this->output
+    		 ->set_output(json_encode(array('ret'=>true)));
+	}
+
+	function inner_gallery_setashead(){
+		$gid=$this->input->post('gid');
+		$myid=$this->session->userdata('uid');
+		$a=$this->UserInfo_model->setImageAsHead($myid,$gid);
+		$this->output
+    		 ->set_content_type('application/json');
+		$this->output
+    		 ->set_output(json_encode(array('ret'=>true)));
+
 	}
 
 
