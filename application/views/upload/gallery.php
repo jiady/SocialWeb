@@ -60,7 +60,7 @@
 
         <p class="text-right">
         <a href="#" class="btn btn-success set_head" role="button" uid=<?=$uid?> >设为头像</a>
-        <a href="#" class="btn btn-danger delete"  role="delete_button" uid=<?=$uid?> >删除</a>
+        <a href="#" class="btn btn-danger delete_button"  role="button" uid=<?=$uid?> >删除</a>
         </p>
 
       </div>
