@@ -19,7 +19,7 @@ div.line {margin-top: 10px;}
 				      	<input type="text" class="form-control" name="birthyear" value=<?=$info["birthyear"]?> />
 			    	</div>
 			    </div>
-			     
+			    
 			    <div class="col-lg-5">
 			    	<div class="input-group">
 						<span class="input-group-addon col-lg-3">性别</span>
