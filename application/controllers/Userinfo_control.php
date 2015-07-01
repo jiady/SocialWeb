@@ -43,11 +43,14 @@ class Userinfo_control extends CI_Controller {
 
 	function change() {
 		$input=$this->input->post();
-		var_dump($input);
-		/*if (true!=$this->Userinfo_model->updateInfo($this->session->userdata("uid"),$input))
+		if ($input['genderF']=="on")
+			$input['gender']='1';
+		else
+			$input['gender']='0';
+		if (true!=$this->Userinfo_model->updateInfo($this->session->userdata("uid"),$input))
 			echo "Something wrong happened!";
 		else
-			redirect('/userinfo_control', 'refresh');*/
+			redirect('/userinfo_control', 'refresh');
 	}
 
 	function changeTag() {
