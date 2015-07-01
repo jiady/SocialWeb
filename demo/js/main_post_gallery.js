@@ -16,7 +16,7 @@ var myArray=new Array();
         $.post(url,postobject,function(data){
             
              if(data.ret==true){
-                 $("image"+postobject.gid).hide();
+                 $("#image"+postobject.gid).hide();
              }
              else{
                 alert("Something goes wrong");

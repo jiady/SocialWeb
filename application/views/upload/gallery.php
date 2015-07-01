@@ -51,16 +51,16 @@
 
 <?php $count=0; ?>
 
-<?php foreach($gallery as $info): $uid=$info->uid; $url=$info->url ?>
+<?php foreach($gallery as $info): $gid=$info->gid; $url=$info->url ?>
 <?php if($count%3==0) echo "<div class='row' >"; $count++ ?>
-<div class=" col-md-4 myclass animated"  id=<?="image".$uid?>>
+<div class=" col-md-4 myclass animated"  id=<?="image".$gid?>>
     <div class="thumbnail ">
       <img src=<?=$url ?> alt="...">
       <div class="caption">
 
         <p class="text-right">
-        <button  class="btn btn-success set_head" role="button" uid=<?=$uid?> >设为头像</a>
-        <button class="btn btn-danger delete_button"  role="button" uid=<?=$uid?> >删除</a>
+        <button  class="btn btn-success set_head" role="button" gid=<?=$gid?> >设为头像</button>
+        <button class="btn btn-danger delete_button"  role="button" gid=<?=$gid?> >删除</button>
         </p>
 
       </div>
