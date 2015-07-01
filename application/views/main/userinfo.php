@@ -29,6 +29,7 @@ div.line {margin-top: 10px;}
 									if ($info['gender']==0)
 										echo "checked"?> />
 								<label>男</label>
+							<span><p>   </p></span>
 							</span>
 							<span class="col-lg-1">
 								<input type="radio" id="gendF" name="genderF" <?php
