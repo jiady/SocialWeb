@@ -12,7 +12,6 @@ class Userinfo_control extends CI_Controller {
 		$this->load->view('block/navigation');
 		$id=$this->session->userdata("uid");
 		$res['info']=$this->Userinfo_model->getInfo($id);
-		var_dump($res['info']);
 		$this->load->view('main/userinfo',$res);
 
 		$this->load->view('main/head/tag_head');
