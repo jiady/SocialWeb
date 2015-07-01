@@ -61,7 +61,7 @@
         <p class="text-right">
 
         <?php var_dump($seq) ;if($seq==0):?>
-            <button  class="btn btn-default disable" role="button" gid=<?=$gid?> >已经设为头像，不可删除</button>
+            <button  class="btn btn-default disabled" role="button" gid=<?=$gid?> >已经设为头像，不可删除</button>
         <?php else:?>
             <button  class="btn btn-success set_head" role="button" gid=<?=$gid?> >设为头像</button>
             <button class="btn btn-danger delete_button"  role="button" gid=<?=$gid?> >删除</button>
