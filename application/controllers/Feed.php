@@ -26,7 +26,6 @@ class Feed extends CI_Controller {
 		if(!$this->session->userdata('uid')){
 			redirect(site_url());
 		}
-		
 	}
 
 	function index($offset=0){

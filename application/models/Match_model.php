@@ -149,8 +149,8 @@ class Match_model extends CI_model{
     function clear_match_table(){
     	$this->db->empty_table('matchuser');
         $this->dbforge->rename_table('futurematch','tmpmatch');
-        $this->dbforge->rename_table('match','futurematch');
-        $this->dbforge->rename_table('tmpmatch','match');
+        $this->dbforge->rename_table('matchuser','futurematch');
+        $this->dbforge->rename_table('tmpmatch','matchuser');
         $this->db->empty_table('futurematch');
     }
 
