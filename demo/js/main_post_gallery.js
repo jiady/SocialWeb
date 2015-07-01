@@ -137,7 +137,7 @@ $(function() {
     });
 
     $('#delete_button').on('click', function() {
-
+        console.log("delete_button");
         var url="http://xsjtu.com/index.php/gallery/inner_gallery_delete";
         var postobject={};
         postobject.gid=$(this).attr('gid');
