@@ -4,6 +4,43 @@
 /*global hljs */
 
 var myArray=new Array();
+
+
+    
+    $('.delete_button').click (function() {
+        console.log("delete_button");
+        var url="http://xsjtu.com/index.php/gallery/inner_gallery_delete";
+        var postobject={};
+        postobject.gid=$(this).attr('gid');
+        //postobject.pictures=myArray;
+        $.post(url,postobject,function(data){
+            
+             if(data.ret==true){
+                 $("image"+postobject.gid).hide();
+             }
+             else{
+                alert("Something goes wrong");
+             }
+        },"json");
+    });
+
+    $('.set_head').on('click',function(){
+        var url="http://xsjtu.com/index.php/gallery/inner_gallery_sethead";
+        var postobject={};
+        postobject.gid=$(this).attr('gid');
+        $.post(url,postobject,function(data){
+            
+             if(data.ret==true){
+                 console.log('success');
+             }
+             else{
+                alert("Something goes wrong");
+             }
+        },"json");
+    });
+
+
+
 $(function() {
     var uploader = Qiniu.uploader({
         runtimes: 'html5,flash,html4',
@@ -136,37 +173,6 @@ $(function() {
         $(this).parents('tr').next().toggle();
     });
 
-    $('#delete_button').on('click', function() {
-        console.log("delete_button");
-        var url="http://xsjtu.com/index.php/gallery/inner_gallery_delete";
-        var postobject={};
-        postobject.gid=$(this).attr('gid');
-        //postobject.pictures=myArray;
-        $.post(url,postobject,function(data){
-            
-             if(data.ret==true){
-                 $("image"+postobject.gid).hide();
-             }
-             else{
-                alert("Something goes wrong");
-             }
-        },"json");
-    });
-
-    $('#set_head').on('click',function(){
-        var url="http://xsjtu.com/index.php/gallery/inner_gallery_sethead";
-        var postobject={};
-        postobject.gid=$(this).attr('gid');
-        $.post(url,postobject,function(data){
-            
-             if(data.ret==true){
-                 console.log('success');
-             }
-             else{
-                alert("Something goes wrong");
-             }
-        },"json");
-    });
 
     var getRotate = function(url) {
         if (!url) {

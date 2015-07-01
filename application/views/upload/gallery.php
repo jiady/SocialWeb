@@ -59,8 +59,8 @@
       <div class="caption">
 
         <p class="text-right">
-        <a href="#" class="btn btn-success set_head" role="button" uid=<?=$uid?> >设为头像</a>
-        <a href="#" class="btn btn-danger delete_button"  role="button" uid=<?=$uid?> >删除</a>
+        <button  class="btn btn-success set_head" role="button" uid=<?=$uid?> >设为头像</a>
+        <button class="btn btn-danger delete_button"  role="button" uid=<?=$uid?> >删除</a>
         </p>
 
       </div>
