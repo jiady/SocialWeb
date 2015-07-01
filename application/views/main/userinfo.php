@@ -23,14 +23,18 @@ div.line {margin-top: 10px;}
 			    <div class="col-lg-5">
 			    	<div class="input-group">
 						<span class="input-group-addon">性别</span>
-						<input type="ratio" class="pull-left" name="genderM" <?php
-							if ($info['gender']==0)
-								echo "checked"?> />
-						<label>男</label>
-						<input type="ratio" class="pull-right" name="genderF" <?php
-							if ($info['gender']==1)
-								echo "checked"?> />
-						<label>女</label>
+							<span class="pull-left">
+								<input type="radio" name="genderM" <?php
+									if ($info['gender']==0)
+										echo "checked"?> />
+								<label>男</label>
+							</span>
+							<span class="pull-right">
+								<input type="radio" name="genderF" <?php
+									if ($info['gender']==1)
+										echo "checked"?> />
+								<label>女</label>
+							</span>
 			    	</div>
 			    </div>
 			</div>
