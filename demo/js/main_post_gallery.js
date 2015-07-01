@@ -153,7 +153,7 @@ $(function() {
         },"json");
     });
 
-    $('#set_head').on('click',function)(){
+    $('#set_head').on('click',function(){
         var url="http://xsjtu.com/index.php/gallery/inner_gallery_sethead";
         var postobject={};
         postobject.gid=$(this).attr('gid');
