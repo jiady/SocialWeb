@@ -21,7 +21,7 @@ div.line {margin-top: 10px;}
 			    </div>
 			     
 			    <div class="col-lg-5">
-			    	<div>
+			    	<div class="input-group">
 						<span class="input-group-addon col-lg-3">性别</span>
 						<span class="col-lg-1">
 							<input type="radio" id="gendM" name="genderM" <?php
