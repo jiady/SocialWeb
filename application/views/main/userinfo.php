@@ -20,16 +20,16 @@ div.line {margin-top: 10px;}
 			    	</div>
 			    </div>
 			     
-			    <div class="col-lg-6">
+			    <div class="col-lg-5">
 			    	<div>
-						<span class="input-group-addon col-lg-1">性别</span>
-						<span class="col-lg-2">
+						<span class="input-group-addon col-lg-3">性别</span>
+						<span class="col-lg-1">
 							<input type="radio" id="gendM" name="genderM" <?php
 								if ($info['gender']==0)
 									echo "checked"?> />
 							<label>男</label>
 						</span>
-						<span class="col-lg-2">
+						<span class="col-lg-1">
 							<input type="radio" id="gendF" name="genderF" <?php
 								if ($info['gender']==1)
 									echo "checked"?> />
