@@ -32,6 +32,8 @@ var myArray=new Array();
             
              if(data.ret==true){
                  console.log('success');
+                 alert("Success!");
+                self.location.href="http://xsjtu.com/index.php/gallery/gallery_post";
              }
              else{
                 alert("Something goes wrong");

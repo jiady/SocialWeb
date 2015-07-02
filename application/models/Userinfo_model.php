@@ -33,7 +33,9 @@ class Userinfo_model extends CI_model{
         $url=$r->url;
         $this->db->where('uid',$uid);
         $this->db->where('seq',0);
-        $this->db->update('url',$url);
+        $toupdate=array();
+        $toupdate['url']=$url;
+        $this->db->update('url',$toupdate);
         return true;
     }
 
