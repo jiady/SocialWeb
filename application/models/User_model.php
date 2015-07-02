@@ -17,6 +17,7 @@ class User_model extends CI_model{
             $this->db->order_by('seq','asc');
             $query=$this->db->get('usergallery');
             $r=$query->row();
+            var_dump($r);
             $row['headimage']=$r->url;
             unset($row['password']);
             $this->session->set_userdata($row);
