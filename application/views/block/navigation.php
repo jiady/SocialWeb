@@ -52,7 +52,7 @@
                $name=$this->session->userdata('name');
 
                if (isset($activetag)&&$activetag=="我") echo "class='active' "?>
-               ><a href=<?=site_url("people/$id")?>> <?=$name?> </a></li>
+               ><a href=<?=site_url("people/".$id)?>> <?=$name?> </a></li>
 
             	<li
                 <?php if (isset($activetag)&&$activetag=="相册") echo "class='active'"?>
