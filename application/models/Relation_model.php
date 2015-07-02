@@ -91,7 +91,7 @@ class Relation_model extends CI_model{
     }
 
     function sendFriendRequest($id, $to_id, $reason="Hello") {
-    	$query="DELETE FROM blacklist WHERE from_uid=".$this->db->escape($to_id)." AND to_uid=".$this->db->escape($id);
+    	$query="DELETE FROM blacklist WHERE from_uid=".$this->db->escape($id)." AND to_uid=".$this->db->escape($to_id);
     	$this->db->query($query); 
         $delete="DELETE FROM friendrequest WHERE from_uid=".$this->db->escape($id)." AND to_uid=".$this->db->escape($to_id);
         $this->db->query($delete);
