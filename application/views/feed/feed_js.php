@@ -29,7 +29,7 @@ $(".comment_area").click(function(){
 		$("#delete_post").hide();
 	}
 	fid=$(this).attr('fid');
-	to_uid=$(this).attr('touid');
+	to_uid=$(this).attr('fromuid');
 	to_name=$(this).attr('toname');
 	console.log(to_name);
 	$("#postx").removeAttr('placeholder');
