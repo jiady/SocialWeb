@@ -31,6 +31,7 @@ class Feed extends CI_Controller {
 	function index($offset=0){
 		
 		$this->load->view('block/header');
+		var_dump($this->session->userdata());
 		$data['activetag']="首页";
 		$this->load->view('block/navigation',$data);
 		$feeddata=$this->Feed_model->getAll(20,$offset);
