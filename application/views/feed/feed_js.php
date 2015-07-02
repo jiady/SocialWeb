@@ -133,7 +133,7 @@ $(document).ready(function(){
 			$(this).addClass(animateOut);
 		}
 		},{
-		offset:'-5%'
+		offset:'-25%'
 	});
 	$('.panel').waypoint(function(direction){
 		if(direction=="up"){
@@ -141,7 +141,7 @@ $(document).ready(function(){
 			$(this).addClass(animateIn);
 		}
 		},{
-		offset:'-5%'
+		offset:'-25%'
 	});
 
 	$('.panel').waypoint(function(direction){
