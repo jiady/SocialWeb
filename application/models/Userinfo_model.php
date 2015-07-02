@@ -35,7 +35,7 @@ class Userinfo_model extends CI_model{
         $this->db->where('seq',0);
         $toupdate=array();
         $toupdate['url']=$url;
-        $this->db->update('url',$toupdate);
+        $this->db->update('usergallery',$toupdate);
         return true;
     }
 
