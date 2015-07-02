@@ -93,13 +93,14 @@ class Relation_model extends CI_model{
     function sendFriendRequest($id, $to_id, $reason="Hello") {
     	$query="DELETE FROM blacklist WHERE from_uid=".$this->db->escape($id)." AND to_uid=".$this->db->escape($to_id);
     	$this->db->query($query); 
+        $query="SELECT * FROM blacklist WHERE from_uid=".$this->db->escape($to_id)." AND to_uid=".$this->db->escape($id);
+        if ($this->db->query($query)->num_rows()>0)
+            return false;
         $delete="DELETE FROM friendrequest WHERE from_uid=".$this->db->escape($id)." AND to_uid=".$this->db->escape($to_id);
         $this->db->query($delete);
     	$insert="INSERT INTO friendrequest(from_uid, to_uid, reason) VALUES(".$this->db->escape($id).",".$this->db->escape($to_id).",".$this->db->escape($reason).")";
     	$this->db->query($insert);
-    	if ($this->db->affected_rows()>0)
-    		return true;
-    	return false;
+        return true;
     }
 
     function getFriendRequests($id) {
