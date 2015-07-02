@@ -68,8 +68,9 @@ function printk($url){
 		    		$toname='无名氏';
 		    	if(isset($comrow->to_name) && strlen($comrow->to_name)>0) 
 					$toname=$comrow->to_name;
+					$fromname=$comrow->commenter_name;
 		    	?>
-				    <div class="media comment_area" touid=<?=$touid?> fid=<?=$row->fid?> toname= <?=$toname?> fromuid=<?=$comrow->uid?>  cid=<?=$comrow->cid?>   data-toggle="modal" data-target="#myModal">
+				    <div class="media comment_area" touid=<?=$touid?> fid=<?=$row->fid?> fromname=<?=$fromname?> toname= <?=$toname?> fromuid=<?=$comrow->uid?>  cid=<?=$comrow->cid?>   data-toggle="modal" data-target="#myModal">
 					  <div class="media-left">
 					      <img class="media-object" src=<?=$comrow->commenter_url?> alt="head">
 					  </div>

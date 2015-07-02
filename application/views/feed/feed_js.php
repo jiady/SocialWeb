@@ -30,7 +30,7 @@ $(".comment_area").click(function(){
 	}
 	fid=$(this).attr('fid');
 	to_uid=$(this).attr('fromuid');
-	to_name=$(this).attr('toname');
+	to_name=$(this).attr('fromname');
 	console.log(to_name);
 	$("#postx").removeAttr('placeholder');
 	$("#postx").attr('placeholder',"@"+to_name);

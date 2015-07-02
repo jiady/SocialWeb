@@ -42,7 +42,9 @@ class Relation_model extends CI_model{
 
     function getSecondaryFriends($id){
     	$id=$this->db->escape($id);
-    	$query="SELECT * FROM user WHERE uid IN (SELECT distinct f2.to_uid FROM friend f1,friend f2 Where f1.from_uid=".$id." AND f1.to_uid=f2.from_uid AND f2.to_uid NOT IN (SELECT to_uid FROM friend WHERE  from_uid=".$id.") )";
+    	$query="SELECT * FROM user WHERE uid IN (SELECT distinct f2.to_uid FROM 
+    		friend f1,friend f2 Where f1.from_uid=".$id." AND f1.to_uid=f2.from_uid
+    		 AND f2.to_uid NOT IN (SELECT to_uid FROM friend WHERE  from_uid=".$id.") )";
     	$result=$this->db->query($query)->result_array();
     	for ($i=0;$i<sizeof($result);$i++){
     		$result[$i]['headimage']=$this->Userinfo_model->getHeadImage($result[$i]['uid']);
