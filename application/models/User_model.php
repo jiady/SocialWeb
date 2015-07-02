@@ -13,11 +13,11 @@ class User_model extends CI_model{
         $query=$this->db->get('user');
         if($query->num_rows()>0){
             $row=$query->row_array();
-            $this->db->where('uid',$this->session->userdata('uid'));
+            $this->db->where('uid',$row['uid']);
             $this->db->order_by('seq','asc');
             $query=$this->db->get('usergallery');
             $r=$query->row();
-            var_dump($r);
+            //var_dump($r);
             $row['headimage']=$r->url;
             unset($row['password']);
             $this->session->set_userdata($row);
@@ -67,7 +67,7 @@ class User_model extends CI_model{
         $query=$this->db->get('user');
         if($query->num_rows()>0){
             $row=$query->row_array();
-            $this->db->where('uid',$this->session->userdata('uid'));
+            $this->db->where('uid',$id);
             $this->db->order_by('seq','asc');
             $query=$this->db->get('usergallery');
             $r=$query->row();
