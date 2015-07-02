@@ -92,7 +92,10 @@ $("#post_comment").click(function(){
 	inject+='</div>';
 
 	inject+='<div class="media-body">';
-	inject+='<p>我 @ '+to_name+'</p>';
+	if(to_name=="回复"){
+		inject+='<p>我回复'+'</p>';
+	}else
+		inject+='<p>我 @ '+to_name+'</p>';
 	inject+='<p> '+postobject.content+'</p>';
 	inject+='</div>';
 	inject+='</div>';
@@ -133,7 +136,7 @@ $(document).ready(function(){
 			$(this).addClass(animateOut);
 		}
 		},{
-		offset:'-25%'
+		offset:'-200%'
 	});
 	$('.panel').waypoint(function(direction){
 		if(direction=="up"){
@@ -141,7 +144,7 @@ $(document).ready(function(){
 			$(this).addClass(animateIn);
 		}
 		},{
-		offset:'-25%'
+		offset:'-200%'
 	});
 
 	$('.panel').waypoint(function(direction){
