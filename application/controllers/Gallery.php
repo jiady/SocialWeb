@@ -63,7 +63,7 @@ class Gallery extends CI_Controller {
     		 ->set_output(json_encode(array('ret'=>true)));
 	}
 
-	function inner_gallery_setashead(){
+	function inner_gallery_sethead(){
 		$gid=$this->input->post('gid');
 		$myid=$this->session->userdata('uid');
 		$a=$this->UserInfo_model->setImageAsHead($myid,$gid);
