@@ -17,7 +17,7 @@
 	<div class="col-lg-2 pull-right">
 	        <?php 
 	        	if ($accepted)
-	        		echo "<p>已接受</p> ";
+	        		echo "<p>已处理</p> ";
 	        	else {
 	        		echo '
 	        		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
