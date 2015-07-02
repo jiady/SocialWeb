@@ -43,9 +43,9 @@ class Userinfo_control extends CI_Controller {
 	function change() {
 		$input=$this->input->post();
 		if (isset($input['genderF']))
-			$input['gender']='1';
-		else if (isset($input['genderM']))
 			$input['gender']='0';
+		else if (isset($input['genderM']))
+			$input['gender']='1';
 		$pass=array();
 		foreach ($input as $key => $val) {
 			if ($key!="genderF" and $key!="genderM")

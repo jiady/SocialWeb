@@ -26,14 +26,14 @@ div.line {margin-top: 10px;}
 						<div class="pull-right">
 							<span class="col-lg-1">
 								<input type="radio" id="gendM" name="genderM" <?php
-									if ($info['gender']==0)
+									if ($info['gender']==1)
 										echo "checked"?> />
 								<label>男</label>
 							<span><p>       </p></span>
 							</span>
 							<span class="col-lg-1">
 								<input type="radio" id="gendF" name="genderF" <?php
-									if ($info['gender']==1)
+									if ($info['gender']==0)
 										echo "checked"?> />
 								<label>女</label>
 							</span>
