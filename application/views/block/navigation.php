@@ -45,6 +45,15 @@
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
+
+            <li
+               <?php 
+               $id=$this->session->userdata('id');
+               $name=$this->session->userdata('name');
+
+               if (isset($activetag)&&$activetag=="我") echo "class='active' "?>
+               ><a href=<?=site_url("people/$id")?>> <?=$name?> </a></li>
+
             	<li
                 <?php if (isset($activetag)&&$activetag=="相册") echo "class='active'"?>
                ><a href=<?=site_url("gallery/gallery_post")?>>相册</a></li>
